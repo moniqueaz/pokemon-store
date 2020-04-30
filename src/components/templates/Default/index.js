@@ -4,8 +4,8 @@ import { MyThemeProvider } from '../../../styles/ThemeContext';
 
 import {} from './styles';
 
-const Default = ({ children }) => {
-  return <MyThemeProvider>{children}</MyThemeProvider>;
+const Default = ({ children, theme }) => {
+  return <MyThemeProvider theme={theme}>{children}</MyThemeProvider>;
 };
 
 Default.defaultProps = {};

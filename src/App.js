@@ -7,9 +7,12 @@ import { Provider } from 'react-redux';
 import store from './store';
 
 function App() {
+  {
+    console.log('Routes: ', Routes());
+  }
   return (
     <Provider store={store}>
-      <Default>
+      <Default theme="fire">
         <GlobalStyle />
         <Routes />
       </Default>

@@ -1,8 +1,9 @@
 import theme from 'styled-theming';
 
 export const backgroundColor = theme('mode', {
-  light: '#fafafa',
-  dark: '#222',
+  fire: 'red',
+  witer: 'blue',
+  dragon: 'green',
 });
 
 export const textColor = theme('mode', {
