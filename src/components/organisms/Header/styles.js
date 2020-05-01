@@ -65,7 +65,7 @@ export const Button = styled.button`
 `;
 
 export const Bottom = styled.div`
-  background-color: green;
+  // background-color: green;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -73,6 +73,12 @@ export const Bottom = styled.div`
   height: 50px;
   transform: translateY(0);
   z-index: -1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 10px;
 
   ${props =>
     props.show &&

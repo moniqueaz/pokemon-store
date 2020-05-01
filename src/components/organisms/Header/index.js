@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FiShoppingCart, FiSearch } from 'react-icons/fi';
+import Search from '../../molecules/Search';
 
 import { Container, Title, Button, Bottom } from './styles';
 
@@ -22,7 +23,9 @@ const Header = ({ title, toggleCart }) => {
       <Button className="button__cart" onClick={toggleCart}>
         <FiShoppingCart />
       </Button>
-      <Bottom show={show}>Search</Bottom>
+      <Bottom show={show}>
+        <Search />
+      </Bottom>
     </Container>
   );
 };

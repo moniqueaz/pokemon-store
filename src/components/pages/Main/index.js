@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { withTheme } from 'styled-components';
 
-import { Wrapper } from './style';
+import { Wrapper } from './styles';
 
 const Main = () => {
   return (

@@ -3,7 +3,7 @@ import { withTheme } from 'styled-components';
 import { uuid } from 'uuidv4';
 import { type } from '../../../services/api';
 
-import {} from './style';
+import {} from './styles';
 
 const Catalog = () => {
   const [listPokemon, setListPokemon] = useState([]);

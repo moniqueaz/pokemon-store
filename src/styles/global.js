@@ -35,6 +35,12 @@ body, input, button{
   // font-family: 'VT323', monospace;
 }
 
+input{
+  &::placeholder {
+    font-family: 'Roboto', sans-serif;
+  }
+}
+
 li{
   list-style: none;
 }
