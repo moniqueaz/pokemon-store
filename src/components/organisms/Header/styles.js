@@ -7,16 +7,17 @@ export const Container = styled.div`
   color: ${textColor};
   padding: 10px;
   position: relative;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 `;
 
 export const Title = styled.h1`
   font-size: 24px;
   font-family: 'Press Start 2P', cursive;
   flex: 1 1 auto;
+
+  a {
+    text-decoration: none;
+    color: ${textColor};
+  }
 `;
 
 export const Button = styled.button`
@@ -39,6 +40,13 @@ export const Button = styled.button`
   }
 `;
 
+export const Middle = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+`;
+
 export const Bottom = styled.div`
   background-color: green;
   position: absolute;
@@ -46,5 +54,13 @@ export const Bottom = styled.div`
   left: 0;
   width: 100%;
   height: 50px;
-  transform: translateY(100%);
+  transform: translateY(0);
+  z-index: -1;
+
+  ${props =>
+    props.show &&
+    css`
+      transform: translateY(100%);
+      z-index: 0;
+    `}
 `;

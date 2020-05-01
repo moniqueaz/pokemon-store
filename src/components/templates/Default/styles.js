@@ -9,6 +9,7 @@ export const DefaultHeader = styled.div`
   position: ${props => (props.fixed ? 'fixed' : 'static')};
   width: 100%;
   height: auto;
+  z-index: 2;
 `;
 
 export const DefaultCart = styled.div`
@@ -19,16 +20,12 @@ export const DefaultCart = styled.div`
   top: 0;
   left: 0;
   display: ${props => (props.show ? 'block' : 'none')};
+  z-index: 3;
 `;
 
 export const Content = styled.div`
   background-color: yellow;
-`;
-
-export const Title = styled.h1`
-  font-size: 24px;
-  font-family: 'Press Start 2P', cursive;
-  flex: 1 1 auto;
+  z-index: 1;
 `;
 
 export const Button = styled.button`
@@ -49,14 +46,4 @@ export const Button = styled.button`
     width: 25px;
     height: 25px;
   }
-`;
-
-export const HeaderBottom = styled.div`
-  background-color: green;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  transform: translateY(100%);
 `;
