@@ -6,7 +6,14 @@ import { MyThemeProvider } from '../../../styles/ThemeContext';
 import Header from '../../organisms/Header';
 import Cart from '../../organisms/Cart';
 
-import { Wrapper, Content, DefaultHeader, DefaultCart, Button } from './styles';
+import {
+  Wrapper,
+  Content,
+  DefaultHeader,
+  DefaultCart,
+  Button,
+  Bottom,
+} from './styles';
 
 const Default = ({ children, theme }) => {
   const [fixed, setFixed] = useState(false);
@@ -35,13 +42,15 @@ const Default = ({ children, theme }) => {
         <DefaultHeader fixed={fixed}>
           <Header title={theme} toggleCart={() => setShow(!show)} />
         </DefaultHeader>
-        <Content>{children}</Content>
-        <DefaultCart show={show}>
-          <Button onClick={() => setShow(false)}>
-            <FiX />
-          </Button>
-          <Cart />
-        </DefaultCart>
+        <Bottom>
+          <Content>{children}</Content>
+          <DefaultCart show={show} fixed={fixed}>
+            <Button onClick={() => setShow(false)}>
+              <FiX />
+            </Button>
+            <Cart />
+          </DefaultCart>
+        </Bottom>
       </Wrapper>
     </MyThemeProvider>
   );

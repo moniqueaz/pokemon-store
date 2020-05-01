@@ -10,6 +10,13 @@ export const Wrapper = styled.div`
   }
 `;
 
+export const Bottom = styled.div`
+  @media (min-width: 1024px) {
+    display: flex;
+    position: relative;
+  }
+`;
+
 export const DefaultHeader = styled.div`
   position: ${props => (props.fixed ? 'fixed' : 'static')};
   width: 100%;
@@ -26,11 +33,29 @@ export const DefaultCart = styled.div`
   left: 0;
   display: ${props => (props.show ? 'block' : 'none')};
   z-index: 3;
+
+  @media (min-width: 1024px) {
+    position: static;
+    ${props =>
+      props.fixed &&
+      css`
+        position: fixed;
+        top: 70px;
+        right: 0;
+        left: inherit;
+      `};
+    display: block;
+    flex: 0 0 30%;
+    width: 30%;
+  }
 `;
 
 export const Content = styled.div`
   background-color: yellow;
   z-index: 1;
+  @media (min-width: 1024px) {
+    flex: 0 0 70%;
+  }
 `;
 
 export const Button = styled.button`
@@ -42,6 +67,10 @@ export const Button = styled.button`
   align-items: center;
   flex: 0 0 auto;
   padding: 5px;
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
 
   & + button {
     margin-left: 20px;
