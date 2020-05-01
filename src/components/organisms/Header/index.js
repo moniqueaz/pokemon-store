@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FiShoppingCart, FiSearch } from 'react-icons/fi';
 
-import { Container, Title, Button, Bottom, Middle } from './styles';
+import { Container, Title, Button, Bottom } from './styles';
 
 const Header = ({ title, toggleCart }) => {
   const [show, setShow] = useState(false);
@@ -13,17 +13,15 @@ const Header = ({ title, toggleCart }) => {
 
   return (
     <Container>
-      <Middle>
-        <Title>
-          <a href="/category">{title}</a>
-        </Title>
-        <Button onClick={() => setShow(!show)}>
-          <FiSearch />
-        </Button>
-        <Button onClick={toggleCart}>
-          <FiShoppingCart />
-        </Button>
-      </Middle>
+      <Title>
+        <a href="/category">{title}</a>
+      </Title>
+      <Button className="button__search" onClick={() => setShow(!show)}>
+        <FiSearch />
+      </Button>
+      <Button className="button__cart" onClick={toggleCart}>
+        <FiShoppingCart />
+      </Button>
       <Bottom show={show}>Search</Bottom>
     </Container>
   );

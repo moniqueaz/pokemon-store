@@ -8,10 +8,24 @@ export const Container = styled.div`
   padding: 10px;
   position: relative;
 
+  display: flex;
+  justify-content: space-beteen;
+  align-items: center;
+
   @media (min-width: 1024px) {
-    display: flex;
-    justify-content: space-beteen;
-    align-items: center;
+  }
+
+  .button {
+    &__search {
+      @media (min-width: 1024px) {
+        display: none;
+      }
+    }
+    &__cart {
+      @media (min-width: 1024px) {
+        order: 2;
+      }
+    }
   }
 `;
 
@@ -48,17 +62,6 @@ export const Button = styled.button`
     width: 25px;
     height: 25px;
   }
-
-  @media (min-width: 1024px) {
-    display: none;
-  }
-`;
-
-export const Middle = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1;
 `;
 
 export const Bottom = styled.div`

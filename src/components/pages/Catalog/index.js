@@ -21,28 +21,19 @@ const Catalog = () => {
 
     const result = data.map(({ pokemon }) => {
       const { name, url } = pokemon;
+      const id = url.match(/\/\d*\/$/)[0].replace(/\//g, '');
       return {
-        id: uuid(),
+        id,
         name,
         price: Math.floor(Math.random() * (99 - 1 + 1) + 1)
           .toFixed(2)
           .replace('.', ','),
-        image: `${process.env.REACT_APP_URL_IMAGE}/${url
-          .match(/\/\d*\/$/)[0]
-          .replace(/\//g, '')}.png`,
+        image: `${process.env.REACT_APP_URL_IMAGE}/${id}.png`,
       };
     });
     // console.log('result: ', result);
 
     setListPokemon(result);
-  };
-
-  const handleError = image => {
-    // console.log('image: ', image);
-    console.log('image.onerror: ', image.src);
-    image.onerror = '';
-    image.src = '/images/pokebola.png';
-    return true;
   };
 
   useEffect(() => {
@@ -69,7 +60,7 @@ const Catalog = () => {
                   src={pokemon.image}
                   alt={pokemon.name}
                   width="30%"
-                  onError={e => handleError(e)}
+                  // onError={}
                 />
                 {pokemon.name} - {pokemon.price}
               </li>
