@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { withTheme } from 'styled-components';
 
 import { Wrapper } from './style';

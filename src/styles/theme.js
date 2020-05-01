@@ -2,13 +2,14 @@ import theme from 'styled-theming';
 
 export const backgroundColor = theme('mode', {
   fire: 'red',
-  witer: 'blue',
+  water: 'blue',
   dragon: 'green',
 });
 
 export const textColor = theme('mode', {
-  light: '#000',
-  dark: '#fff',
+  fire: '#fff',
+  water: '#000',
+  dragon: '#fff',
 });
 
 export const buttonBackgroundColor = theme('mode', {
