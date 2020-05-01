@@ -16,7 +16,7 @@ const Catalog = () => {
   };
 
   const mountItem = data => {
-    console.log('pokemon: ', data);
+    // console.log('pokemon: ', data);
 
     const result = data.map(({ pokemon }) => {
       const { name } = pokemon;
@@ -27,7 +27,7 @@ const Catalog = () => {
           .replace('.', ','),
       };
     });
-    console.log('result: ', result);
+    // console.log('result: ', result);
 
     setListPokemon(result);
   };
@@ -38,7 +38,7 @@ const Catalog = () => {
 
   useEffect(() => {
     listPokemon.length && setIsLoader(false);
-    console.log('listPokemon: ', listPokemon);
+    // console.log('listPokemon: ', listPokemon);
   }, [listPokemon]);
 
   return (
@@ -46,7 +46,7 @@ const Catalog = () => {
       <ul>
         {listPokemon.map((pokemon, index) => {
           {
-            console.log('pokemon: ', pokemon.name);
+            // console.log('pokemon: ', pokemon.name);
           }
           return (
             <li key={`${pokemon.name}_${index}`}>

@@ -1,28 +1,16 @@
 import styled, { css } from 'styled-components';
 import { backgroundColor, textColor } from '../../../styles/theme';
 
-export const Wrapper = styled.div`
+export const Container = styled.div`
+  background-color: ${backgroundColor};
+  text-transform: uppercase;
+  color: ${textColor};
+  padding: 10px;
   position: relative;
-`;
 
-export const DefaultHeader = styled.div`
-  position: ${props => (props.fixed ? 'fixed' : 'static')};
-  width: 100%;
-  height: auto;
-`;
-
-export const DefaultCart = styled.div`
-  background-color: blue;
-  height: 100vh;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: ${props => (props.show ? 'block' : 'none')};
-`;
-
-export const Content = styled.div`
-  background-color: yellow;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const Title = styled.h1`
@@ -51,7 +39,7 @@ export const Button = styled.button`
   }
 `;
 
-export const HeaderBottom = styled.div`
+export const Bottom = styled.div`
   background-color: green;
   position: absolute;
   bottom: 0;

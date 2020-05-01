@@ -1,26 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-// import { FaSearch, FaShoppingCart } from 'react-icons/fa';
-import { FiShoppingCart, FiSearch } from 'react-icons/fi';
+import { FiX } from 'react-icons/fi';
 import { MyThemeProvider } from '../../../styles/ThemeContext';
 
-import { Wrapper, Header, Content, Cart, Title, Button } from './styles';
+import Header from '../../organisms/Header';
+import Cart from '../../organisms/Cart';
+
+import { Wrapper, Content, DefaultHeader, DefaultCart, Button } from './styles';
 
 const Default = ({ children, theme }) => {
+  const [fixed, setFixed] = useState(false);
+  const [show, setShow] = useState(false);
+
+  const scroll = () => {
+    if (window.pageYOffset > 200) {
+      setFixed(true);
+    }
+    if (window.pageYOffset < 100) {
+      setFixed(false);
+    }
+  };
+
+  useEffect(() => {
+    window.onscroll = scroll;
+  }, []);
+
+  useEffect(() => {
+    console.log('show: ', show);
+  }, [show]);
+
   return (
     <MyThemeProvider theme={theme}>
       <Wrapper>
-        <Header>
-          <Title>{theme}</Title>
-          <Button>
-            <FiSearch />
-          </Button>
-          <Button>
-            <FiShoppingCart />
-          </Button>
-        </Header>
+        <DefaultHeader fixed={fixed}>
+          <Header title={theme} toggleCart={() => setShow(!show)} />
+        </DefaultHeader>
         <Content>{children}</Content>
-        <Cart display="none">Cart</Cart>
+        <DefaultCart show={show}>
+          <Button onClick={() => setShow(false)}>
+            <FiX />
+          </Button>
+          <Cart />
+        </DefaultCart>
       </Wrapper>
     </MyThemeProvider>
   );
