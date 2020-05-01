@@ -3,6 +3,11 @@ import { backgroundColor, textColor } from '../../../styles/theme';
 
 export const Wrapper = styled.div`
   position: relative;
+
+  @media (min-width: 1024px) {
+    max-width: 1366px;
+    margin: 0 auto;
+  }
 `;
 
 export const DefaultHeader = styled.div`

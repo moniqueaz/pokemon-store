@@ -7,6 +7,12 @@ export const Container = styled.div`
   color: ${textColor};
   padding: 10px;
   position: relative;
+
+  @media (min-width: 1024px) {
+    display: flex;
+    justify-content: space-beteen;
+    align-items: center;
+  }
 `;
 
 export const Title = styled.h1`
@@ -17,6 +23,10 @@ export const Title = styled.h1`
   a {
     text-decoration: none;
     color: ${textColor};
+  }
+
+  @media (min-width: 1024px) {
+    margin-right: 50px;
   }
 `;
 
@@ -37,6 +47,10 @@ export const Button = styled.button`
   svg {
     width: 25px;
     height: 25px;
+  }
+
+  @media (min-width: 1024px) {
+    display: none;
   }
 `;
 
@@ -63,4 +77,10 @@ export const Bottom = styled.div`
       transform: translateY(100%);
       z-index: 0;
     `}
+
+  @media (min-width: 1024px) {
+    position: static;
+    transform: translateY(0);
+    z-index: 0;
+  }
 `;
