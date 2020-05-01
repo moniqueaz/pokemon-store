@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { withTheme } from 'styled-components';
+import { uuid } from 'uuidv4';
 import { type } from '../../../services/api';
 
 import {} from './style';
@@ -19,17 +20,29 @@ const Catalog = () => {
     // console.log('pokemon: ', data);
 
     const result = data.map(({ pokemon }) => {
-      const { name } = pokemon;
+      const { name, url } = pokemon;
       return {
+        id: uuid(),
         name,
         price: Math.floor(Math.random() * (99 - 1 + 1) + 1)
           .toFixed(2)
           .replace('.', ','),
+        image: `${process.env.REACT_APP_URL_IMAGE}/${url
+          .match(/\/\d*\/$/)[0]
+          .replace(/\//g, '')}.png`,
       };
     });
     // console.log('result: ', result);
 
     setListPokemon(result);
+  };
+
+  const handleError = image => {
+    // console.log('image: ', image);
+    console.log('image.onerror: ', image.src);
+    image.onerror = '';
+    image.src = '/images/pokebola.png';
+    return true;
   };
 
   useEffect(() => {
@@ -43,18 +56,27 @@ const Catalog = () => {
 
   return (
     !isLoader && (
-      <ul>
-        {listPokemon.map((pokemon, index) => {
-          {
-            // console.log('pokemon: ', pokemon.name);
-          }
-          return (
-            <li key={`${pokemon.name}_${index}`}>
-              {pokemon.name} - {pokemon.price}
-            </li>
-          );
-        })}
-      </ul>
+      <>
+        <img src="/images/pokebola.png" alt="" />
+        <ul>
+          {listPokemon.map((pokemon, index) => {
+            {
+              // console.log('pokemon: ', pokemon.name);
+            }
+            return (
+              <li key={`${pokemon.name}_${index}`}>
+                <img
+                  src={pokemon.image}
+                  alt={pokemon.name}
+                  width="30%"
+                  onError={e => handleError(e)}
+                />
+                {pokemon.name} - {pokemon.price}
+              </li>
+            );
+          })}
+        </ul>
+      </>
     )
   );
 };
