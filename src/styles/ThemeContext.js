@@ -1,35 +1,22 @@
-import React, { useState, useContext, createContext } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
-import { backgroundColor, textColor } from './theme';
-
-import { useDispatch, useSelector } from 'react-redux';
-import * as MapDispachToActions from '../store/actions/actionCreators';
+import React, { useContext, createContext } from 'react';
+import { ThemeProvider } from 'styled-components';
 
 const ThemeToggleContext = createContext();
 
 export const useTheme = () => useContext(ThemeToggleContext);
 
-export const MyThemeProvider = ({ children }) => {
-  const dispatch = useDispatch();
-  const { theme } = useSelector(state => state.type);
-
-  const Wrapper = styled.div`
-    background-color: ${backgroundColor};
-    color: ${textColor};
-  `;
-
-  const handleToTheme = value => {
-    dispatch(MapDispachToActions.mountToTheme(value));
-  };
+export const MyThemeProvider = ({ children, theme }) => {
+  const [themeState, setThemeState] = React.useState(theme);
+  console.log('themeState: ', themeState);
 
   return (
-    <ThemeToggleContext.Provider value={{ toggle: handleToTheme }}>
+    <ThemeToggleContext.Provider value={{ toggle: setThemeState }}>
       <ThemeProvider
         theme={{
-          mode: theme,
+          mode: themeState,
         }}
       >
-        <Wrapper>{children}</Wrapper>
+        {children}
       </ThemeProvider>
     </ThemeToggleContext.Provider>
   );
