@@ -4,6 +4,9 @@
   "private": true,
   "author": "Monique Azevedo <moniqueaz.si@gmail.com>",
   "scripts": {
+    "dev:fire": "REACT_APP_TYPE=fire react-scripts start",
+    "dev:witer": "REACT_APP_TYPE=witer react-scripts start",
+    "dev:dragon": "REACT_APP_TYPE=dragon react-scripts start",
     "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
