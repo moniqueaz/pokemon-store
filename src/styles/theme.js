@@ -7,8 +7,9 @@ export const backgroundColor = theme('mode', {
 });
 
 export const textColor = theme('mode', {
-  light: '#000',
-  dark: '#fff',
+  fire: '#fff',
+  witer: '#000',
+  dragon: '#fff',
 });
 
 export const buttonBackgroundColor = theme('mode', {
