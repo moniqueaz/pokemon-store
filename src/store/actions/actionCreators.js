@@ -1,6 +1,28 @@
-export function mountToTheme(theme) {
+export function initToCart(cart) {
   return {
-    type: 'MOUNT_TO_THEME',
+    type: 'INIT_TO_CART',
+    cart,
+  };
+}
+export function addToCart(item, theme) {
+  return {
+    type: 'ADD_TO_CART',
+    item,
+    theme,
+  };
+}
+
+export function removeToCart(id, theme) {
+  return {
+    type: 'REMOVE_TO_CART',
+    id,
+    theme,
+  };
+}
+
+export function deleteCart(theme) {
+  return {
+    type: 'DELETE_TO_CART',
     theme,
   };
 }

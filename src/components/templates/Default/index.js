@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FiX } from 'react-icons/fi';
+import { useDispatch, useSelector } from 'react-redux';
 import { MyThemeProvider } from '../../../styles/ThemeContext';
+import * as MapDispachToActions from '../../../store/actions/actionCreators';
 
 import Header from '../../organisms/Header';
 import Cart from '../../organisms/Cart';
@@ -19,6 +21,10 @@ import {
 const Default = ({ children, theme }) => {
   const [fixed, setFixed] = useState(false);
   const [show, setShow] = useState(false);
+  const cart = useSelector(state => state.cart);
+  const [list, setList] = useState([]);
+  const storage = JSON.parse(localStorage.getItem(`cart-${theme}`));
+  const dispatch = useDispatch();
 
   const scroll = () => {
     if (window.pageYOffset > 200) {
@@ -29,9 +35,21 @@ const Default = ({ children, theme }) => {
     }
   };
 
+  const handleToCart = items => {
+    dispatch(MapDispachToActions.initToCart(items));
+  };
+
   useEffect(() => {
     window.onscroll = scroll;
+    if (storage.length) {
+      setList(storage);
+      handleToCart(storage);
+    }
   }, []);
+
+  useEffect(() => {
+    setList(cart);
+  }, [cart]);
 
   return (
     <MyThemeProvider theme={theme}>
@@ -46,7 +64,7 @@ const Default = ({ children, theme }) => {
             <Content>{children}</Content>
           </Container>
           <DefaultCart show={show} fixed={fixed}>
-            <Cart onClose={() => setShow(false)} />
+            <Cart data={list} onClose={() => setShow(false)} />
           </DefaultCart>
         </Middle>
         <Footer>
