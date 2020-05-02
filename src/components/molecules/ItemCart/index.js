@@ -6,6 +6,7 @@ import FormatPrice from '../../atoms/FormatPrice';
 import { Image, Title, Button, Type, Price, Item, Info } from './styles';
 
 const ItemCart = ({ data, onDelete, isLoader }) => {
+  console.log('isLoader: ', isLoader);
   console.log('data: ', data);
   const { id, image, link, type, price, name } = data;
   const [loader, setLoader] = useState(isLoader);
@@ -41,7 +42,7 @@ const ItemCart = ({ data, onDelete, isLoader }) => {
 };
 
 ItemCart.defaultProps = {
-  data: [],
+  data: {},
   onDelete: () => undefined,
   isLoader: true,
 };
@@ -50,7 +51,7 @@ ItemCart.propTypes = {
   /**
    * Essa propriedade é responsavel por realizar a carga no componente.
    */
-  data: PropTypes.arrayOf({}),
+  data: PropTypes.object,
   /**
    * Essa propriedade é responsavel por receber a função quer será executada
    * ao tentar excluir um item.

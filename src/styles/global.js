@@ -1,5 +1,6 @@
 import { createGlobalStyle, keyframes } from 'styled-components';
 import { black, white, grayLight } from './theme';
+import { font } from './variables';
 
 const rotate = keyframes`
   0% {
@@ -32,13 +33,12 @@ body{
 body, input, button{
   color: ${black};
   font-size: 20px;
-  font-family: 'Roboto', sans-serif;
-  // font-family: 'VT323', monospace;
+  font-family: ${font.primary};
 }
 
 input{
   &::placeholder {
-    font-family: 'Roboto', sans-serif;
+    font-family: ${font.primary};
     color: ${grayLight};
   }
 }

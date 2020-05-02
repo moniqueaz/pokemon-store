@@ -11,8 +11,9 @@ import {
   Content,
   DefaultHeader,
   DefaultCart,
-  Button,
-  Bottom,
+  Container,
+  Middle,
+  Footer,
 } from './styles';
 
 const Default = ({ children, theme }) => {
@@ -40,17 +41,21 @@ const Default = ({ children, theme }) => {
     <MyThemeProvider theme={theme}>
       <Wrapper>
         <DefaultHeader fixed={fixed}>
-          <Header title={theme} toggleCart={() => setShow(!show)} />
+          <Container>
+            <Header title={theme} toggleCart={() => setShow(!show)} />
+          </Container>
         </DefaultHeader>
-        <Bottom>
-          <Content>{children}</Content>
+        <Middle>
+          <Container>
+            <Content>{children}</Content>
+          </Container>
           <DefaultCart show={show} fixed={fixed}>
-            <Button onClick={() => setShow(false)}>
-              <FiX />
-            </Button>
-            <Cart />
+            <Cart onClose={() => setShow(false)} />
           </DefaultCart>
-        </Bottom>
+        </Middle>
+        <Footer>
+          <Container>Pokemon</Container>
+        </Footer>
       </Wrapper>
     </MyThemeProvider>
   );

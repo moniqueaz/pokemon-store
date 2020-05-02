@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { backgroundColor, textColor } from '../../../styles/theme';
+import { font } from '../../../styles/variables';
 
 export const Container = styled.div`
   background-color: ${backgroundColor};
@@ -31,7 +32,7 @@ export const Container = styled.div`
 
 export const Title = styled.h1`
   font-size: 24px;
-  font-family: 'Press Start 2P', cursive;
+  font-family: ${font.secondary};
   flex: 1 1 auto;
 
   a {

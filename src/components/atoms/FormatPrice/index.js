@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { textButtonColor, backgroundButtonColor } from '../../../styles/theme';
 
 import {} from './styles';
 
