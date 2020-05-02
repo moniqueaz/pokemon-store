@@ -1,3 +1,9 @@
+export function initToCart(cart) {
+  return {
+    type: 'INIT_TO_CART',
+    cart,
+  };
+}
 export function addToCart(item, theme) {
   return {
     type: 'ADD_TO_CART',
