@@ -9,7 +9,7 @@ import {
 import { font } from '../../../styles/variables';
 
 export const Item = styled.div`
-  width: 300px;
+  width: 100%;
   height: 400px;
   background-color: ${white};
   overflow: hidden;
@@ -29,10 +29,10 @@ export const Item = styled.div`
     width: 100%;
     height: 170px;
     z-index: -1;
-    background-image: url('/images/bgbright-x2.png');
-    background-size: inherit;
-    background-position: center;
-    filter: brightness(2.5);
+    // background-image: url('/images/bgbright-x2.png');
+    // background-size: inherit;
+    // background-position: center;
+    // filter: brightness(2.5);
   }
 
   &:after {
@@ -44,9 +44,9 @@ export const Item = styled.div`
     height: 170px;
     z-index: -2;
     background-color: ${primaryLight};
-    background-image: url('/images/bgbright-x2.png');
-    background-size: cover;
-    background-position: center;
+    // background-image: url('/images/bgbright-x2.png');
+    // background-size: cover;
+    // background-position: center;
   }
 
   a {
@@ -59,6 +59,7 @@ export const Item = styled.div`
 export const Image = styled.img`
   width: 60%;
   margin-bottom: 20px;
+  max-width: 185px;
 `;
 
 export const Type = styled.span`
