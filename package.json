@@ -1,6 +1,6 @@
 {
   "name": "pokemon-store",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "author": "Monique Azevedo <moniqueaz.si@gmail.com>",
   "scripts": {
@@ -11,7 +11,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006",
+    "storybook:fire": "REACT_APP_TYPE=fire start-storybook -p 6006",
+    "storybook:water": "REACT_APP_TYPE=water start-storybook -p 6006",
+    "storybook:dragon": "REACT_APP_TYPE=dragon start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
   "dependencies": {

@@ -1,5 +1,11 @@
 import styled, { css } from 'styled-components';
-import { backgroundColor, textColor } from '../../../styles/theme';
+import {
+  backgroundColor,
+  textColor,
+  backgroundColorSecondary,
+  textColorSecondary,
+} from '../../../styles/theme';
+import { font } from '../../../styles/variables';
 
 export const Container = styled.div`
   background-color: ${backgroundColor};
@@ -31,7 +37,7 @@ export const Container = styled.div`
 
 export const Title = styled.h1`
   font-size: 24px;
-  font-family: 'Press Start 2P', cursive;
+  font-family: ${font.secondary};
   flex: 1 1 auto;
 
   a {
@@ -46,13 +52,13 @@ export const Title = styled.h1`
 
 export const Button = styled.button`
   background-color: transparent;
-  background-color: blue;
   color: ${textColor};
   display: flex;
   justify-content: center;
   align-items: center;
   flex: 0 0 auto;
   padding: 5px;
+  position: relative;
 
   & + button {
     margin-left: 20px;
@@ -64,15 +70,35 @@ export const Button = styled.button`
   }
 `;
 
-export const Bottom = styled.div`
-  background-color: green;
+export const Count = styled.span`
+  background-color: ${backgroundColorSecondary};
+  color: ${textColorSecondary};
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  bottom: 0;
+  top: 2px;
+  right: -2px;
+`;
+
+export const Bottom = styled.div`
+  position: absolute;
+  bottom: -3px;
   left: 0;
   width: 100%;
   height: 50px;
   transform: translateY(0);
   z-index: -1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 10px;
 
   ${props =>
     props.show &&

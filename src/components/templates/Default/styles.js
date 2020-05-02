@@ -1,19 +1,44 @@
 import styled, { css } from 'styled-components';
-import { backgroundColor, textColor } from '../../../styles/theme';
+import {
+  backgroundColor,
+  textColor,
+  backgroundFooter,
+  textColorFooter,
+  primaryDark,
+} from '../../../styles/theme';
+import { container, height, font } from '../../../styles/variables';
 
 export const Wrapper = styled.div`
   position: relative;
+`;
 
+export const Container = styled.div`
+  // position: relative;
   @media (min-width: 1024px) {
-    max-width: 1366px;
+    ${container}
     margin: 0 auto;
   }
 `;
 
-export const Bottom = styled.div`
+export const Footer = styled.div`
+  padding: 10px;
+  text-align: center;
+  background-color: ${backgroundFooter};
+  color: ${textColorFooter};
+  border-top: 4px solid ${primaryDark};
+  font-family: ${font.tertiary};
+`;
+
+export const Middle = styled.div`
+  min-height: calc(
+    ${height.content} - ${height.mobile.header} - ${height.mobile.footer}
+  );
   @media (min-width: 1024px) {
     display: flex;
     position: relative;
+    min-height: calc(
+      ${height.content} - ${height.desk.header} - ${height.desk.footer}
+    );
   }
 `;
 
@@ -22,12 +47,14 @@ export const DefaultHeader = styled.div`
   width: 100%;
   height: auto;
   z-index: 2;
+  background-color: ${backgroundColor};
+  border-bottom: 4px solid ${primaryDark};
 `;
 
 export const DefaultCart = styled.div`
-  background-color: blue;
   height: 100vh;
   width: 100%;
+  max-width: 100vw;
   position: fixed;
   top: 0;
   left: 0;
@@ -46,25 +73,6 @@ export const Content = styled.div`
   z-index: 1;
   @media (min-width: 1024px) {
     width: 100%;
-  }
-`;
-
-export const Button = styled.button`
-  background-color: transparent;
-  background-color: blue;
-  color: ${textColor};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 0 0 auto;
-  padding: 5px;
-
-  & + button {
-    margin-left: 20px;
-  }
-
-  svg {
-    width: 25px;
-    height: 25px;
+    ${container}
   }
 `;

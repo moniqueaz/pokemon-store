@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { withTheme } from 'styled-components';
-import { uuid } from 'uuidv4';
 import { type } from '../../../services/api';
 
-import {} from './style';
+import {} from './styles';
 
 const Catalog = () => {
   const [listPokemon, setListPokemon] = useState([]);
@@ -25,9 +24,7 @@ const Catalog = () => {
       return {
         id,
         name,
-        price: Math.floor(Math.random() * (99 - 1 + 1) + 1)
-          .toFixed(2)
-          .replace('.', ','),
+        price: Math.floor(Math.random() * (9999 - 1000 + 1000) + 1000),
         image: `${process.env.REACT_APP_URL_IMAGE}/${id}.png`,
       };
     });
@@ -48,7 +45,7 @@ const Catalog = () => {
   return (
     !isLoader && (
       <>
-        <img src="/images/pokebola.png" alt="" />
+        {/* <img src="/images/pokebola.png" alt="" /> */}
         <ul>
           {listPokemon.map((pokemon, index) => {
             {

@@ -1,0 +1,24 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+
+import ItemCart from '../components/molecules/ItemCart';
+
+<Meta title="Molecules/ItemCart" component={ItemCart} />
+
+Documentação Molecula ItemCart
+
+<Preview>
+  <Story name="default">
+    <ItemCart
+      data={{
+        id: 1,
+        image: 'https://pokeres.bastionbot.org/images/pokemon/25.png',
+        link: '/',
+        type: 'electric',
+        price: 2000,
+        name: 'Pikachu',
+      }}
+      isLoader={false}
+    />
+  </Story>
+</Preview>
