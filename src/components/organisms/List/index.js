@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-// import { FiPlusCircle } from 'react-icons/fi';
+import { useDispatch, useSelector } from 'react-redux';
+import { withTheme } from 'styled-components';
+import * as MapDispachToActions from '../../../store/actions/actionCreators';
 import Button from '../../atoms/Button';
 import ItemList from '../../molecules/ItemList';
 
 import { Wrapper, Items, Item, ShowMore } from './styles';
 
-const List = ({ data, isLoader }) => {
+const List = ({ data, isLoader, theme }) => {
   const [list, setList] = useState(data);
   const [page, setPage] = useState(1);
   const [showLoadMore, setShowLoadMore] = useState(true);
   const groupBy = 12;
   const [itemsLength, setItemsLength] = useState(groupBy);
+  const dispatch = useDispatch();
 
   const handleLoadMore = () => {
     const newPage = page + 1;
@@ -22,6 +25,10 @@ const List = ({ data, isLoader }) => {
     setList(list);
   };
 
+  const handleToCart = item => {
+    dispatch(MapDispachToActions.addToCart(item, theme));
+  };
+
   useEffect(() => {
     const showItemsLength = groupBy * page;
     setItemsLength(showItemsLength);
@@ -30,7 +37,7 @@ const List = ({ data, isLoader }) => {
   }, [page, list]);
 
   useEffect(() => {
-    setList(data);
+    !isLoader && setList(data);
   }, [isLoader]);
 
   return (
@@ -47,7 +54,7 @@ const List = ({ data, isLoader }) => {
                     itemsPerPage={groupBy}
                     index={index}
                   >
-                    <ItemList data={item} />
+                    <ItemList data={item} addToCart={handleToCart} />
                   </Item>
                 )
               );
@@ -82,4 +89,4 @@ List.propTypes = {
   isLoader: PropTypes.bool,
 };
 
-export default List;
+export default withTheme(List);

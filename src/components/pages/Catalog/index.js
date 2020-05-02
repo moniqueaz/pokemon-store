@@ -5,7 +5,8 @@ import List from '../../organisms/List';
 
 import {} from './styles';
 
-const Catalog = () => {
+const Catalog = ({ theme }) => {
+  console.log('theme: ', theme);
   const [listPokemon, setListPokemon] = useState([]);
   const [isLoader, setIsLoader] = useState(true);
 
