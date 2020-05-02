@@ -9,12 +9,13 @@ const Catalog = ({ theme }) => {
   console.log('theme: ', theme);
   const [listPokemon, setListPokemon] = useState([]);
   const [isLoader, setIsLoader] = useState(true);
+  const storage = JSON.parse(localStorage.getItem(`list-${theme.mode}`));
 
   const getType = async () => {
     const {
       data: { pokemon },
     } = await type.get('/');
-    mountItem(pokemon);
+    return pokemon;
   };
 
   const mountItem = data => {
@@ -31,10 +32,26 @@ const Catalog = ({ theme }) => {
     });
 
     setListPokemon(result);
+    localStorage.setItem(`list-${theme.mode}`, JSON.stringify(result));
+  };
+
+  const mountCatalog = async () => {
+    console.log('storage: ', storage);
+    if (storage) {
+      if (storage.length) {
+        setListPokemon(storage);
+      } else {
+        const pokemon = await getType();
+        mountItem(pokemon);
+      }
+    } else {
+      const pokemon = await getType();
+      mountItem(pokemon);
+    }
   };
 
   useEffect(() => {
-    getType();
+    mountCatalog();
   }, []);
 
   useEffect(() => {

@@ -24,6 +24,7 @@ const Default = ({ children, theme }) => {
   const cart = useSelector(state => state.cart);
   const [list, setList] = useState([]);
   const storage = JSON.parse(localStorage.getItem(`cart-${theme}`));
+  const storageCatalog = JSON.parse(localStorage.getItem(`list-${theme}`));
   const dispatch = useDispatch();
 
   const scroll = () => {
@@ -41,9 +42,16 @@ const Default = ({ children, theme }) => {
 
   useEffect(() => {
     window.onscroll = scroll;
-    if (storage.length) {
-      setList(storage);
-      handleToCart(storage);
+    if (storage && storageCatalog) {
+      console.log('storage: ', storage);
+      if (storage) {
+        if (storage.length) {
+          setList(storage);
+          handleToCart(storage);
+        }
+      }
+    } else {
+      localStorage.setItem(`cart-${theme}`, JSON.stringify([]));
     }
   }, []);
 
