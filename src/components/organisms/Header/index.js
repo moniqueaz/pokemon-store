@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
 import { FiShoppingCart, FiSearch, FiX } from 'react-icons/fi';
 import Search from '../../molecules/Search';
 
@@ -7,6 +8,7 @@ import { Container, Title, Button, Bottom, Count } from './styles';
 
 const Header = ({ title, toggleCart }) => {
   const [show, setShow] = useState(false);
+  const cart = useSelector(state => state.cart);
 
   return (
     <Container>
@@ -19,7 +21,7 @@ const Header = ({ title, toggleCart }) => {
       </Button>
       <Button className="button__cart" onClick={toggleCart}>
         <FiShoppingCart />
-        <Count>4</Count>
+        <Count>{cart.length}</Count>
       </Button>
       <Bottom show={show}>
         <Search />

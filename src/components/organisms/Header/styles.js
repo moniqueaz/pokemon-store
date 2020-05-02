@@ -74,8 +74,9 @@ export const Count = styled.span`
   background-color: ${backgroundColorSecondary};
   color: ${textColorSecondary};
   border-radius: 50%;
-  height: 12px;
-  width: 12px;
+  min-height: 15px;
+  min-width: 15px;
+  padding: 2px;
   font-size: 10px;
   display: flex;
   justify-content: center;
