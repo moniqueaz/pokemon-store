@@ -1,5 +1,3 @@
-import {} from './theme';
-
 export const fontColor = {
   primary: '##FF0101',
   primaryLight: '#FF4D4D',

@@ -1,7 +1,8 @@
 import React from 'react';
 import { addDecorator, addParameters } from '@storybook/react';
-// import GlobalStyle from '../src/styles/global';
 import { withInfo } from '@storybook/addon-info';
+import GlobalStyle from '../src/styles/global';
+import { MyThemeProvider } from '../src/styles/ThemeContext';
 // import { configureViewport } from '@storybook/addon-viewport';
 
 const newViewports = {
@@ -39,6 +40,8 @@ const newViewports = {
 //   viewports: newViewports,
 // });
 
+const theme = process.env.REACT_APP_TYPE;
+
 const styles = {
   padding: '20px',
 };
@@ -51,10 +54,10 @@ addParameters({
 });
 addDecorator(withInfo);
 addDecorator(story => (
-  <>
+  <MyThemeProvider theme={theme}>
     <Container>
-      {/* <GlobalStyle /> */}
+      <GlobalStyle />
       {story()}
     </Container>
-  </>
+  </MyThemeProvider>
 ));

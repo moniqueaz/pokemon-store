@@ -35,7 +35,14 @@ const Search = ({ value, onSubmit }) => {
 Search.defaultProps = {};
 
 Search.propTypes = {
+  /**
+   * Essa propriedade é usada para pré definir um valor no input.
+   */
   value: PropTypes.string,
+  /**
+   * Essa propriedade é usada para passar uma função que será executada no submit
+   * da busca.
+   */
   onSubmit: PropTypes.func,
 };
 

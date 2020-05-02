@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { withTheme } from 'styled-components';
-import { uuid } from 'uuidv4';
 import { type } from '../../../services/api';
 
 import {} from './styles';
@@ -25,9 +24,7 @@ const Catalog = () => {
       return {
         id,
         name,
-        price: Math.floor(Math.random() * (99 - 1 + 1) + 1)
-          .toFixed(2)
-          .replace('.', ','),
+        price: Math.floor(Math.random() * (999 - 100 + 1) + 1),
         image: `${process.env.REACT_APP_URL_IMAGE}/${id}.png`,
       };
     });

@@ -1,4 +1,5 @@
 import { createGlobalStyle, keyframes } from 'styled-components';
+import { black, white, grayLight } from './theme';
 
 const rotate = keyframes`
   0% {
@@ -23,13 +24,13 @@ html, body, #root{
 }
 
 body{
-  background-color: #fff;
+  background-color: ${white};
   -webkit-font-smoothing: antialiased !important;
   font-size: 20px;
 }
 
 body, input, button{
-  color: #000;
+  color: ${black};
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
   // font-family: 'VT323', monospace;
@@ -38,6 +39,7 @@ body, input, button{
 input{
   &::placeholder {
     font-family: 'Roboto', sans-serif;
+    color: ${grayLight};
   }
 }
 
@@ -49,6 +51,12 @@ button{
   cursor: pointer;
   border: 0;
   border-radius: 0;
+  background-color: transparent;
+  transition: all 0.1s linear;
+  &:active {
+    opacity: 0.8;
+    transition: all 0.1s linear;
+  }
 }
 
 .loop {

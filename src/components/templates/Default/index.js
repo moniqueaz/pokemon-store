@@ -59,7 +59,13 @@ const Default = ({ children, theme }) => {
 Default.defaultProps = {};
 
 Default.propTypes = {
+  /**
+   * Essa pripriedade recebe o conteudo que será exibida no template.
+   */
   children: PropTypes.element.isRequired,
+  /**
+   * Essa pripriedade informa o tema do projeto.
+   */
   theme: PropTypes.string.isRequired,
 };
 

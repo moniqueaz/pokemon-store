@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import { white, black } from '../../../styles/theme';
 
 export const Form = styled.form`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
+  background-color: ${white};
   border-radius: 50px;
   height: 40px;
   overflow: hidden;
@@ -12,7 +13,7 @@ export const Form = styled.form`
   width: 100%;
 
   svg {
-    color: #2c2c2c;
+    color: ${black};
     width: 20px;
     height: 20px;
     @media (min-width: 1024px) {
@@ -31,7 +32,6 @@ export const Input = styled.input`
   }
 
   &::placeholder {
-    color: #bbb;
     font-size: 12px;
     @media (min-width: 1024px) {
       font-size: 14px;
@@ -45,6 +45,7 @@ export const Button = styled.button`
   justify-content: center;
   align-items: center;
   background-color: transparent;
+  border: 0;
 
   & + button {
     margin-left: 5px;
