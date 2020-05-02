@@ -33,10 +33,6 @@ const Default = ({ children, theme }) => {
     window.onscroll = scroll;
   }, []);
 
-  useEffect(() => {
-    console.log('show: ', show);
-  }, [show]);
-
   return (
     <MyThemeProvider theme={theme}>
       <Wrapper>

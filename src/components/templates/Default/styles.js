@@ -31,7 +31,6 @@ export const Footer = styled.div`
 `;
 
 export const Middle = styled.div`
-  background-color: ${grayLight};
   min-height: calc(
     ${height.content} - ${height.mobile.header} - ${height.mobile.footer}
   );

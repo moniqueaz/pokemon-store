@@ -4,19 +4,16 @@ import PropTypes from 'prop-types';
 import Button from '../../atoms/Button';
 import ItemList from '../../molecules/ItemList';
 
-import { Wrapper, Items, Item } from './styles';
+import { Wrapper, Items, Item, ShowMore } from './styles';
 
 const List = ({ data, isLoader }) => {
   const [list, setList] = useState(data);
   const [page, setPage] = useState(1);
-  const [showLoadMore, setShowLoadMore] = useState(false);
-  const groupBy = 10;
+  const [showLoadMore, setShowLoadMore] = useState(true);
+  const groupBy = 12;
   const [itemsLength, setItemsLength] = useState(groupBy);
 
   const handleLoadMore = () => {
-    if (showMoreItems) {
-      showMoreItems();
-    }
     const newPage = page + 1;
     setPage(newPage);
   };
@@ -30,14 +27,18 @@ const List = ({ data, isLoader }) => {
     setItemsLength(showItemsLength);
     const hasMore = showItemsLength < list.length;
     setShowLoadMore(hasMore);
-  }, [page, groupBy, list]);
+  }, [page, list]);
+
+  useEffect(() => {
+    setList(data);
+  }, [isLoader]);
 
   return (
     <Wrapper>
       {!isLoader && (
         <>
           <Items>
-            {data.map((item, index) => {
+            {list.map((item, index) => {
               return (
                 index < itemsLength && (
                   <Item
@@ -53,9 +54,11 @@ const List = ({ data, isLoader }) => {
             })}
           </Items>
           {showLoadMore && (
-            <Button size="large" onClick={handleLoadMore}>
-              Show More
-            </Button>
+            <ShowMore>
+              <Button full size="large" onClick={handleLoadMore}>
+                Show More
+              </Button>
+            </ShowMore>
           )}
         </>
       )}

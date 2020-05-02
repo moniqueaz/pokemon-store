@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components';
 import { textButtonColor, backgroundButtonColor } from '../../../styles/theme';
 
 import { ButtonStyle } from './styles';
 
 const Button = ({ children, color, bgColor, full, onClick, size }) => {
-  console.log('typeof children: ', typeof children);
-  console.log('children: ', children);
   const handleToClick = () => {
     onClick();
   };
@@ -20,8 +19,8 @@ const Button = ({ children, color, bgColor, full, onClick, size }) => {
       size={size}
     >
       {typeof children !== 'string'
-        ? children.map(child => {
-            return <span>{child}</span>;
+        ? children.map((child, index) => {
+            return <span key={index}>{child}</span>;
           })
         : children}
     </ButtonStyle>
@@ -30,9 +29,13 @@ const Button = ({ children, color, bgColor, full, onClick, size }) => {
 
 Button.defaultProps = {
   children: '',
-  color: textButtonColor,
-  bgColor: backgroundButtonColor,
-  full: '',
+  color: css`
+    ${textButtonColor}
+  `,
+  bgColor: css`
+    ${backgroundButtonColor}
+  `,
+  full: false,
   size: 'small',
 };
 

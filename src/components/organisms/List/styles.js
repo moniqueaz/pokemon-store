@@ -30,13 +30,24 @@ const animateInHorizont = keyframes`
   }
 `;
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.div`
+  margin-bottom: 20px;
+`;
 
 export const Items = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-start;
+  padding: 20px 10px;
+
+  @media (min-width: 768px) and (max-width: 1366px) {
+    padding: 20px;
+  }
+
+  @media (min-width: 1367px) {
+    padding: 20px 0;
+  }
 `;
 
 export const Item = styled.li`
@@ -78,4 +89,10 @@ export const Item = styled.li`
       margin-left: 0;
     }
   }
+`;
+
+export const ShowMore = styled.div`
+  margin: 0 auto;
+  width: 100%;
+  max-width: 400px;
 `;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { withTheme } from 'styled-components';
 import { type } from '../../../services/api';
-import ItemList from '../../molecules/ItemList';
+import List from '../../organisms/List';
 
 import {} from './styles';
 
@@ -17,8 +17,6 @@ const Catalog = () => {
   };
 
   const mountItem = data => {
-    // console.log('pokemon: ', data);
-
     const result = data.map(({ pokemon }) => {
       const { name, url } = pokemon;
       const id = url.match(/\/\d*\/$/)[0].replace(/\//g, '');
@@ -30,7 +28,6 @@ const Catalog = () => {
         image: `${process.env.REACT_APP_URL_IMAGE}/${id}.png`,
       };
     });
-    // console.log('result: ', result);
 
     setListPokemon(result);
   };
@@ -41,28 +38,9 @@ const Catalog = () => {
 
   useEffect(() => {
     listPokemon.length && setIsLoader(false);
-    // console.log('listPokemon: ', listPokemon);
   }, [listPokemon]);
 
-  return (
-    !isLoader && (
-      <>
-        {/* <img src="/images/pokebola.png" alt="" /> */}
-        <ul>
-          {listPokemon.map((pokemon, index) => {
-            {
-              // console.log('pokemon: ', pokemon.name);
-            }
-            return (
-              <li key={`${pokemon.name}_${index}`}>
-                <ItemList data={pokemon} />
-              </li>
-            );
-          })}
-        </ul>
-      </>
-    )
-  );
+  return <List data={listPokemon} isLoader={isLoader} />;
 };
 
 export default withTheme(Catalog);
