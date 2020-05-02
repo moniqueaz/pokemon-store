@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FiX } from 'react-icons/fi';
+import { useDispatch, useSelector } from 'react-redux';
+import { withTheme } from 'styled-components';
+import * as MapDispachToActions from '../../../store/actions/actionCreators';
 
 import FormatPrice from '../../atoms/FormatPrice';
 
@@ -19,9 +22,15 @@ import {
   Count,
 } from './styles';
 
-const Cart = ({ data, onClose }) => {
+const Cart = ({ data, onClose, theme }) => {
+  const dispatch = useDispatch();
+
   const handleToClose = () => {
     onClose();
+  };
+
+  const handleToCart = id => {
+    dispatch(MapDispachToActions.removeToCart(id, theme));
   };
 
   return (
@@ -39,7 +48,11 @@ const Cart = ({ data, onClose }) => {
             {data.map(item => {
               return (
                 <li key={item.id}>
-                  <ItemCart data={item} isLoader={false} />
+                  <ItemCart
+                    data={item}
+                    isLoader={false}
+                    onDelete={handleToCart}
+                  />
                 </li>
               );
             })}
@@ -77,4 +90,4 @@ Cart.propTypes = {
   onClose: PropTypes.func,
 };
 
-export default Cart;
+export default withTheme(Cart);

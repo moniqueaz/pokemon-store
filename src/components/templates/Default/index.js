@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FiX } from 'react-icons/fi';
+import { useDispatch, useSelector } from 'react-redux';
 import { MyThemeProvider } from '../../../styles/ThemeContext';
 
 import Header from '../../organisms/Header';
@@ -19,6 +20,7 @@ import {
 const Default = ({ children, theme }) => {
   const [fixed, setFixed] = useState(false);
   const [show, setShow] = useState(false);
+  const cart = useSelector(state => state.cart);
 
   const scroll = () => {
     if (window.pageYOffset > 200) {
@@ -46,7 +48,7 @@ const Default = ({ children, theme }) => {
             <Content>{children}</Content>
           </Container>
           <DefaultCart show={show} fixed={fixed}>
-            <Cart onClose={() => setShow(false)} />
+            <Cart data={cart} onClose={() => setShow(false)} />
           </DefaultCart>
         </Middle>
         <Footer>

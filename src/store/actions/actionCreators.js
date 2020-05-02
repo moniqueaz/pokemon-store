@@ -6,15 +6,17 @@ export function addToCart(item, theme) {
   };
 }
 
-export function removeToCart(item) {
+export function removeToCart(id, theme) {
   return {
     type: 'REMOVE_TO_CART',
-    item,
+    id,
+    theme,
   };
 }
 
-export function deleteCart() {
+export function deleteCart(theme) {
   return {
     type: 'DELETE_TO_CART',
+    theme,
   };
 }

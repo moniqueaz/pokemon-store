@@ -12,10 +12,15 @@ export default function cart(state = [], action) {
       return [...newState];
     case 'REMOVE_TO_CART':
       const newCartDelete = state.filter(item => {
-        return item.id !== action.item.id;
+        return item.id !== action.id;
       });
+      localStorage.setItem(
+        `list-${action.theme.mode}`,
+        JSON.stringify([...newCartDelete])
+      );
       return [...newCartDelete];
     case 'DELETE_CART':
+      localStorage.setItem(`list-${action.theme.mode}`, JSON.stringify([]));
       return [];
     default:
       return state;
