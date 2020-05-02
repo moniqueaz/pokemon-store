@@ -5,6 +5,8 @@ import { textButtonColor, backgroundButtonColor } from '../../../styles/theme';
 import { ButtonStyle } from './styles';
 
 const Button = ({ children, color, bgColor, full, onClick, size }) => {
+  console.log('typeof children: ', typeof children);
+  console.log('children: ', children);
   const handleToClick = () => {
     onClick();
   };
@@ -17,7 +19,7 @@ const Button = ({ children, color, bgColor, full, onClick, size }) => {
       onClick={handleToClick}
       size={size}
     >
-      {!typeof children
+      {typeof children !== 'string'
         ? children.map(child => {
             return <span>{child}</span>;
           })
