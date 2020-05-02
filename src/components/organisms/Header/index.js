@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { FiShoppingCart, FiSearch, FiX } from 'react-icons/fi';
 import Search from '../../molecules/Search';
 
-import { Container, Title, Button, Bottom } from './styles';
+import { Container, Title, Button, Bottom, Count } from './styles';
 
 const Header = ({ title, toggleCart }) => {
   const [show, setShow] = useState(false);
@@ -23,6 +23,7 @@ const Header = ({ title, toggleCart }) => {
       </Button>
       <Button className="button__cart" onClick={toggleCart}>
         <FiShoppingCart />
+        <Count>4</Count>
       </Button>
       <Bottom show={show}>
         <Search />

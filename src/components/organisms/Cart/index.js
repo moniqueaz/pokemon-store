@@ -35,17 +35,15 @@ const Cart = ({ data, onClose }) => {
       </Header>
       <Content>
         {data.length ? (
-          <>
-            <ul>
-              {data.map(item => {
-                return (
-                  <li>
-                    <ItemCart key={item.id} data={item} isLoader={false} />
-                  </li>
-                );
-              })}
-            </ul>
-          </>
+          <ul>
+            {data.map(item => {
+              return (
+                <li>
+                  <ItemCart key={item.id} data={item} isLoader={false} />
+                </li>
+              );
+            })}
+          </ul>
         ) : (
           <Empty>Empty cart</Empty>
         )}

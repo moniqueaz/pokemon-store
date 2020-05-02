@@ -12,6 +12,18 @@ export const textColor = theme('mode', {
   dragon: '',
 });
 
+export const backgroundColorSecondary = theme('mode', {
+  fire: '#FFFC19',
+  water: '',
+  dragon: '',
+});
+
+export const textColorSecondary = theme('mode', {
+  fire: '#272A2B',
+  water: '',
+  dragon: '',
+});
+
 export const backgroundFooter = theme('mode', {
   fire: '#FF0101',
   water: '',

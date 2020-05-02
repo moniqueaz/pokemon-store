@@ -1,5 +1,10 @@
 import styled, { css } from 'styled-components';
-import { backgroundColor, textColor } from '../../../styles/theme';
+import {
+  backgroundColor,
+  textColor,
+  backgroundColorSecondary,
+  textColorSecondary,
+} from '../../../styles/theme';
 import { font } from '../../../styles/variables';
 
 export const Container = styled.div`
@@ -47,13 +52,13 @@ export const Title = styled.h1`
 
 export const Button = styled.button`
   background-color: transparent;
-  background-color: blue;
   color: ${textColor};
   display: flex;
   justify-content: center;
   align-items: center;
   flex: 0 0 auto;
   padding: 5px;
+  position: relative;
 
   & + button {
     margin-left: 20px;
@@ -65,8 +70,22 @@ export const Button = styled.button`
   }
 `;
 
+export const Count = styled.span`
+  background-color: ${backgroundColorSecondary};
+  color: ${textColorSecondary};
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 2px;
+  right: -2px;
+`;
+
 export const Bottom = styled.div`
-  // background-color: green;
   position: absolute;
   bottom: 0;
   left: 0;
