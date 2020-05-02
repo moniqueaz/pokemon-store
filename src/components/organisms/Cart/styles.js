@@ -4,6 +4,7 @@ import {
   white,
   backgroundColor,
   textColor,
+  primaryDark,
 } from '../../../styles/theme';
 import { font } from '../../../styles/variables';
 
@@ -24,6 +25,7 @@ export const Header = styled.div`
   padding: 10px;
   color: ${textColor};
   flex: 0 0 auto;
+  border-bottom: 4px solid ${primaryDark};
 
   svg {
     color: ${textColor};
@@ -62,6 +64,8 @@ export const Count = styled.span`
 
 export const Bottom = styled.div`
   flex: 0 0 auto;
+  padding: 10px;
+  border-top: 2px solid ${grayLight};
 `;
 
 export const Total = styled.div`

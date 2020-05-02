@@ -9,7 +9,13 @@ export const font = {
 export const container = 'max-width: 1366px;';
 
 export const height = {
-  header: '55px',
-  footer: '44px',
   content: '100vh',
+  mobile: {
+    header: '59px',
+    footer: '44px',
+  },
+  desk: {
+    header: '74px',
+    footer: '44px',
+  },
 };

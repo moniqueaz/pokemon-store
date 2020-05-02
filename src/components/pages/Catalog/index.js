@@ -24,7 +24,7 @@ const Catalog = () => {
       return {
         id,
         name,
-        price: Math.floor(Math.random() * (999 - 100 + 1) + 1),
+        price: Math.floor(Math.random() * (9999 - 1000 + 1000) + 1000),
         image: `${process.env.REACT_APP_URL_IMAGE}/${id}.png`,
       };
     });
@@ -45,7 +45,7 @@ const Catalog = () => {
   return (
     !isLoader && (
       <>
-        <img src="/images/pokebola.png" alt="" />
+        {/* <img src="/images/pokebola.png" alt="" /> */}
         <ul>
           {listPokemon.map((pokemon, index) => {
             {

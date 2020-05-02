@@ -37,9 +37,12 @@ body, input, button{
 }
 
 input{
+  font-size: 18px;
+  font-family: ${font.tertiary};
   &::placeholder {
-    font-family: ${font.primary};
+    font-family: ${font.tertiary};
     color: ${grayLight};
+    font-size: 16px;
   }
 }
 

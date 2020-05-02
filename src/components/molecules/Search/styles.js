@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { white, black } from '../../../styles/theme';
+import { font } from '../../../styles/variables';
 
 export const Form = styled.form`
   display: flex;
@@ -26,16 +27,10 @@ export const Input = styled.input`
   width: 100%;
   flex: 1 1 auto;
   border: 0;
-  font-size: 12px;
   @media (min-width: 1024px) {
-    font-size: 14px;
   }
 
   &::placeholder {
-    font-size: 12px;
-    @media (min-width: 1024px) {
-      font-size: 14px;
-    }
   }
 `;
 

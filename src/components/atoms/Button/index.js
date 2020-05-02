@@ -4,7 +4,7 @@ import { textButtonColor, backgroundButtonColor } from '../../../styles/theme';
 
 import { ButtonStyle } from './styles';
 
-const Button = ({ children, color, bgColor, full, onClick }) => {
+const Button = ({ children, color, bgColor, full, onClick, size }) => {
   const handleToClick = () => {
     onClick();
   };
@@ -15,6 +15,7 @@ const Button = ({ children, color, bgColor, full, onClick }) => {
       full={full}
       type="button"
       onClick={handleToClick}
+      size={size}
     >
       {!typeof children
         ? children.map(child => {
@@ -30,6 +31,7 @@ Button.defaultProps = {
   color: textButtonColor,
   bgColor: backgroundButtonColor,
   full: '',
+  size: 'small',
 };
 
 Button.propTypes = {
@@ -49,6 +51,10 @@ Button.propTypes = {
    * Essa propriedade quando incluida força a largura do button para 100%.
    */
   full: PropTypes.bool,
+  /**
+   * Essa propriedade define a grossura do componente.
+   */
+  size: PropTypes.string,
 };
 
 export default Button;

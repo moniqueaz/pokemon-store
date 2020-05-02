@@ -52,7 +52,9 @@ const Cart = ({ data, onClose }) => {
         <Total>
           Total: <FormatPrice value={20000} />
         </Total>
-        <Button full>Finaly</Button>
+        <Button full size="large">
+          Finaly
+        </Button>
       </Bottom>
     </Container>
   );

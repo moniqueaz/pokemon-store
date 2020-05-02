@@ -87,7 +87,7 @@ export const Count = styled.span`
 
 export const Bottom = styled.div`
   position: absolute;
-  bottom: 0;
+  bottom: -3px;
   left: 0;
   width: 100%;
   height: 50px;
