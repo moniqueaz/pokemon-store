@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { withTheme } from 'styled-components';
 import { type } from '../../../services/api';
+import ItemList from '../../molecules/ItemList';
 
 import {} from './styles';
 
@@ -24,6 +25,7 @@ const Catalog = () => {
       return {
         id,
         name,
+        type: process.env.REACT_APP_TYPE,
         price: Math.floor(Math.random() * (9999 - 1000 + 1000) + 1000),
         image: `${process.env.REACT_APP_URL_IMAGE}/${id}.png`,
       };
@@ -53,13 +55,7 @@ const Catalog = () => {
             }
             return (
               <li key={`${pokemon.name}_${index}`}>
-                <img
-                  src={pokemon.image}
-                  alt={pokemon.name}
-                  width="30%"
-                  // onError={}
-                />
-                {pokemon.name} - {pokemon.price}
+                <ItemList data={pokemon} />
               </li>
             );
           })}

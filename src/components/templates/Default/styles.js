@@ -5,6 +5,7 @@ import {
   backgroundFooter,
   textColorFooter,
   primaryDark,
+  grayLight,
 } from '../../../styles/theme';
 import { container, height, font } from '../../../styles/variables';
 
@@ -30,11 +31,12 @@ export const Footer = styled.div`
 `;
 
 export const Middle = styled.div`
+  background-color: ${grayLight};
   min-height: calc(
     ${height.content} - ${height.mobile.header} - ${height.mobile.footer}
   );
   @media (min-width: 1024px) {
-    display: flex;
+    // display: flex;
     position: relative;
     min-height: calc(
       ${height.content} - ${height.desk.header} - ${height.desk.footer}
@@ -69,7 +71,6 @@ export const DefaultCart = styled.div`
 `;
 
 export const Content = styled.div`
-  background-color: yellow;
   z-index: 1;
   @media (min-width: 1024px) {
     width: 100%;
