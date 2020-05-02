@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FiX } from 'react-icons/fi';
 import { useDispatch, useSelector } from 'react-redux';
@@ -24,6 +24,8 @@ import {
 
 const Cart = ({ data, onClose, theme }) => {
   const dispatch = useDispatch();
+  const [count, setCount] = useState(0);
+  const [total, setTotal] = useState(0);
 
   const handleToClose = () => {
     onClose();
@@ -33,11 +35,20 @@ const Cart = ({ data, onClose, theme }) => {
     dispatch(MapDispachToActions.removeToCart(id, theme));
   };
 
+  useEffect(() => {
+    setCount(data.length);
+    setTotal(
+      data.reduce((total, { price }) => {
+        return total + price;
+      }, 0)
+    );
+  }, [data]);
+
   return (
     <Container>
       <Header>
         <Title>Cart</Title>
-        <Count>0 items</Count>
+        <Count>{count === 1 ? '1 item' : `${count} ìtems`}</Count>
         <ButtonClose onClick={handleToClose}>
           <FiX />
         </ButtonClose>
@@ -63,7 +74,7 @@ const Cart = ({ data, onClose, theme }) => {
       </Content>
       <Bottom>
         <Total>
-          Total: <FormatPrice value={20000} />
+          Total: <FormatPrice value={total} />
         </Total>
         <Button full size="large">
           Finaly
