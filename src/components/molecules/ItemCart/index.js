@@ -6,8 +6,6 @@ import FormatPrice from '../../atoms/FormatPrice';
 import { Image, Title, Button, Type, Price, Item, Info } from './styles';
 
 const ItemCart = ({ data, onDelete, isLoader }) => {
-  console.log('isLoader: ', isLoader);
-  console.log('data: ', data);
   const { id, image, link, type, price, name } = data;
   const [loader, setLoader] = useState(isLoader);
 

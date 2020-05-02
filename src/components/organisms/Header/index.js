@@ -8,10 +8,6 @@ import { Container, Title, Button, Bottom, Count } from './styles';
 const Header = ({ title, toggleCart }) => {
   const [show, setShow] = useState(false);
 
-  useEffect(() => {
-    console.log('show: ', show);
-  }, [show]);
-
   return (
     <Container>
       <Title>

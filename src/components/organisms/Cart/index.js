@@ -38,8 +38,8 @@ const Cart = ({ data, onClose }) => {
           <ul>
             {data.map(item => {
               return (
-                <li>
-                  <ItemCart key={item.id} data={item} isLoader={false} />
+                <li key={item.id}>
+                  <ItemCart data={item} isLoader={false} />
                 </li>
               );
             })}

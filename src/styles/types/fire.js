@@ -8,7 +8,7 @@ export const fontColor = {
   white: '#fff',
   black: '#272A2B;',
   gray: '#6C7378',
-  grayLight: '#C4C4C4',
+  grayLight: '#D1D1D1',
   grayDark: '#555A5E',
   error: '#C90241',
   success: '#3C7800',

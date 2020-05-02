@@ -107,9 +107,9 @@ export const gray = theme('mode', {
 });
 
 export const grayLight = theme('mode', {
-  fire: '#C4C4C4',
-  water: '#C4C4C4',
-  dragon: '#C4C4C4',
+  fire: '#D1D1D1',
+  water: '#D1D1D1',
+  dragon: '#D1D1D1',
 });
 
 export const grayDark = theme('mode', {

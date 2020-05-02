@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components';
 import { textButtonColor, backgroundButtonColor } from '../../../styles/theme';
 
 import { ButtonStyle } from './styles';
@@ -17,9 +18,9 @@ const Button = ({ children, color, bgColor, full, onClick, size }) => {
       onClick={handleToClick}
       size={size}
     >
-      {!typeof children
-        ? children.map(child => {
-            return <span>{child}</span>;
+      {typeof children !== 'string'
+        ? children.map((child, index) => {
+            return <span key={index}>{child}</span>;
           })
         : children}
     </ButtonStyle>
@@ -28,9 +29,13 @@ const Button = ({ children, color, bgColor, full, onClick, size }) => {
 
 Button.defaultProps = {
   children: '',
-  color: textButtonColor,
-  bgColor: backgroundButtonColor,
-  full: '',
+  color: css`
+    ${textButtonColor}
+  `,
+  bgColor: css`
+    ${backgroundButtonColor}
+  `,
+  full: false,
   size: 'small',
 };
 
