@@ -28,6 +28,7 @@ body{
   background-color: ${white};
   -webkit-font-smoothing: antialiased !important;
   font-size: 20px;
+  background-color: ${grayLight};
 }
 
 body, input, button{

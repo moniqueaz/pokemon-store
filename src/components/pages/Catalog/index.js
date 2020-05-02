@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { withTheme } from 'styled-components';
 import { type } from '../../../services/api';
+import List from '../../organisms/List';
 
 import {} from './styles';
 
@@ -16,19 +17,17 @@ const Catalog = () => {
   };
 
   const mountItem = data => {
-    // console.log('pokemon: ', data);
-
     const result = data.map(({ pokemon }) => {
       const { name, url } = pokemon;
       const id = url.match(/\/\d*\/$/)[0].replace(/\//g, '');
       return {
         id,
         name,
+        type: process.env.REACT_APP_TYPE,
         price: Math.floor(Math.random() * (9999 - 1000 + 1000) + 1000),
         image: `${process.env.REACT_APP_URL_IMAGE}/${id}.png`,
       };
     });
-    // console.log('result: ', result);
 
     setListPokemon(result);
   };
@@ -39,34 +38,9 @@ const Catalog = () => {
 
   useEffect(() => {
     listPokemon.length && setIsLoader(false);
-    // console.log('listPokemon: ', listPokemon);
   }, [listPokemon]);
 
-  return (
-    !isLoader && (
-      <>
-        {/* <img src="/images/pokebola.png" alt="" /> */}
-        <ul>
-          {listPokemon.map((pokemon, index) => {
-            {
-              // console.log('pokemon: ', pokemon.name);
-            }
-            return (
-              <li key={`${pokemon.name}_${index}`}>
-                <img
-                  src={pokemon.image}
-                  alt={pokemon.name}
-                  width="30%"
-                  // onError={}
-                />
-                {pokemon.name} - {pokemon.price}
-              </li>
-            );
-          })}
-        </ul>
-      </>
-    )
-  );
+  return <List data={listPokemon} isLoader={isLoader} />;
 };
 
 export default withTheme(Catalog);
