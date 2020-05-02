@@ -55,13 +55,20 @@ export const Title = styled.h3`
   font-size: 16px;
 `;
 
-export const Total = styled.span`
+export const Count = styled.span`
   font-family: ${font.tertiary};
   font-size: 20px;
 `;
 
 export const Bottom = styled.div`
   flex: 0 0 auto;
+`;
+
+export const Total = styled.div`
+  padding: 10px 0;
+  text-align: center;
+  font-family: ${font.tertiary};
+  font-size: 20px;
 `;
 
 export const Empty = styled.div`

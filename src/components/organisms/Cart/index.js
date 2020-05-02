@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FiX } from 'react-icons/fi';
 
+import FormatPrice from '../../atoms/FormatPrice';
+
 import Button from '../../atoms/Button';
 import ItemCart from '../../molecules/ItemCart';
 
@@ -14,6 +16,7 @@ import {
   Total,
   Bottom,
   Empty,
+  Count,
 } from './styles';
 
 const Cart = ({ data, onClose }) => {
@@ -25,7 +28,7 @@ const Cart = ({ data, onClose }) => {
     <Container>
       <Header>
         <Title>Cart</Title>
-        <Total>0 items</Total>
+        <Count>0 items</Count>
         <ButtonClose onClick={handleToClose}>
           <FiX />
         </ButtonClose>
@@ -48,6 +51,9 @@ const Cart = ({ data, onClose }) => {
         )}
       </Content>
       <Bottom>
+        <Total>
+          Total: <FormatPrice value={20000} />
+        </Total>
         <Button full>Finaly</Button>
       </Bottom>
     </Container>

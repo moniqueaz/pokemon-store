@@ -5,7 +5,7 @@ import {
   backgroundFooter,
   textColorFooter,
 } from '../../../styles/theme';
-import { container } from '../../../styles/variables';
+import { container, height } from '../../../styles/variables';
 
 export const Wrapper = styled.div`
   position: relative;
@@ -27,6 +27,7 @@ export const Footer = styled.div`
 `;
 
 export const Middle = styled.div`
+  min-height: calc(${height.content} - ${height.header} - ${height.footer});
   @media (min-width: 1024px) {
     display: flex;
     position: relative;
