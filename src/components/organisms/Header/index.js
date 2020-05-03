@@ -17,6 +17,7 @@ import { Container, Title, Bottom } from './styles';
 
 const Header = ({ title }) => {
   const [show, setShow] = useState(false);
+  console.log('show: ', show);
 
   const dispatch = useDispatch();
   const handleToSearch = value => {

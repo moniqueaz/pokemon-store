@@ -23,7 +23,7 @@ import {
   List,
 } from './styles';
 
-const Cart = ({ data, theme }) => {
+const Cart = ({ theme }) => {
   const dispatch = useDispatch();
   const cart = useSelector(state => state.cart);
   const [count, setCount] = useState(0);
@@ -42,13 +42,13 @@ const Cart = ({ data, theme }) => {
   // }, [cart]);
 
   useEffect(() => {
-    setCount(data.length);
+    setCount(cart.length);
     setTotal(
-      data.reduce((total, { price }) => {
+      cart.reduce((total, { price }) => {
         return total + price;
       }, 0)
     );
-  }, [data]);
+  }, [cart]);
 
   const handleToCart = items => {
     dispatch(MapDispachToActions.initToCart(items));

@@ -5,6 +5,7 @@ import {
   backgroundColor,
   textColor,
   primaryDark,
+  black,
 } from '../../../styles/theme';
 import { font } from '../../../styles/variables';
 
@@ -15,8 +16,10 @@ export const Container = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  display: ${props => (props.show ? 'block' : 'none')};
   z-index: 3;
+  transform: ${props => (!props.show ? 'translateX(100%)' : 'translateX(0)')};
+  transition: all 0.3s linear;
+  color: ${black};
 
   @media (min-width: 1024px) {
     width: 400px;
