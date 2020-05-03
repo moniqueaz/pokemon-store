@@ -6,7 +6,9 @@ export const filterList = (search, list) => {
 };
 
 export const redirectSearchResult = (search, history) => {
-  if (search) {
-    history.push(`/search/?search=${search}`);
-  }
+  history.push(`/catalog/?search=${search}`);
+};
+
+export const mountValueSearch = value => {
+  return value.match(/\w*$/g).join('');
 };

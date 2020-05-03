@@ -77,7 +77,7 @@ const Cart = ({ theme }) => {
         <Content>
           <Header>
             <Title>Cart</Title>
-            <Count>{count === 1 ? '1 item' : `${count} ìtems`}</Count>
+            <Count>{count === 1 ? '1 item' : `${count} items`}</Count>
             <ButtonClose onClick={() => setShow(false)}>
               <FiX />
             </ButtonClose>

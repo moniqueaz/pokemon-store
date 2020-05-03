@@ -3,7 +3,6 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Main from './components/pages/Main';
 import Catalog from './components/pages/Catalog';
-import SearchResult from './components/pages/SearchResult';
 
 export default function Routes() {
   return (
@@ -11,7 +10,6 @@ export default function Routes() {
       <Switch>
         <Route path="/" exact component={Main} />
         <Route path="/catalog" component={Catalog} />
-        <Route path="/search" component={SearchResult} />
         {/* <Route path='*' component={NotFound}/> */}
       </Switch>
     </BrowserRouter>

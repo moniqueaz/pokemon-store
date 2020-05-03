@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { MyThemeProvider } from '../../../styles/ThemeContext';
 import * as MapDispachToActions from '../../../store/actions/actionCreators';
 
 import Header from '../../organisms/Header';
@@ -15,8 +14,7 @@ import {
   Footer,
 } from './styles';
 
-const Default = ({ children, theme }) => {
-  console.log('theme: ', theme);
+const Default = ({ children }) => {
   const [fixed, setFixed] = useState(false);
 
   const scroll = () => {
@@ -33,23 +31,21 @@ const Default = ({ children, theme }) => {
   }, []);
 
   return (
-    <MyThemeProvider theme={theme}>
-      <Wrapper>
-        <DefaultHeader fixed={fixed}>
-          <Container>
-            <Header title={theme} />
-          </Container>
-        </DefaultHeader>
-        <Middle>
-          <Container>
-            <Content>{children}</Content>
-          </Container>
-        </Middle>
-        <Footer>
-          <Container>Pokemon</Container>
-        </Footer>
-      </Wrapper>
-    </MyThemeProvider>
+    <Wrapper>
+      <DefaultHeader fixed={fixed}>
+        <Container>
+          <Header />
+        </Container>
+      </DefaultHeader>
+      <Middle>
+        <Container>
+          <Content>{children}</Content>
+        </Container>
+      </Middle>
+      <Footer>
+        <Container>Pokemon</Container>
+      </Footer>
+    </Wrapper>
   );
 };
 
