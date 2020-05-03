@@ -5,8 +5,7 @@ import List from '../../organisms/List';
 
 import {} from './styles';
 
-const Catalog = ({ theme }) => {
-  console.log('theme: ', theme);
+const Catalog = ({ theme, match }) => {
   const [listPokemon, setListPokemon] = useState([]);
   const [isLoader, setIsLoader] = useState(true);
   const storage = JSON.parse(localStorage.getItem(`list-${theme.mode}`));
@@ -36,7 +35,6 @@ const Catalog = ({ theme }) => {
   };
 
   const mountCatalog = async () => {
-    console.log('storage: ', storage);
     if (storage) {
       if (storage.length) {
         setListPokemon(storage);

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { FiX } from 'react-icons/fi';
 import { useDispatch, useSelector } from 'react-redux';
 import { MyThemeProvider } from '../../../styles/ThemeContext';
 import * as MapDispachToActions from '../../../store/actions/actionCreators';
@@ -19,6 +18,7 @@ import {
 } from './styles';
 
 const Default = ({ children, theme }) => {
+  console.log('theme: ', theme);
   const [fixed, setFixed] = useState(false);
   const [show, setShow] = useState(false);
   const cart = useSelector(state => state.cart);
@@ -43,7 +43,6 @@ const Default = ({ children, theme }) => {
   useEffect(() => {
     window.onscroll = scroll;
     if (storage && storageCatalog) {
-      console.log('storage: ', storage);
       if (storage) {
         if (storage.length) {
           setList(storage);

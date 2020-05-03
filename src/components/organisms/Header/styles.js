@@ -105,12 +105,12 @@ export const Bottom = styled.div`
     props.show &&
     css`
       transform: translateY(100%);
-      z-index: 0;
+      z-index: 1;
     `}
 
   @media (min-width: 1024px) {
     position: static;
     transform: translateY(0);
-    z-index: 0;
+    z-index: 1;
   }
 `;

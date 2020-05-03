@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { FiShoppingCart, FiSearch, FiX } from 'react-icons/fi';
 import Search from '../../molecules/Search';
+import * as MapDispachToActions from '../../../store/actions/actionCreators';
 
 import { Container, Title, Button, Bottom, Count } from './styles';
 
-const Header = ({ title, toggleCart }) => {
+const Header = ({ title, toggleCart, onSearch }) => {
   const [show, setShow] = useState(false);
   const cart = useSelector(state => state.cart);
+  const dispatch = useDispatch();
+  const handleToSearch = value => {
+    // dispatch(MapDispachToActions.mountToSearch(value));
+  };
 
   return (
     <Container>
@@ -24,7 +30,7 @@ const Header = ({ title, toggleCart }) => {
         <Count>{cart.length}</Count>
       </Button>
       <Bottom show={show}>
-        <Search />
+        <Search onSubmit={handleToSearch} />
       </Bottom>
     </Container>
   );
