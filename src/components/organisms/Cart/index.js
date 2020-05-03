@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { FiX } from 'react-icons/fi';
+import { FiX, FiShoppingCart } from 'react-icons/fi';
 import { useDispatch, useSelector } from 'react-redux';
 import { withTheme } from 'styled-components';
 import * as MapDispachToActions from '../../../store/actions/actionCreators';
@@ -20,20 +20,26 @@ import {
   Bottom,
   Empty,
   Count,
+  List,
 } from './styles';
 
-const Cart = ({ data, onClose, theme }) => {
+const Cart = ({ data, theme }) => {
   const dispatch = useDispatch();
+  const cart = useSelector(state => state.cart);
   const [count, setCount] = useState(0);
   const [total, setTotal] = useState(0);
+  const [show, setShow] = useState(false);
 
-  const handleToClose = () => {
-    onClose();
-  };
+  const storage = JSON.parse(localStorage.getItem(`cart-${theme.mode}`));
+  const storageCatalog = JSON.parse(localStorage.getItem(`list-${theme.mode}`));
 
-  const handleToCart = id => {
+  const removeToCart = id => {
     dispatch(MapDispachToActions.removeToCart(id, theme));
   };
+
+  // useEffect(() => {
+  //   setList(cart);
+  // }, [cart]);
 
   useEffect(() => {
     setCount(data.length);
@@ -44,43 +50,68 @@ const Cart = ({ data, onClose, theme }) => {
     );
   }, [data]);
 
+  const handleToCart = items => {
+    dispatch(MapDispachToActions.initToCart(items));
+  };
+
+  useEffect(() => {
+    if (storage && storageCatalog) {
+      if (storage) {
+        if (storage.length) {
+          // setList(storage);
+          handleToCart(storage);
+        }
+      }
+    } else {
+      localStorage.setItem(`cart-${theme.mode}`, JSON.stringify([]));
+    }
+  }, []);
+
   return (
-    <Container>
-      <Header>
-        <Title>Cart</Title>
-        <Count>{count === 1 ? '1 item' : `${count} ìtems`}</Count>
-        <ButtonClose onClick={handleToClose}>
-          <FiX />
-        </ButtonClose>
-      </Header>
-      <Content>
-        {data.length ? (
-          <ul>
-            {data.map(item => {
-              return (
-                <li key={item.id}>
-                  <ItemCart
-                    data={item}
-                    isLoader={false}
-                    onDelete={handleToCart}
-                  />
-                </li>
-              );
-            })}
-          </ul>
-        ) : (
-          <Empty>Empty cart</Empty>
-        )}
-      </Content>
-      <Bottom>
-        <Total>
-          Total: <FormatPrice value={total} />
-        </Total>
-        <Button full size="large">
-          Finaly
-        </Button>
-      </Bottom>
-    </Container>
+    <>
+      <Button className="button__cart" onClick={() => setShow(!show)}>
+        <FiShoppingCart />
+        <Count>{cart.length}</Count>
+      </Button>
+      <Container show={show}>
+        <Content>
+          <Header>
+            <Title>Cart</Title>
+            <Count>{count === 1 ? '1 item' : `${count} ìtems`}</Count>
+            <ButtonClose onClick={() => setShow(false)}>
+              <FiX />
+            </ButtonClose>
+          </Header>
+          <List>
+            {cart.length ? (
+              <ul>
+                {cart.map(item => {
+                  return (
+                    <li key={item.id}>
+                      <ItemCart
+                        data={item}
+                        isLoader={false}
+                        onDelete={removeToCart}
+                      />
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : (
+              <Empty>Empty cart</Empty>
+            )}
+          </List>
+          <Bottom>
+            <Total>
+              Total: <FormatPrice value={total} />
+            </Total>
+            <Button full size="large">
+              Finaly
+            </Button>
+          </Bottom>
+        </Content>
+      </Container>
+    </>
   );
 };
 

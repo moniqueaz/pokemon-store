@@ -12,6 +12,7 @@ export default function Routes() {
         <Route path="/" exact component={Main} />
         <Route path="/catalog" component={Catalog} />
         <Route path="/search" component={SearchResult} />
+        {/* <Route path='*' component={NotFound}/> */}
       </Switch>
     </BrowserRouter>
   );

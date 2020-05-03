@@ -9,6 +9,23 @@ import {
 import { font } from '../../../styles/variables';
 
 export const Container = styled.div`
+  height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: ${props => (props.show ? 'block' : 'none')};
+  z-index: 3;
+
+  @media (min-width: 1024px) {
+    width: 400px;
+    left: inherit;
+    right: 0;
+  }
+`;
+
+export const Content = styled.div`
   background-color: ${white};
   display: flex;
   flex-direction: column;
@@ -32,7 +49,7 @@ export const Header = styled.div`
   }
 `;
 
-export const Content = styled.div`
+export const List = styled.div`
   overflow: auto;
   flex: 1 1 50%;
   padding: 10px 0;
@@ -82,4 +99,21 @@ export const Empty = styled.div`
   font-family: ${font.tertiary};
   font-size: 20px;
   height: 100px;
+`;
+
+export const DefaultCart = styled.div`
+  height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: ${props => (props.show ? 'block' : 'none')};
+  z-index: 3;
+
+  @media (min-width: 1024px) {
+    width: 400px;
+    left: inherit;
+    right: 0;
+  }
 `;

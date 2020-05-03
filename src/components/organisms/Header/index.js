@@ -1,16 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import { FiShoppingCart, FiSearch, FiX } from 'react-icons/fi';
+import { FiSearch, FiX } from 'react-icons/fi';
+import { withTheme } from 'styled-components';
 import Search from '../../molecules/Search';
+import Cart from '../../organisms/Cart';
+import {
+  backgroundColorSecondary,
+  textColorSecondary,
+} from '../../../styles/theme';
+import Button from '../../atoms/Button';
+
 import * as MapDispachToActions from '../../../store/actions/actionCreators';
 
-import { Container, Title, Button, Bottom, Count } from './styles';
+import { Container, Title, Bottom } from './styles';
 
-const Header = ({ title, toggleCart, onSearch }) => {
+const Header = ({ title }) => {
   const [show, setShow] = useState(false);
-  const cart = useSelector(state => state.cart);
+
   const dispatch = useDispatch();
   const handleToSearch = value => {
     // dispatch(MapDispachToActions.mountToSearch(value));
@@ -21,17 +28,19 @@ const Header = ({ title, toggleCart, onSearch }) => {
       <Title>
         <a href="/category">{title}</a>
       </Title>
-      <Button className="button__search" onClick={() => setShow(!show)}>
+      <Button
+        className="button__search"
+        onClick={() => setShow(!show)}
+        color={textColorSecondary}
+        bgColor={backgroundColorSecondary}
+      >
         {!show && <FiSearch />}
         {show && <FiX />}
-      </Button>
-      <Button className="button__cart" onClick={toggleCart}>
-        <FiShoppingCart />
-        <Count>{cart.length}</Count>
       </Button>
       <Bottom show={show}>
         <Search onSubmit={handleToSearch} />
       </Bottom>
+      <Cart />
     </Container>
   );
 };
@@ -45,4 +54,4 @@ Header.propTypes = {
   toggleCart: PropTypes.func,
 };
 
-export default Header;
+export default withTheme(Header);

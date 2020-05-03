@@ -23,6 +23,7 @@ export const Container = styled.div`
 
   .button {
     &__search {
+      margin-right: 10px;
       @media (min-width: 1024px) {
         display: none;
       }
