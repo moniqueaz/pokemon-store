@@ -20,13 +20,6 @@ export const Container = styled.div`
   display: ${props => (props.show ? 'block' : 'none')};
 `;
 
-export const Overlay = styled.div`
-  background-color: ${black};
-  opacity: 0.5;
-  width: 100vw;
-  height: 100vh;
-`;
-
 export const Content = styled.div`
   position: absolute;
   left: 50%;

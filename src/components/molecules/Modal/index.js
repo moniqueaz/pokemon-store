@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FiX } from 'react-icons/fi';
 import Button from '../../atoms/Button';
+import Overlay from '../../atoms/Overlay';
 
-import { Container, Overlay, Content, Message } from './styles';
+import { Container, Content, Message } from './styles';
 
 const Modal = ({ children, onOpen, show }) => {
   return (
