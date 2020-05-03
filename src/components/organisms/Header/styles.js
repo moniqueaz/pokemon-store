@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import {
   backgroundColor,
   textColor,
@@ -23,6 +23,7 @@ export const Container = styled.div`
 
   .button {
     &__search {
+      margin-right: 10px;
       @media (min-width: 1024px) {
         display: none;
       }
@@ -86,31 +87,69 @@ export const Count = styled.span`
   right: -2px;
 `;
 
+const animateIn = keyframes`
+  0 {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  25% {
+    transform: translateY(105%);
+    opacity: .8;
+  }
+  50% {
+    transform: translateY(100%);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(105%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 1;
+  }
+`;
+
+const animateOut = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+`;
+
 export const Bottom = styled.div`
   position: absolute;
   bottom: -3px;
   left: 0;
   width: 100%;
   height: 50px;
-  transform: translateY(0);
-  z-index: -1;
+  transform: translateY(100%);
+  z-index: 1;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   padding: 0 10px;
+  opacity: 0;
+
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-fill-mode: both;
 
   ${props =>
     props.show &&
     css`
-      transform: translateY(100%);
-      z-index: 0;
+      animation-name: ${animateIn};
+      animation-duration: 0.8s;
     `}
 
   @media (min-width: 1024px) {
     position: static;
     transform: translateY(0);
-    z-index: 0;
+    z-index: 1;
+    opacity: 1;
   }
 `;

@@ -9,7 +9,8 @@ export default function Routes() {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={Main} />
-        <Route path="/:type" component={Catalog} />
+        <Route path="/catalog" component={Catalog} />
+        {/* <Route path='*' component={NotFound}/> */}
       </Switch>
     </BrowserRouter>
   );
