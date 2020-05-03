@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 
 import { OverlayStyle } from './styles';
 
-const Overlay = ({ onClick }) => {
-  return <OverlayStyle onClick={onClick} />;
+const Overlay = ({ onClick, show }) => {
+  return <OverlayStyle onClick={onClick} show={show} />;
 };
 
 Overlay.defaultProps = {
   onClick: () => undefined,
+  show: false,
 };
 
 Overlay.propTypes = {
@@ -17,6 +18,10 @@ Overlay.propTypes = {
    * no click do modal.
    */
   onClick: PropTypes.func,
+  /**
+   * Essa propriedade definie se o componente está sendo exibido ou não
+   */
+  show: PropTypes.bool,
 };
 
 export default Overlay;

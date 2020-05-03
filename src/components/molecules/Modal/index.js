@@ -9,7 +9,7 @@ import { Container, Content, Message } from './styles';
 const Modal = ({ children, onOpen, show }) => {
   return (
     <Container show={show}>
-      <Overlay onClick={() => onOpen(false)} />
+      <Overlay onClick={() => onOpen(false)} show={show} />
       <Content>
         <Button className="modal__close" onClick={() => onOpen(false)}>
           <FiX />

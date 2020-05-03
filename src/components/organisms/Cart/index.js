@@ -4,6 +4,7 @@ import { FiX, FiShoppingCart } from 'react-icons/fi';
 import { useDispatch, useSelector } from 'react-redux';
 import { withTheme } from 'styled-components';
 import * as MapDispachToActions from '../../../store/actions/actionCreators';
+import Overlay from '../../atoms/Overlay';
 
 import FormatPrice from '../../atoms/FormatPrice';
 import Modal from '../../molecules/Modal';
@@ -41,6 +42,7 @@ const Cart = ({ theme }) => {
   };
 
   const handleToCheckout = (value = true) => {
+    setShow(false);
     setCashBack(total);
     setOpen(value);
     dispatch(MapDispachToActions.deleteCart(theme));
@@ -74,6 +76,7 @@ const Cart = ({ theme }) => {
 
   return (
     <>
+      <Overlay onClick={() => setShow(false)} show={show} />
       <Button className="button__cart" onClick={() => setShow(!show)}>
         <FiShoppingCart />
         <Count>{cart.length}</Count>

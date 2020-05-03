@@ -37,6 +37,7 @@ export const Content = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 
   @media (min-width: 768px) {
     min-height: 400px;

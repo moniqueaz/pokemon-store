@@ -3,7 +3,23 @@ import { black } from '../../../styles/theme';
 
 export const OverlayStyle = styled.div`
   background-color: ${black};
-  opacity: 0.5;
   width: 100vw;
   height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+
+  ${props =>
+    props.show
+      ? css`
+          opacity: 0.5;
+          pointer-events: click;
+          transition: all 0.5s linear;
+        `
+      : css`
+          opacity: 0;
+          pointer-events: none;
+          transition: all 0.5s linear;
+        `};
 `;
