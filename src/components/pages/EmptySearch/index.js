@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { withTheme } from 'styled-components';
 import Layout from '../../templates/Default';
 
-import { Wrapper } from './styles';
+import { Title } from './styles';
 
-const Main = () => {
+const EmptySearch = () => {
   return (
     <Layout>
-      <Wrapper>Main</Wrapper>
+      <Title>Empty Search :(</Title>
     </Layout>
   );
 };
 
-export default withTheme(Main);
+export default withTheme(EmptySearch);

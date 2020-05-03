@@ -57,7 +57,7 @@ const Catalog = ({ theme, location }) => {
   const mountList = list => {
     if (search.length) {
       const result = filterList(mountValueSearch(search), list);
-      !result.length && history.push('/');
+      !result.length && history.push('/emptysearch');
       setListPokemon(result);
     } else {
       setListPokemon(list);

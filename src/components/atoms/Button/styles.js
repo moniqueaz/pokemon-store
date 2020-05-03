@@ -40,7 +40,9 @@ export const ButtonStyle = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 5px;
     & + * {
+      margin: 0;
       margin-left: 5px;
     }
   }

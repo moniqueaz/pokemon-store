@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { withTheme } from 'styled-components';
 import Layout from '../../templates/Default';
 
-import { Wrapper } from './styles';
+import { Title } from './styles';
 
-const Main = () => {
+const NotFound = () => {
   return (
     <Layout>
-      <Wrapper>Main</Wrapper>
+      <Title>404 NotFount :(</Title>
     </Layout>
   );
 };
 
-export default withTheme(Main);
+export default withTheme(NotFound);
