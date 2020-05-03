@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { withTheme } from 'styled-components';
 import * as MapDispachToActions from '../../../store/actions/actionCreators';
 import Overlay from '../../atoms/Overlay';
+import Minicart from '../../molecules/Minicart';
 
 import FormatPrice from '../../atoms/FormatPrice';
 import Modal from '../../molecules/Modal';
@@ -81,6 +82,7 @@ const Cart = ({ theme }) => {
         <FiShoppingCart />
         <Count>{cart.length}</Count>
       </Button>
+      <Minicart item={cart[cart.length - 1]} />
       <Container show={show}>
         <Content>
           <Header>
