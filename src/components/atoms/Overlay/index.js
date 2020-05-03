@@ -12,6 +12,10 @@ Overlay.defaultProps = {
 };
 
 Overlay.propTypes = {
+  /**
+   * Essa propriedade é responsavel por receber uma função que será executado no
+   * no click do modal.
+   */
   onClick: PropTypes.func,
 };
 
