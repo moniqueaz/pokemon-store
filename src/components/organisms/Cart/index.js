@@ -6,6 +6,7 @@ import { withTheme } from 'styled-components';
 import * as MapDispachToActions from '../../../store/actions/actionCreators';
 
 import FormatPrice from '../../atoms/FormatPrice';
+import Modal from '../../molecules/Modal';
 
 import Button from '../../atoms/Button';
 import ItemCart from '../../molecules/ItemCart';
@@ -29,6 +30,8 @@ const Cart = ({ theme }) => {
   const [count, setCount] = useState(0);
   const [total, setTotal] = useState(0);
   const [show, setShow] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [cashBack, setCashBack] = useState(0);
 
   const storage = JSON.parse(localStorage.getItem(`cart-${theme.mode}`));
   const storageCatalog = JSON.parse(localStorage.getItem(`list-${theme.mode}`));
@@ -37,9 +40,11 @@ const Cart = ({ theme }) => {
     dispatch(MapDispachToActions.removeToCart(id, theme));
   };
 
-  // useEffect(() => {
-  //   setList(cart);
-  // }, [cart]);
+  const handleToCheckout = (value = true) => {
+    setCashBack(total);
+    setOpen(value);
+    dispatch(MapDispachToActions.deleteCart(theme));
+  };
 
   useEffect(() => {
     setCount(cart.length);
@@ -105,12 +110,26 @@ const Cart = ({ theme }) => {
             <Total>
               Total: <FormatPrice value={total} />
             </Total>
-            <Button full size="large">
+            <Button
+              full
+              size="large"
+              onClick={handleToCheckout}
+              disabled={!cart.length}
+            >
               Finaly
             </Button>
           </Bottom>
         </Content>
       </Container>
+      <Modal show={open} onOpen={handleToCheckout}>
+        <h2>Obrigada!!!</h2>
+        <br />
+        <p>Voce ganhou de volta</p>
+        <br />
+        <span className="success highlight">
+          <FormatPrice value={cashBack * (10 / 100)} />
+        </span>
+      </Modal>
     </>
   );
 };

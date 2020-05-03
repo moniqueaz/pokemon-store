@@ -54,7 +54,6 @@ Header.defaultProps = {
 };
 
 Header.propTypes = {
-  title: PropTypes.string.isRequired,
   toggleCart: PropTypes.func,
 };
 

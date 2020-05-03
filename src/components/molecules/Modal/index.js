@@ -1,26 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FiX } from 'react-icons/fi';
-import FormatPrice from '../../atoms/FormatPrice';
 import Button from '../../atoms/Button';
 
 import { Container, Overlay, Content, Message } from './styles';
 
-const Modal = ({ children, show }) => {
-  const [open, setOpen] = useState(show);
-  const handleToClose = () => {
-    console.log('close');
-  };
-
-  useEffect(() => {
-    console.log(open);
-  }, []);
-
+const Modal = ({ children, onOpen, show }) => {
   return (
-    <Container show={open}>
-      <Overlay onClick={() => setOpen(false)} />
+    <Container show={show}>
+      <Overlay onClick={() => onOpen(false)} />
       <Content>
-        <Button className="modal__close" onClick={() => setOpen(false)}>
+        <Button className="modal__close" onClick={() => onOpen(false)}>
           <FiX />
         </Button>
         <Message>{children}</Message>

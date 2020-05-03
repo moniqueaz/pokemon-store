@@ -12,6 +12,7 @@ const Button = ({
   onClick,
   size,
   className,
+  disabled,
 }) => {
   const handleToClick = () => {
     onClick();
@@ -25,6 +26,7 @@ const Button = ({
       type="button"
       onClick={handleToClick}
       size={size}
+      disabled={disabled}
     >
       {children}
     </ButtonStyle>
@@ -37,6 +39,7 @@ Button.defaultProps = {
   bgColor: backgroundButtonColor,
   full: false,
   size: 'small',
+  disabled: false,
 };
 
 Button.propTypes = {
@@ -60,6 +63,10 @@ Button.propTypes = {
    * Essa propriedade define a grossura do componente.
    */
   size: PropTypes.string,
+  /**
+   * Essa propriedade é responsavel por ativar ou desativar o button.
+   */
+  disabled: PropTypes.bool,
 };
 
 export default Button;

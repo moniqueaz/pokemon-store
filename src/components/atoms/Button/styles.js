@@ -1,5 +1,9 @@
 import styled, { css } from 'styled-components';
-import { backgroundButtonColor, black } from '../../../styles/theme';
+import {
+  backgroundButtonColorDisabled,
+  black,
+  textButtonColorDisabled,
+} from '../../../styles/theme';
 import { font } from '../../../styles/variables';
 
 export const ButtonStyle = styled.button`
@@ -14,12 +18,16 @@ export const ButtonStyle = styled.button`
   border-bottom: 4px solid ${black};
   border-right: 4px solid ${black};
 
+  ${props =>
+    props.disabled &&
+    css`
+      pointer-events: none;
+      color: ${textButtonColorDisabled};
+      background-color: ${backgroundButtonColorDisabled};
+    `}
+
   padding: ${props =>
-      props.size === 'small'
-        ? '5px'
-        : props.size === 'normal'
-        ? '10px'
-        : '15px'}
+    props.size === 'small' ? '5px' : props.size === 'normal' ? '10px' : '15px'}
     10px;
 
   ${props =>

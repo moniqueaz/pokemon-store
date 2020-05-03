@@ -11,7 +11,12 @@ import { font } from '../../../styles/variables';
 export const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  position: relative;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 4;
+  color: ${black};
+
   display: ${props => (props.show ? 'block' : 'none')};
 `;
 
