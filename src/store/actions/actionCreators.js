@@ -22,7 +22,7 @@ export function removeToCart(id, theme) {
 
 export function deleteCart(theme) {
   return {
-    type: 'DELETE_TO_CART',
+    type: 'DELETE_CART',
     theme,
   };
 }

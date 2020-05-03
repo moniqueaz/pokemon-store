@@ -50,6 +50,18 @@ export const backgroundButtonColor = theme('mode', {
   dragon: '',
 });
 
+export const textButtonColorDisabled = theme('mode', {
+  fire: '#272A2B',
+  water: '',
+  dragon: '',
+});
+
+export const backgroundButtonColorDisabled = theme('mode', {
+  fire: '#6C7378',
+  water: '',
+  dragon: '',
+});
+
 // Colors
 
 export const primary = theme('mode', {

@@ -1,0 +1,23 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import FormatPrice from '../components/atoms/FormatPrice';
+
+import Modal from '../components/molecules/Modal';
+
+<Meta title="Molecules/Modal" component={Modal} />
+
+Documentação Molecula Modal
+
+<Preview>
+  <Story name="default">
+    <Modal show>
+      <h2>Obrigada!!!</h2>
+      <br />
+      <p>Voce ganhou de volta</p>
+      <br />
+      <span className="success highlight">
+        <FormatPrice value={20000} />
+      </span>
+    </Modal>
+  </Story>
+</Preview>

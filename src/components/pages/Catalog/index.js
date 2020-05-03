@@ -71,7 +71,6 @@ const Catalog = ({ theme, location }) => {
 
   useEffect(() => {
     listPokemon.length && setIsLoader(false);
-    console.log('listPokemon: ', listPokemon);
   }, [listPokemon]);
 
   return (
