@@ -26,3 +26,10 @@ export function deleteCart(theme) {
     theme,
   };
 }
+
+export function mountToSearch(value) {
+  return {
+    type: 'MOUNT_TO_SEARCH',
+    value,
+  };
+}

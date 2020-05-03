@@ -8,7 +8,7 @@ import ItemList from '../../molecules/ItemList';
 
 import { Wrapper, Items, Item, ShowMore } from './styles';
 
-const List = ({ data, isLoader, theme }) => {
+const List = ({ data, isLoader, message, theme }) => {
   const [list, setList] = useState(data);
   const [page, setPage] = useState(1);
   const [showLoadMore, setShowLoadMore] = useState(true);
@@ -42,7 +42,7 @@ const List = ({ data, isLoader, theme }) => {
 
   return (
     <Wrapper>
-      {!isLoader && (
+      {!isLoader ? (
         <>
           <Items>
             {list.map((item, index) => {
@@ -68,6 +68,8 @@ const List = ({ data, isLoader, theme }) => {
             </ShowMore>
           )}
         </>
+      ) : (
+        <p>{message}</p>
       )}
     </Wrapper>
   );
@@ -76,6 +78,7 @@ const List = ({ data, isLoader, theme }) => {
 List.defaultProps = {
   data: [],
   isLoader: true,
+  message: 'Loading...',
 };
 
 List.propTypes = {
@@ -87,6 +90,7 @@ List.propTypes = {
    * Essa propriedade é responsavel por ddefinir os estado do componente.
    */
   isLoader: PropTypes.bool,
+  message: PropTypes.string,
 };
 
 export default withTheme(List);

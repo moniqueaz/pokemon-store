@@ -9,7 +9,7 @@ const Search = ({ value, onSubmit }) => {
 
   const handleToSearch = e => {
     e.preventDefault();
-    onSubmit();
+    onSubmit(input);
   };
 
   return (
@@ -21,6 +21,7 @@ const Search = ({ value, onSubmit }) => {
         placeholder="Qual o seu pokemon"
         required
         onChange={e => setInput(e.target.value)}
+        minLength="3"
       />
       <Button type="button" onClick={() => setInput('')}>
         <FiX />

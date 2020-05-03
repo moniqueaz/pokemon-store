@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { withTheme } from 'styled-components';
 import { type } from '../../../services/api';
 import List from '../../organisms/List';
+import Layout from '../../templates/Default';
+
+import { filterList, mountValueSearch } from '../../../utils';
 
 import {} from './styles';
 
-const Catalog = ({ theme }) => {
-  console.log('theme: ', theme);
+const Catalog = ({ theme, location }) => {
   const [listPokemon, setListPokemon] = useState([]);
   const [isLoader, setIsLoader] = useState(true);
+  const { search } = location;
+  const history = useHistory();
   const storage = JSON.parse(localStorage.getItem(`list-${theme.mode}`));
 
   const getType = async () => {
@@ -31,15 +36,14 @@ const Catalog = ({ theme }) => {
       };
     });
 
-    setListPokemon(result);
     localStorage.setItem(`list-${theme.mode}`, JSON.stringify(result));
+    mountList(result);
   };
 
   const mountCatalog = async () => {
-    console.log('storage: ', storage);
     if (storage) {
       if (storage.length) {
-        setListPokemon(storage);
+        mountList(storage);
       } else {
         const pokemon = await getType();
         mountItem(pokemon);
@@ -50,15 +54,31 @@ const Catalog = ({ theme }) => {
     }
   };
 
+  const mountList = list => {
+    if (search.length) {
+      const result = filterList(mountValueSearch(search), list);
+      !result.length && history.push('/');
+      setListPokemon(result);
+    } else {
+      setListPokemon(list);
+    }
+  };
+
   useEffect(() => {
+    setIsLoader(true);
     mountCatalog();
-  }, []);
+  }, [search]);
 
   useEffect(() => {
     listPokemon.length && setIsLoader(false);
+    console.log('listPokemon: ', listPokemon);
   }, [listPokemon]);
 
-  return <List data={listPokemon} isLoader={isLoader} />;
+  return (
+    <Layout>
+      <List data={listPokemon} isLoader={isLoader} />
+    </Layout>
+  );
 };
 
 export default withTheme(Catalog);

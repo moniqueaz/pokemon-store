@@ -28,11 +28,11 @@ export const ButtonStyle = styled.button`
       width: 100%;
     `}
 
-  span {
+  * {
     display: flex;
     justify-content: center;
     align-items: center;
-    & + span {
+    & + * {
       margin-left: 5px;
     }
   }

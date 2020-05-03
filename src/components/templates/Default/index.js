@@ -1,31 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { FiX } from 'react-icons/fi';
 import { useDispatch, useSelector } from 'react-redux';
-import { MyThemeProvider } from '../../../styles/ThemeContext';
 import * as MapDispachToActions from '../../../store/actions/actionCreators';
 
 import Header from '../../organisms/Header';
-import Cart from '../../organisms/Cart';
 
 import {
   Wrapper,
   Content,
   DefaultHeader,
-  DefaultCart,
   Container,
   Middle,
   Footer,
 } from './styles';
 
-const Default = ({ children, theme }) => {
+const Default = ({ children }) => {
   const [fixed, setFixed] = useState(false);
-  const [show, setShow] = useState(false);
-  const cart = useSelector(state => state.cart);
-  const [list, setList] = useState([]);
-  const storage = JSON.parse(localStorage.getItem(`cart-${theme}`));
-  const storageCatalog = JSON.parse(localStorage.getItem(`list-${theme}`));
-  const dispatch = useDispatch();
 
   const scroll = () => {
     if (window.pageYOffset > 200) {
@@ -36,50 +26,26 @@ const Default = ({ children, theme }) => {
     }
   };
 
-  const handleToCart = items => {
-    dispatch(MapDispachToActions.initToCart(items));
-  };
-
   useEffect(() => {
     window.onscroll = scroll;
-    if (storage && storageCatalog) {
-      console.log('storage: ', storage);
-      if (storage) {
-        if (storage.length) {
-          setList(storage);
-          handleToCart(storage);
-        }
-      }
-    } else {
-      localStorage.setItem(`cart-${theme}`, JSON.stringify([]));
-    }
   }, []);
 
-  useEffect(() => {
-    setList(cart);
-  }, [cart]);
-
   return (
-    <MyThemeProvider theme={theme}>
-      <Wrapper>
-        <DefaultHeader fixed={fixed}>
-          <Container>
-            <Header title={theme} toggleCart={() => setShow(!show)} />
-          </Container>
-        </DefaultHeader>
-        <Middle>
-          <Container>
-            <Content>{children}</Content>
-          </Container>
-          <DefaultCart show={show} fixed={fixed}>
-            <Cart data={list} onClose={() => setShow(false)} />
-          </DefaultCart>
-        </Middle>
-        <Footer>
-          <Container>Pokemon</Container>
-        </Footer>
-      </Wrapper>
-    </MyThemeProvider>
+    <Wrapper>
+      <DefaultHeader fixed={fixed}>
+        <Container>
+          <Header />
+        </Container>
+      </DefaultHeader>
+      <Middle>
+        <Container>
+          <Content>{children}</Content>
+        </Container>
+      </Middle>
+      <Footer>
+        <Container>Pokemon</Container>
+      </Footer>
+    </Wrapper>
   );
 };
 

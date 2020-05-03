@@ -52,23 +52,6 @@ export const DefaultHeader = styled.div`
   border-bottom: 4px solid ${primaryDark};
 `;
 
-export const DefaultCart = styled.div`
-  height: 100vh;
-  width: 100%;
-  max-width: 100vw;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: ${props => (props.show ? 'block' : 'none')};
-  z-index: 3;
-
-  @media (min-width: 1024px) {
-    width: 400px;
-    left: inherit;
-    right: 0;
-  }
-`;
-
 export const Content = styled.div`
   z-index: 1;
   @media (min-width: 1024px) {

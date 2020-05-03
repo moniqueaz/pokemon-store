@@ -1,16 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
 import { textButtonColor, backgroundButtonColor } from '../../../styles/theme';
 
 import { ButtonStyle } from './styles';
 
-const Button = ({ children, color, bgColor, full, onClick, size }) => {
+const Button = ({
+  children,
+  color,
+  bgColor,
+  full,
+  onClick,
+  size,
+  className,
+}) => {
   const handleToClick = () => {
     onClick();
   };
   return (
     <ButtonStyle
+      className={className}
       color={color}
       bgColor={bgColor}
       full={full}
@@ -18,23 +26,15 @@ const Button = ({ children, color, bgColor, full, onClick, size }) => {
       onClick={handleToClick}
       size={size}
     >
-      {typeof children !== 'string'
-        ? children.map((child, index) => {
-            return <span key={index}>{child}</span>;
-          })
-        : children}
+      {children}
     </ButtonStyle>
   );
 };
 
 Button.defaultProps = {
   children: '',
-  color: css`
-    ${textButtonColor}
-  `,
-  bgColor: css`
-    ${backgroundButtonColor}
-  `,
+  color: textButtonColor,
+  bgColor: backgroundButtonColor,
   full: false,
   size: 'small',
 };
@@ -47,11 +47,11 @@ Button.propTypes = {
   /**
    * Essa propriedade é responsavel por alterar a cor do texto.
    */
-  color: PropTypes.string,
+  color: PropTypes.func,
   /**
    * Essa propriedade é responsavel por alterar a cor do boutton
    */
-  bgColor: PropTypes.string,
+  bgColor: PropTypes.func,
   /**
    * Essa propriedade quando incluida força a largura do button para 100%.
    */
