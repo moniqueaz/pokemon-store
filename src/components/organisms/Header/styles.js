@@ -134,6 +134,7 @@ export const Bottom = styled.div`
 
   padding: 0 10px;
   opacity: 0;
+  pointer-events: none;
 
   animation-timing-function: ease-out;
   animation-delay: 0;
@@ -144,6 +145,7 @@ export const Bottom = styled.div`
     css`
       animation-name: ${animateIn};
       animation-duration: 0.8s;
+      pointer-events: all;
     `}
 
   @media (min-width: 1024px) {
@@ -151,5 +153,6 @@ export const Bottom = styled.div`
     transform: translateY(0);
     z-index: 1;
     opacity: 1;
+    pointer-events: all;
   }
 `;

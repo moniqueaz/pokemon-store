@@ -14,7 +14,7 @@ export const OverlayStyle = styled.div`
     props.show
       ? css`
           opacity: 0.5;
-          pointer-events: click;
+          pointer-events: all;
           transition: all 0.5s linear;
         `
       : css`
