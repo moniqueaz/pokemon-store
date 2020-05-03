@@ -7,7 +7,7 @@ import {
   primaryDark,
   black,
 } from '../../../styles/theme';
-import { font } from '../../../styles/variables';
+import { font, height } from '../../../styles/variables';
 
 export const Container = styled.div`
   height: 100vh;
@@ -49,6 +49,10 @@ export const Header = styled.div`
 
   svg {
     color: ${textColor};
+  }
+
+  @media (min-width: 1024px) {
+    height: ${height.desk.header};
   }
 `;
 
