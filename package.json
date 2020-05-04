@@ -7,7 +7,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "dev:fire": "REACT_APP_TYPE=fire react-scripts start",
+    "storybook:fire": "REACT_APP_TYPE=fire start-storybook -p 6006"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
