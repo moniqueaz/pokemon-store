@@ -53,7 +53,7 @@ Default.propTypes = {
   /**
    * Essa pripriedade recebe o conteudo que será exibida no template.
    */
-  children: PropTypes.element.isRequired,
+  children: PropTypes.object.isRequired,
 };
 
 export default Default;

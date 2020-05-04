@@ -6,6 +6,7 @@ import { findItemByProductId } from '../../../utils';
 import {
   pokemon as pokemonAPI,
   ability as abilityAPI,
+  abilityWithoutBaseURL,
 } from '../../../services/api';
 import FormatPrice from '../../atoms/FormatPrice';
 import ItemHighlight from '../../atoms/ItemHighlight';
@@ -17,10 +18,10 @@ import {
   Top,
   Description,
   Title,
-  Item,
   Wrapper,
   Button,
   Details,
+  Stats,
 } from './styles';
 
 const Product = ({ theme, location }) => {
@@ -48,8 +49,15 @@ const Product = ({ theme, location }) => {
   };
 
   const getAbility = async abilities => {
-    // const result = await abilityAPI.get(`/${idAbility}`);
-    // setAbility(result);
+    let result = [];
+    for (let abilitie of abilities) {
+      result.push(await abilityWithoutBaseURL.get(abilitie.ability.url));
+    }
+    setAbility(
+      result.map(res => {
+        return { ...res.data };
+      })
+    );
   };
 
   const mountDescription = description => {};
@@ -70,8 +78,8 @@ const Product = ({ theme, location }) => {
 
   useEffect(() => {
     if (ability) {
-      mountDescription(ability);
       console.log('ability: ', ability);
+      mountDescription(ability);
     }
   }, [ability]);
 
@@ -84,7 +92,7 @@ const Product = ({ theme, location }) => {
 
   return (
     <Layout>
-      {!idLoader && (
+      {!idLoader ? (
         <Wrapper>
           <Top>
             <ItemHighlight height="auto" className="product__image">
@@ -93,22 +101,56 @@ const Product = ({ theme, location }) => {
             <Info>
               <Title>{product.name}</Title>
               <FormatPrice value={product.price} />
-              <Item>{product.type}</Item>
               <Button>
                 <AddToCart data={product} />
               </Button>
               {infor && (
-                <Details>
-                  <p>Sprites: </p>
-                  <p>Heigth: </p>
-                  <p>Weight: </p>
-                  <p>Types: </p>
-                </Details>
+                <>
+                  <Details>
+                    <img src={infor.sprites.front_default} alt={infor.name} />
+                    <p>Base Experience: {infor.base_experience}</p>
+                    <p>Heigth: {infor.height} </p>
+                    <p>Weight: {infor.weight / 100}</p>
+                    <p>
+                      Types:{' '}
+                      {infor.types.map(({ type }, index) => {
+                        return <span key={index}>{type.name}</span>;
+                      })}
+                    </p>
+                  </Details>
+                  <Stats>
+                    {infor.stats.map(({ stat, base_stat, effort }, index) => {
+                      return (
+                        <div key={index}>
+                          <p>{stat.name}</p>
+                          <p>{base_stat}</p>
+                          <p>{effort}</p>
+                        </div>
+                      );
+                    })}
+                  </Stats>
+                </>
               )}
             </Info>
           </Top>
-          <Description>Description</Description>
+          <Description>
+            <h3>Abilitys</h3>
+            {ability &&
+              ability.map(abil => {
+                return (
+                  <div>
+                    <h4>{abil.name.replace(/-/g, ' ')}</h4>
+                    <h5>Effect</h5>
+                    <p>{abil.effect_entries[[0]].effect}</p>
+                    <h5>Short Effect</h5>
+                    <p>{abil.effect_entries[0].short_effect}</p>
+                  </div>
+                );
+              })}
+          </Description>
         </Wrapper>
+      ) : (
+        <div>Empty</div>
       )}
     </Layout>
   );

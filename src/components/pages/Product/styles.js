@@ -90,6 +90,8 @@ export const Button = styled.div`
   }
 `;
 
+export const Stats = styled.div``;
+
 export const Details = styled.div``;
 
 export const Description = styled.div`
