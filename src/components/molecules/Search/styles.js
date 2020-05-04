@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { white, black } from '../../../styles/theme';
+import styled, { css } from 'styled-components';
+import { white, black, grayLight } from '../../../styles/theme';
 
 export const Form = styled.form`
   display: flex;
@@ -11,6 +11,8 @@ export const Form = styled.form`
   overflow: hidden;
   padding: 5px;
   width: 100%;
+  border-bottom: 5px solid ${grayLight};
+  border-right: 5px solid ${grayLight};
 
   svg {
     color: ${black};
@@ -26,11 +28,6 @@ export const Input = styled.input`
   width: 100%;
   flex: 1 1 auto;
   border: 0;
-  @media (min-width: 1024px) {
-  }
-
-  &::placeholder {
-  }
 `;
 
 export const Button = styled.button`
@@ -44,6 +41,15 @@ export const Button = styled.button`
   & + button {
     margin-left: 5px;
   }
+
+  ${props =>
+    props.disabled &&
+    css`
+      pointer-events: none;
+      svg {
+        color: ${grayLight};
+      }
+    `}
 
   @media (min-width: 1024px) {
     padding: 10px;

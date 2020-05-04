@@ -23,7 +23,12 @@ const Search = ({ value, onSubmit }) => {
         onChange={e => setInput(e.target.value)}
         minLength="3"
       />
-      <Button type="button" onClick={() => setInput('')}>
+      <Button
+        type="button"
+        className="search__clear"
+        onClick={() => setInput('')}
+        disabled={!input}
+      >
         <FiX />
       </Button>
       <Button type="submit">

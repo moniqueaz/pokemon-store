@@ -160,7 +160,7 @@ const Product = ({ theme, location }) => {
           </Description>
         </Wrapper>
       ) : (
-        <div>Empty</div>
+        <div>Loading...</div>
       )}
     </Layout>
   );
