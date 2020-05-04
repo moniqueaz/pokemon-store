@@ -1,6 +1,6 @@
 export const filterListWithName = (search, list) => {
   const result = list.filter(item => {
-    return item.name === search;
+    return item.originalName === search;
   });
   return result;
 };

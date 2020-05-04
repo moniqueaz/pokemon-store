@@ -5,12 +5,21 @@ import Layout from '../../templates/Default';
 import { findItemByProductId } from '../../../utils';
 import FormatPrice from '../../atoms/FormatPrice';
 import ItemHighlight from '../../atoms/ItemHighlight';
+import AddToCart from '../../atoms/AddToCart';
 
-import { Image, Info, Top, Description, Title, Item, Wrapper } from './styles';
+import {
+  Image,
+  Info,
+  Top,
+  Description,
+  Title,
+  Item,
+  Wrapper,
+  Button,
+} from './styles';
 
 const Product = ({ theme, location }) => {
   const productId = location.pathname.split('/')[2];
-  const productName = location.pathname.split('/')[3];
   const [product, setProduct] = useState({});
   const history = useHistory();
   const [idLoader, setIsLoader] = useState(true);
@@ -20,7 +29,7 @@ const Product = ({ theme, location }) => {
     const item = findItemByProductId(id, list);
     if (item) {
       setProduct(item);
-      history.push(`/product/${id}/${item.name}`);
+      history.push(`/product/${id}/${item.originalName}`);
     } else {
       history.push('/notfound');
     }
@@ -46,6 +55,9 @@ const Product = ({ theme, location }) => {
               <Title>{product.name}</Title>
               <FormatPrice value={product.price} />
               <Item>{product.type}</Item>
+              <Button>
+                <AddToCart data={product} />
+              </Button>
             </Info>
           </Top>
           <Description>Description</Description>

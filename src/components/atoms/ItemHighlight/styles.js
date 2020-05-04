@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { primaryLight, white } from '../../../styles/theme';
+import { primaryLight, white, grayLight } from '../../../styles/theme';
 
 export const Item = styled.div`
   width: 100%;
@@ -12,7 +12,8 @@ export const Item = styled.div`
   justify-content: space-between;
   align-items: center;
   position: relative;
-  z-index: 1;
+  z-index: 0;
+  background-color: ${grayLight};
 
   &:before {
     content: '';

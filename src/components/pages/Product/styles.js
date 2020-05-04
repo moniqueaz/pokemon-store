@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { font } from '../../../styles/variables';
-import { gray } from '../../../styles/theme';
+import { font, height } from '../../../styles/variables';
+import { grayLight, white } from '../../../styles/theme';
 
 export const Wrapper = styled.div`
   padding: 20px 0;
@@ -9,6 +9,11 @@ export const Wrapper = styled.div`
   .product {
     &__image {
       padding: 20px;
+
+      @media (min-width: 1024px) {
+        flex: 0 0 calc(60% - 30px);
+        width: calc(60% - 30px);
+      }
     }
   }
 `;
@@ -20,17 +25,36 @@ export const Image = styled.img`
   width: 100%;
 
   @media (min-width: 1024px) {
-    flex: 1 1 60%;
     width: 50%;
   }
 `;
 
 export const Info = styled.div`
   padding: 20px 0;
+  width: 100%;
+  border-radius: 10px;
 
   @media (min-width: 1024px) {
-    flex: 1 1 40%;
+    flex: 0 0 40%;
+    width: 40%;
     padding: 20px;
+    background-color: ${grayLight};
+    margin: 40px 30px 0 0;
+    height: calc(100% - ${height.desk.header} - ${height.desk.footer} - 80px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    position: fixed;
+    top: ${height.desk.header};
+    right: 0;
+    max-width: calc((100vw - 60px) * (40 / 100));
+  }
+  @media (min-width: 1366px) {
+    right: calc((100vw - 1366px) / 2);
+    max-width: calc((1366px - 60px) * (40 / 100));
   }
 `;
 
@@ -45,8 +69,27 @@ export const Top = styled.div`
   }
 `;
 
-export const Title = styled.h2``;
+export const Title = styled.h2`
+  text-transform: capitalize;
+`;
 
 export const Item = styled.span``;
 
-export const Description = styled.div``;
+export const Button = styled.div`
+  width: 100%;
+  padding: 0 50px;
+
+  @media (min-width: 1024px) {
+    position: absolute;
+    bottom: 30px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+`;
+
+export const Description = styled.div`
+  @media (min-width: 1024px) {
+    flex: 0 0 60%;
+    width: 60%;
+  }
+`;

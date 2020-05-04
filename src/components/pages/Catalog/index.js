@@ -31,7 +31,8 @@ const Catalog = ({ theme, location }) => {
       const productId = uuid();
       return {
         id,
-        name,
+        name: name.replace(/-/g, ' '),
+        originalName: name,
         productId,
         type: process.env.REACT_APP_TYPE,
         price: Math.floor(Math.random() * (9999 - 1000 + 1000) + 1000),
