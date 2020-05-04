@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { FiPlusCircle } from 'react-icons/fi';
 import FormatPrice from '../../atoms/FormatPrice';
-import Button from '../../atoms/Button';
+import AddToCart from '../../atoms/AddToCart';
 
 import { Item, Type, Title, Price, Image, Bottom, Middle } from './styles';
 
-const ItemsList = ({ data, addToCart }) => {
-  const { id, image, link, type, price, name } = data;
+const ItemsList = ({ data }) => {
+  const { image, link, type, price, name } = data;
 
   return (
     <Item>
@@ -22,9 +21,7 @@ const ItemsList = ({ data, addToCart }) => {
         </Price>
       </Middle>
       <Bottom>
-        <Button full onClick={() => addToCart(data)}>
-          Add to Cart <FiPlusCircle />
-        </Button>
+        <AddToCart data={data} />
       </Bottom>
     </Item>
   );
@@ -40,11 +37,6 @@ ItemsList.propTypes = {
    * Essa propriedade é responsavel por realizar a carga no componente.
    */
   data: PropTypes.object,
-  /**
-   * Essa propriedade é responsavel por receber a função que será executada ao
-   * clicar no button add to cart.
-   */
-  addToCart: PropTypes.func,
 };
 
 export default ItemsList;

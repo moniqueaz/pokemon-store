@@ -25,10 +25,6 @@ const List = ({ data, isLoader, message, theme }) => {
     setList(list);
   };
 
-  const handleToCart = item => {
-    dispatch(MapDispachToActions.addToCart(item, theme));
-  };
-
   useEffect(() => {
     const showItemsLength = groupBy * page;
     setItemsLength(showItemsLength);
@@ -54,7 +50,7 @@ const List = ({ data, isLoader, message, theme }) => {
                     itemsPerPage={groupBy}
                     index={index}
                   >
-                    <ItemList data={item} addToCart={handleToCart} />
+                    <ItemList data={item} />
                   </Item>
                 )
               );
