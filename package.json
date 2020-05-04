@@ -5,15 +5,12 @@
   "author": "Monique Azevedo <moniqueaz.si@gmail.com>",
   "scripts": {
     "dev:fire": "REACT_APP_TYPE=fire react-scripts start",
-    "dev:water": "REACT_APP_TYPE=water react-scripts start",
-    "dev:dragon": "REACT_APP_TYPE=dragon react-scripts start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook:fire": "REACT_APP_TYPE=fire start-storybook -p 6006",
-    "storybook:water": "REACT_APP_TYPE=water start-storybook -p 6006",
-    "storybook:dragon": "REACT_APP_TYPE=dragon start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
