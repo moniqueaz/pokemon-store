@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { withTheme } from 'styled-components';
 import { useHistory } from 'react-router-dom';
+import { GiPlainArrow } from 'react-icons/gi';
 import Layout from '../../templates/Default';
 import { findItemByProductId } from '../../../utils';
 import {
   pokemon as pokemonAPI,
-  ability as abilityAPI,
   abilityWithoutBaseURL,
 } from '../../../services/api';
 import FormatPrice from '../../atoms/FormatPrice';
@@ -22,6 +22,8 @@ import {
   Button,
   Details,
   Stats,
+  Price,
+  ProgressBar,
 } from './styles';
 
 const Product = ({ theme, location }) => {
@@ -100,31 +102,39 @@ const Product = ({ theme, location }) => {
             </ItemHighlight>
             <Info>
               <Title>{product.name}</Title>
-              <FormatPrice value={product.price} />
+              <Price>
+                <FormatPrice value={product.price} />
+              </Price>
               <Button>
                 <AddToCart data={product} />
               </Button>
               {infor && (
                 <>
                   <Details>
-                    <img src={infor.sprites.front_default} alt={infor.name} />
+                    {infor.sprites.front_default && (
+                      <img src={infor.sprites.front_default} alt={infor.name} />
+                    )}
                     <p>Base Experience: {infor.base_experience}</p>
                     <p>Heigth: {infor.height} </p>
-                    <p>Weight: {infor.weight / 100}</p>
-                    <p>
+                    <p>Weight: {infor.weight / 10}</p>
+                    <p className="product__types">
                       Types:{' '}
-                      {infor.types.map(({ type }, index) => {
-                        return <span key={index}>{type.name}</span>;
-                      })}
+                      <ul>
+                        {infor.types.map(({ type }, index) => {
+                          return <li key={index}>{type.name}</li>;
+                        })}
+                      </ul>
                     </p>
                   </Details>
                   <Stats>
-                    {infor.stats.map(({ stat, base_stat, effort }, index) => {
+                    {infor.stats.map(({ stat, base_stat }, index) => {
                       return (
                         <div key={index}>
-                          <p>{stat.name}</p>
-                          <p>{base_stat}</p>
-                          <p>{effort}</p>
+                          <h3>
+                            {stat.name.replace(/-/g, ' ')} - {base_stat}
+                          </h3>
+                          <ProgressBar value={base_stat} />
+                          <div className=""></div>
                         </div>
                       );
                     })}
@@ -138,7 +148,7 @@ const Product = ({ theme, location }) => {
             {ability &&
               ability.map(abil => {
                 return (
-                  <div>
+                  <div className="product__descriptions">
                     <h4>{abil.name.replace(/-/g, ' ')}</h4>
                     <h5>Effect</h5>
                     <p>{abil.effect_entries[[0]].effect}</p>

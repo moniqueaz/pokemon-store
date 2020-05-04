@@ -19,3 +19,9 @@ export const height = {
     footer: '44px',
   },
 };
+
+export const progressBar = {
+  low: '#FF2341',
+  normal: '#1CE889',
+  hard: '#0E90E8',
+};
