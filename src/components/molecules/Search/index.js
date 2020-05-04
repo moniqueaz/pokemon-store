@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { FiSearch, FiX } from 'react-icons/fi';
 
@@ -23,7 +23,12 @@ const Search = ({ value, onSubmit }) => {
         onChange={e => setInput(e.target.value)}
         minLength="3"
       />
-      <Button type="button" onClick={() => setInput('')}>
+      <Button
+        type="button"
+        className="search__clear"
+        onClick={() => setInput('')}
+        disabled={!input}
+      >
         <FiX />
       </Button>
       <Button type="submit">

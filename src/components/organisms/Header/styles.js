@@ -4,6 +4,7 @@ import {
   textColor,
   backgroundColorSecondary,
   textColorSecondary,
+  secondary,
 } from '../../../styles/theme';
 import { font } from '../../../styles/variables';
 
@@ -110,14 +111,14 @@ const animateIn = keyframes`
   }
 `;
 
-const animateOut = keyframes`
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-`;
+// const animateOut = keyframes`
+//   from {
+//     opacity: 1;
+//   }
+//   to {
+//     opacity: 0;
+//   }
+// `;
 
 export const Bottom = styled.div`
   position: absolute;
@@ -127,6 +128,7 @@ export const Bottom = styled.div`
   height: 50px;
   transform: translateY(100%);
   z-index: 1;
+  background-color: ${secondary};
 
   display: flex;
   justify-content: center;
@@ -154,5 +156,6 @@ export const Bottom = styled.div`
     z-index: 1;
     opacity: 1;
     pointer-events: all;
+    background-color: transparent;
   }
 `;
