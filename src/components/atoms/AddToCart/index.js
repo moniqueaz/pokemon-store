@@ -6,7 +6,7 @@ import * as MapDispachToActions from '../../../store/actions/actionCreators';
 import { withTheme } from 'styled-components';
 import Button from '../Button';
 
-const AddToCart = ({ theme, data }) => {
+const AddToCart = ({ theme, data, size }) => {
   const dispatch = useDispatch();
 
   const handleToCart = item => {
@@ -14,7 +14,7 @@ const AddToCart = ({ theme, data }) => {
   };
 
   return (
-    <Button full onClick={() => handleToCart(data)}>
+    <Button full onClick={() => handleToCart(data)} size={size}>
       Add to Cart <FiPlusCircle />
     </Button>
   );
@@ -23,6 +23,7 @@ const AddToCart = ({ theme, data }) => {
 AddToCart.defaultProps = {
   onClick: () => undefined,
   data: {},
+  size: 'small',
 };
 
 AddToCart.propTypes = {
@@ -35,6 +36,10 @@ AddToCart.propTypes = {
    * Essa propriedade recebe o objeto que será retornado com a funçaõ.
    */
   data: PropTypes.object,
+  /**
+   * Essa propriedade defini a largura do button.
+   */
+  size: PropTypes.string,
 };
 
 export default withTheme(AddToCart);

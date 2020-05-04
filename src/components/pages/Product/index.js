@@ -106,7 +106,7 @@ const Product = ({ theme, location }) => {
                 <FormatPrice value={product.price} />
               </Price>
               <Button>
-                <AddToCart data={product} />
+                <AddToCart data={product} size="normal" />
               </Button>
               {infor && (
                 <>

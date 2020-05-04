@@ -7,6 +7,8 @@ import {
   white,
   gray,
   secondaryDark,
+  secondary,
+  black,
 } from '../../../styles/theme';
 import { font, progressBar } from '../../../styles/variables';
 
@@ -19,8 +21,8 @@ export const Wrapper = styled.div`
       padding: 20px;
 
       @media (min-width: 1024px) {
-        flex: 0 0 calc(60% - 30px);
-        width: calc(60% - 30px);
+        flex: 0 0 60%;
+        width: 60%;
       }
     }
     &__types {
@@ -153,6 +155,20 @@ export const Price = styled.div`
   font-family: ${font.tertiary};
   font-size: 30px;
   color: ${success};
+  @media (max-width: 1023px) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    padding: 0;
+    background-color: ${secondary};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 44px;
+    z-index: 5;
+    border-bottom: 5px solid ${black};
+  }
 `;
 
 export const Item = styled.span``;
@@ -160,6 +176,15 @@ export const Item = styled.span``;
 export const Button = styled.div`
   width: 100%;
   padding: 0 50px;
+
+  @media (max-width: 1023px) {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    padding: 0;
+    z-index: 5;
+  }
 
   @media (min-width: 1024px) {
     position: absolute;
