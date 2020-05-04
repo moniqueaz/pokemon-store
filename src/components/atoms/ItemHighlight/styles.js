@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { primaryLight, white, grayLight } from '../../../styles/theme';
 
 export const Item = styled.div`

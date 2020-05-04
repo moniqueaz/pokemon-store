@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { FiTrash2 } from 'react-icons/fi';
 import FormatPrice from '../../atoms/FormatPrice';
@@ -7,10 +7,9 @@ import { Image, Title, Button, Type, Price, Item, Info } from './styles';
 
 const ItemCart = ({ data, onDelete, isLoader }) => {
   const { id, image, link, type, price, name } = data;
-  const [loader, setLoader] = useState(isLoader);
 
   return (
-    !loader && (
+    !isLoader && (
       <Item>
         <Image src={image} alt={name} />
         <Info>

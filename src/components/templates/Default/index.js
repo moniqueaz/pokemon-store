@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
-import * as MapDispachToActions from '../../../store/actions/actionCreators';
 
 import Header from '../../organisms/Header';
 

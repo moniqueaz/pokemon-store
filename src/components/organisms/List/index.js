@@ -1,29 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
 import { withTheme } from 'styled-components';
-import * as MapDispachToActions from '../../../store/actions/actionCreators';
 import Button from '../../atoms/Button';
 import ItemList from '../../molecules/ItemList';
 
 import { Wrapper, Items, Item, ShowMore } from './styles';
 
-const List = ({ data, isLoader, message, theme }) => {
+const List = ({ data, isLoader, message }) => {
   const [list, setList] = useState(data);
   const [page, setPage] = useState(1);
   const [showLoadMore, setShowLoadMore] = useState(true);
   const groupBy = 12;
   const [itemsLength, setItemsLength] = useState(groupBy);
-  const dispatch = useDispatch();
 
   const handleLoadMore = () => {
     const newPage = page + 1;
     setPage(newPage);
   };
 
-  const showMoreItems = () => {
-    setList(list);
-  };
+  // const showMoreItems = () => {
+  //   setList(list);
+  // };
 
   useEffect(() => {
     const showItemsLength = groupBy * page;
@@ -34,7 +31,7 @@ const List = ({ data, isLoader, message, theme }) => {
 
   useEffect(() => {
     !isLoader && setList(data);
-  }, [isLoader]);
+  }, [isLoader, data]);
 
   return (
     <Wrapper>

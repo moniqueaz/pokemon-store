@@ -1,11 +1,5 @@
 import styled from 'styled-components';
-import {
-  primaryLight,
-  secondary,
-  black,
-  grayLight,
-  white,
-} from '../../../styles/theme';
+import { grayLight, white } from '../../../styles/theme';
 import { font } from '../../../styles/variables';
 
 export const Image = styled.img`

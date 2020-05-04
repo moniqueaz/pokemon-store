@@ -110,14 +110,14 @@ const animateIn = keyframes`
   }
 `;
 
-const animateOut = keyframes`
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-`;
+// const animateOut = keyframes`
+//   from {
+//     opacity: 1;
+//   }
+//   to {
+//     opacity: 0;
+//   }
+// `;
 
 export const Bottom = styled.div`
   position: absolute;

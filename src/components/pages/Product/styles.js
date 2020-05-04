@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { font, height } from '../../../styles/variables';
-import { grayLight, white, grayDark } from '../../../styles/theme';
+import { height } from '../../../styles/variables';
+import { grayLight, grayDark } from '../../../styles/theme';
 
 export const Wrapper = styled.div`
   padding: 20px 0;
@@ -89,6 +89,8 @@ export const Button = styled.div`
     transform: translateX(50%);
   }
 `;
+
+export const Details = styled.div``;
 
 export const Description = styled.div`
   padding: 20px 0;

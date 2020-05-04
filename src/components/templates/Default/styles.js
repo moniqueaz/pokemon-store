@@ -1,7 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import {
   backgroundColor,
-  textColor,
   backgroundFooter,
   textColorFooter,
   primaryDark,

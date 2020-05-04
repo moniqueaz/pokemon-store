@@ -3,6 +3,10 @@ import { withTheme } from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import Layout from '../../templates/Default';
 import { findItemByProductId } from '../../../utils';
+import {
+  pokemon as pokemonAPI,
+  ability as abilityAPI,
+} from '../../../services/api';
 import FormatPrice from '../../atoms/FormatPrice';
 import ItemHighlight from '../../atoms/ItemHighlight';
 import AddToCart from '../../atoms/AddToCart';
@@ -16,11 +20,14 @@ import {
   Item,
   Wrapper,
   Button,
+  Details,
 } from './styles';
 
 const Product = ({ theme, location }) => {
   const productId = location.pathname.split('/')[2];
-  const [product, setProduct] = useState({});
+  const [product, setProduct] = useState();
+  const [infor, setInfor] = useState();
+  const [ability, setAbility] = useState();
   const history = useHistory();
   const [idLoader, setIsLoader] = useState(true);
 
@@ -35,13 +42,45 @@ const Product = ({ theme, location }) => {
     }
   };
 
+  const getProduct = async idPokemon => {
+    const result = await pokemonAPI.get(`/${idPokemon}`);
+    setInfor(result.data);
+  };
+
+  const getAbility = async abilities => {
+    // const result = await abilityAPI.get(`/${idAbility}`);
+    // setAbility(result);
+  };
+
+  const mountDescription = description => {};
+
+  const mountInfor = infor => {};
+
   useEffect(() => {
     mountProduct(productId);
   }, []);
 
   useEffect(() => {
-    setIsLoader(false);
-  }, [location]);
+    if (infor) {
+      console.log('infor: ', infor);
+      getAbility(infor.abilities);
+      mountInfor(product);
+    }
+  }, [infor]);
+
+  useEffect(() => {
+    if (ability) {
+      mountDescription(ability);
+      console.log('ability: ', ability);
+    }
+  }, [ability]);
+
+  useEffect(() => {
+    if (product) {
+      setIsLoader(false);
+      getProduct(product.id);
+    }
+  }, [product]);
 
   return (
     <Layout>
@@ -58,6 +97,14 @@ const Product = ({ theme, location }) => {
               <Button>
                 <AddToCart data={product} />
               </Button>
+              {infor && (
+                <Details>
+                  <p>Sprites: </p>
+                  <p>Heigth: </p>
+                  <p>Weight: </p>
+                  <p>Types: </p>
+                </Details>
+              )}
             </Info>
           </Top>
           <Description>Description</Description>

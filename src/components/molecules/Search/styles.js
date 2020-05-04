@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { white, black } from '../../../styles/theme';
-import { font } from '../../../styles/variables';
 
 export const Form = styled.form`
   display: flex;
