@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FiPlusCircle } from 'react-icons/fi';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import * as MapDispachToActions from '../../../store/actions/actionCreators';
 import { withTheme } from 'styled-components';
 import Button from '../Button';

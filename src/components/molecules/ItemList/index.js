@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FormatPrice from '../../atoms/FormatPrice';
 import AddToCart from '../../atoms/AddToCart';
+import Item from '../../atoms/ItemHighlight';
 
-import { Item, Type, Title, Price, Image, Bottom, Middle } from './styles';
+import { Type, Title, Price, Image, Bottom, Middle } from './styles';
 
 const ItemsList = ({ data }) => {
   const { image, link, type, price, name } = data;
