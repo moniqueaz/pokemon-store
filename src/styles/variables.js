@@ -25,3 +25,8 @@ export const progressBar = {
   normal: '#1CE889',
   hard: '#0E90E8',
 };
+
+export const skeleton = {
+  to: '#D3D3D3',
+  from: 'transparent',
+};
