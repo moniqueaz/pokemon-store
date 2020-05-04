@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { font, height } from '../../../styles/variables';
-import { grayLight, white } from '../../../styles/theme';
+import { grayLight, white, grayDark } from '../../../styles/theme';
 
 export const Wrapper = styled.div`
   padding: 20px 0;
@@ -42,6 +42,9 @@ export const Info = styled.div`
     margin: 40px 30px 0 0;
     height: calc(100% - ${height.desk.header} - ${height.desk.footer} - 80px);
 
+    border-bottom: 4px solid ${grayDark};
+    border-right: 4px solid ${grayDark};
+
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -50,11 +53,11 @@ export const Info = styled.div`
     position: fixed;
     top: ${height.desk.header};
     right: 0;
-    max-width: calc((100vw - 60px) * (40 / 100));
+    max-width: calc((100vw - 60px) * (30 / 100));
   }
   @media (min-width: 1366px) {
     right: calc((100vw - 1366px) / 2);
-    max-width: calc((1366px - 60px) * (40 / 100));
+    max-width: calc((1366px - 60px) * (30 / 100));
   }
 `;
 
@@ -88,6 +91,7 @@ export const Button = styled.div`
 `;
 
 export const Description = styled.div`
+  padding: 20px 0;
   @media (min-width: 1024px) {
     flex: 0 0 60%;
     width: 60%;
