@@ -1,6 +1,13 @@
-export const filterList = (search, list) => {
+export const filterListWithName = (search, list) => {
   const result = list.filter(item => {
-    return item.name === search;
+    return item.originalName === search;
+  });
+  return result;
+};
+
+export const findItemByProductId = (id, list) => {
+  const result = list.find(item => {
+    return item.productId === id;
   });
   return result;
 };

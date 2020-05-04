@@ -1,11 +1,11 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import {
   backgroundColor,
-  textColor,
   backgroundFooter,
   textColorFooter,
   primaryDark,
   grayLight,
+  white,
 } from '../../../styles/theme';
 import { container, height, font } from '../../../styles/variables';
 
@@ -31,6 +31,7 @@ export const Footer = styled.div`
 `;
 
 export const Middle = styled.div`
+  background-color: ${grayLight};
   min-height: calc(
     ${height.content} - ${height.mobile.header} - ${height.mobile.footer}
   );
@@ -54,8 +55,13 @@ export const DefaultHeader = styled.div`
 
 export const Content = styled.div`
   z-index: 1;
+  background-color: ${white};
+  min-height: calc(
+    ${height.content} - ${height.desk.header} - ${height.desk.footer}
+  );
   @media (min-width: 1024px) {
     width: 100%;
+    padding: 20px;
     ${container}
   }
 `;

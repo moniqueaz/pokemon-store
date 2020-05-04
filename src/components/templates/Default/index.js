@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
-import * as MapDispachToActions from '../../../store/actions/actionCreators';
 
 import Header from '../../organisms/Header';
 
@@ -55,7 +53,7 @@ Default.propTypes = {
   /**
    * Essa pripriedade recebe o conteudo que será exibida no template.
    */
-  children: PropTypes.element.isRequired,
+  children: PropTypes.object.isRequired,
 };
 
 export default Default;

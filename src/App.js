@@ -1,5 +1,4 @@
 import React from 'react';
-import Layout from './components/templates/Default';
 import Routes from './routes';
 import GlobalStyle from './styles/global';
 import { Provider } from 'react-redux';

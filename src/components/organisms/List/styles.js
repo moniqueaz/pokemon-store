@@ -1,12 +1,4 @@
-import styled, { keyframes, css } from 'styled-components';
-import {
-  primaryLight,
-  secondary,
-  black,
-  grayLight,
-  white,
-} from '../../../styles/theme';
-import { font } from '../../../styles/variables';
+import styled, { keyframes } from 'styled-components';
 
 const animateIn = keyframes`
   from {

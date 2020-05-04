@@ -3,6 +3,8 @@ import { addDecorator, addParameters } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import GlobalStyle from '../src/styles/global';
 import { MyThemeProvider } from '../src/styles/ThemeContext';
+import { Provider } from 'react-redux';
+import store from '../src/store';
 // import { configureViewport } from '@storybook/addon-viewport';
 
 const newViewports = {
@@ -57,7 +59,7 @@ addDecorator(story => (
   <MyThemeProvider theme={theme}>
     <Container>
       <GlobalStyle />
-      {story()}
+      <Provider store={store}>{story()}</Provider>
     </Container>
   </MyThemeProvider>
 ));

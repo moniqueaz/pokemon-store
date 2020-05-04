@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { black, gray } from '../../../styles/theme';
+import { gray } from '../../../styles/theme';
 
 export const Item = styled.div`
   display: flex;

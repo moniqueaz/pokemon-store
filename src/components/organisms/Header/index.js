@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { FiSearch, FiX } from 'react-icons/fi';
 import { withTheme } from 'styled-components';
 import Search from '../../molecules/Search';
 import Cart from '../../organisms/Cart';
-import * as MapDispachToActions from '../../../store/actions/actionCreators';
-import { filter, redirectSearchResult } from '../../../utils';
+import { redirectSearchResult } from '../../../utils';
 import Button from '../../atoms/Button';
 
 import {
@@ -19,12 +17,10 @@ import { Container, Title, Bottom } from './styles';
 
 const Header = ({ theme }) => {
   const [show, setShow] = useState(false);
-  const dispatch = useDispatch();
   const history = useHistory();
 
   const handleToSearch = value => {
     redirectSearchResult(value, history);
-    // dispatch(MapDispachToActions.mountToSearch(value));
   };
 
   return (
