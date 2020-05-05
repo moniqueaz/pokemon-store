@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Skeleton from '../../atoms/Skeleton';
 
@@ -86,9 +85,5 @@ const ListSkeleton = () => {
     </SekeletonStyle>
   );
 };
-
-ListSkeleton.defaultProps = {};
-
-ListSkeleton.propTypes = {};
 
 export default ListSkeleton;

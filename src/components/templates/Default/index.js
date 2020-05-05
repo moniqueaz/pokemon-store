@@ -15,7 +15,7 @@ import {
 const Default = ({ children }) => {
   const [fixed, setFixed] = useState(false);
 
-  const scroll = () => {
+  const scrollDown = () => {
     if (window.pageYOffset > 200) {
       setFixed(true);
     }
@@ -25,7 +25,7 @@ const Default = ({ children }) => {
   };
 
   useEffect(() => {
-    window.onscroll = scroll;
+    window.onscroll = scrollDown;
   }, []);
 
   return (

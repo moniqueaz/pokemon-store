@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { height } from '../../../styles/variables';
 import { grayLight, grayDark } from '../../../styles/theme';
 import { font } from '../../../styles/variables';
@@ -9,9 +9,14 @@ export const Wrapper = styled.div`
 
   .product {
     &__image {
-      padding: 20px;
-      min-height: 300px;
+      img {
+        margin: 20px;
 
+        @media (max-width: 1023) {
+          max-width: 300px;
+        }
+      }
+      min-height: 300px;
       @media (min-width: 1024px) {
         flex: 0 0 60%;
         width: 60%;
@@ -21,17 +26,6 @@ export const Wrapper = styled.div`
         min-height: 370px;
       }
     }
-  }
-`;
-
-export const Image = styled.img`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-
-  @media (min-width: 1024px) {
-    width: 50%;
   }
 `;
 
@@ -76,6 +70,19 @@ export const Top = styled.div`
 
   @media (min-width: 1024px) {
     flex-direction: row;
+  }
+
+  .product {
+    &__image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      @media (min-width: 1024px) {
+        width: 50%;
+      }
+    }
   }
 `;
 

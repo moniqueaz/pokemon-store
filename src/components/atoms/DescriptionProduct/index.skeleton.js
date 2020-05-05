@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Skeleton from '../../atoms/Skeleton';
 
@@ -11,7 +10,6 @@ const SekeletonStyle = styled.div`
 
 const DescriptionProductSkeleton = () => {
   const [width, setWidth] = useState('');
-  const [height, setHeight] = useState('400px');
 
   useEffect(() => {
     const result = window.innerWidth;
@@ -21,7 +19,6 @@ const DescriptionProductSkeleton = () => {
       setWidth('790px');
     } else {
       setWidth(`${result - 20}px`);
-      setHeight('500px');
     }
   }, []);
 
@@ -49,9 +46,5 @@ const DescriptionProductSkeleton = () => {
     </SekeletonStyle>
   );
 };
-
-DescriptionProductSkeleton.defaultProps = {};
-
-DescriptionProductSkeleton.propTypes = {};
 
 export default DescriptionProductSkeleton;

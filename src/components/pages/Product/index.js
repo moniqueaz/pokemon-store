@@ -11,8 +11,9 @@ import Skeleton from './index.skeleton';
 import ItemHighlight from '../../atoms/ItemHighlight';
 import InfoProduct from '../../molecules/InfoProduct';
 import DescriptionProduct from '../../atoms/DescriptionProduct';
+import Image from '../../atoms/Image';
 
-import { Image, Info, Top, Description, Wrapper } from './styles';
+import { Info, Top, Description, Wrapper } from './styles';
 
 const Product = ({ theme, location }) => {
   const productId = location.pathname.split('/')[2];
@@ -80,7 +81,11 @@ const Product = ({ theme, location }) => {
         <Top>
           {!idLoader ? (
             <ItemHighlight height="auto" className="product__image">
-              <Image src={product.image} alt={product.name} />
+              <Image
+                src={product.image}
+                alt={product.name}
+                className="product__image"
+              />
             </ItemHighlight>
           ) : (
             <Skeleton />

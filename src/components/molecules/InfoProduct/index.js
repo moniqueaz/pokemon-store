@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { GiPlainArrow } from 'react-icons/gi';
+// import { GiPlainArrow } from 'react-icons/gi';
 import FormatPrice from '../../atoms/FormatPrice';
 import AddToCart from '../../atoms/AddToCart';
 

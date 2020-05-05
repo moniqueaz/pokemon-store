@@ -1,12 +1,9 @@
 import styled, { keyframes } from 'styled-components';
-import { height } from '../../../styles/variables';
 import {
-  grayLight,
   grayDark,
   success,
   white,
   gray,
-  secondaryDark,
   secondary,
   black,
 } from '../../../styles/theme';
