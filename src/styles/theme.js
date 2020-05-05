@@ -2,37 +2,37 @@ import theme from 'styled-theming';
 
 export const backgroundColor = theme('mode', {
   fire: '#FF0101',
-  water: '',
+  water: '#0099E0',
   dragon: '',
 });
 
 export const textColor = theme('mode', {
   fire: '#fff',
-  water: '',
+  water: '#fff',
   dragon: '',
 });
 
 export const backgroundColorSecondary = theme('mode', {
   fire: '#FFFC19',
-  water: '',
+  water: '#E07A00',
   dragon: '',
 });
 
 export const textColorSecondary = theme('mode', {
   fire: '#272A2B',
-  water: '',
+  water: '#272A2B',
   dragon: '',
 });
 
 export const backgroundFooter = theme('mode', {
   fire: '#FF0101',
-  water: '',
+  water: '#0099E0',
   dragon: '',
 });
 
 export const textColorFooter = theme('mode', {
   fire: '#fff',
-  water: '',
+  water: '#fff',
   dragon: '',
 });
 
@@ -40,25 +40,25 @@ export const textColorFooter = theme('mode', {
 
 export const textButtonColor = theme('mode', {
   fire: '#fff',
-  water: '',
+  water: '#fff',
   dragon: '',
 });
 
 export const backgroundButtonColor = theme('mode', {
   fire: '#3C7800',
-  water: '',
+  water: '#0BE0B0',
   dragon: '',
 });
 
 export const textButtonColorDisabled = theme('mode', {
   fire: '#272A2B',
-  water: '',
+  water: '#272A2B',
   dragon: '',
 });
 
 export const backgroundButtonColorDisabled = theme('mode', {
   fire: '#6C7378',
-  water: '',
+  water: '#6C7378',
   dragon: '',
 });
 
@@ -66,37 +66,37 @@ export const backgroundButtonColorDisabled = theme('mode', {
 
 export const primary = theme('mode', {
   fire: '#FF0101',
-  water: '',
+  water: '#0099E0',
   dragon: '',
 });
 
 export const primaryLight = theme('mode', {
   fire: '#FF4D4D',
-  water: '',
+  water: '#19B6FF',
   dragon: '',
 });
 
 export const primaryDark = theme('mode', {
   fire: '#800000',
-  water: '',
+  water: '#006594',
   dragon: '',
 });
 
 export const secondary = theme('mode', {
   fire: '#FFFC19',
-  water: '',
+  water: '#E07A00',
   dragon: '',
 });
 
 export const secondaryLight = theme('mode', {
   fire: '#FFFC66',
-  water: '',
+  water: '#FF9819',
   dragon: '',
 });
 
 export const secondaryDark = theme('mode', {
   fire: '#807E0D',
-  water: '',
+  water: '#945100',
   dragon: '',
 });
 
@@ -132,12 +132,12 @@ export const grayDark = theme('mode', {
 
 export const error = theme('mode', {
   fire: '#C90241',
-  water: '',
+  water: '#E01631',
   dragon: '',
 });
 
 export const success = theme('mode', {
   fire: '#3C7800',
-  water: '',
+  water: '#0BE0B0',
   dragon: '',
 });
