@@ -1,36 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { withTheme } from 'styled-components';
 import { useHistory } from 'react-router-dom';
-import { GiPlainArrow } from 'react-icons/gi';
 import Layout from '../../templates/Default';
 import { findItemByProductId } from '../../../utils';
 import {
   pokemon as pokemonAPI,
   abilityWithoutBaseURL,
 } from '../../../services/api';
-import FormatPrice from '../../atoms/FormatPrice';
 import ItemHighlight from '../../atoms/ItemHighlight';
-import AddToCart from '../../atoms/AddToCart';
+import InfoCart from '../../molecules/InfoCart';
+import DescriptionCart from '../../atoms/DescriptionCart';
 
-import {
-  Image,
-  Info,
-  Top,
-  Description,
-  Title,
-  Wrapper,
-  Button,
-  Details,
-  Stats,
-  Price,
-  ProgressBar,
-} from './styles';
+import { Image, Info, Top, Description, Wrapper } from './styles';
 
 const Product = ({ theme, location }) => {
   const productId = location.pathname.split('/')[2];
   const [product, setProduct] = useState();
   const [infor, setInfor] = useState();
-  const [ability, setAbility] = useState();
+  const [ability, setAbility] = useState([]);
   const history = useHistory();
   const [idLoader, setIsLoader] = useState(true);
 
@@ -62,10 +49,6 @@ const Product = ({ theme, location }) => {
     );
   };
 
-  const mountDescription = description => {};
-
-  const mountInfor = infor => {};
-
   useEffect(() => {
     mountProduct(productId);
   }, []);
@@ -74,14 +57,12 @@ const Product = ({ theme, location }) => {
     if (infor) {
       console.log('infor: ', infor);
       getAbility(infor.abilities);
-      mountInfor(product);
     }
   }, [infor]);
 
   useEffect(() => {
     if (ability) {
       console.log('ability: ', ability);
-      mountDescription(ability);
     }
   }, [ability]);
 
@@ -101,62 +82,11 @@ const Product = ({ theme, location }) => {
               <Image src={product.image} alt={product.name} />
             </ItemHighlight>
             <Info>
-              <Title>{product.name}</Title>
-              <Price>
-                <FormatPrice value={product.price} />
-              </Price>
-              <Button>
-                <AddToCart data={product} size="normal" />
-              </Button>
-              {infor && (
-                <>
-                  <Details>
-                    {infor.sprites.front_default && (
-                      <img src={infor.sprites.front_default} alt={infor.name} />
-                    )}
-                    <p>Base Experience: {infor.base_experience}</p>
-                    <p>Heigth: {infor.height} </p>
-                    <p>Weight: {infor.weight / 10}</p>
-                    <p className="product__types">
-                      Types:{' '}
-                      <ul>
-                        {infor.types.map(({ type }, index) => {
-                          return <li key={index}>{type.name}</li>;
-                        })}
-                      </ul>
-                    </p>
-                  </Details>
-                  <Stats>
-                    {infor.stats.map(({ stat, base_stat }, index) => {
-                      return (
-                        <div key={index}>
-                          <h3>
-                            {stat.name.replace(/-/g, ' ')} - {base_stat}
-                          </h3>
-                          <ProgressBar value={base_stat} />
-                          <div className=""></div>
-                        </div>
-                      );
-                    })}
-                  </Stats>
-                </>
-              )}
+              <InfoCart data={product} isLoader={false} infor={infor} />
             </Info>
           </Top>
           <Description>
-            <h3>Abilitys</h3>
-            {ability &&
-              ability.map(abil => {
-                return (
-                  <div className="product__descriptions">
-                    <h4>{abil.name.replace(/-/g, ' ')}</h4>
-                    <h5>Effect</h5>
-                    <p>{abil.effect_entries[[0]].effect}</p>
-                    <h5>Short Effect</h5>
-                    <p>{abil.effect_entries[0].short_effect}</p>
-                  </div>
-                );
-              })}
+            <DescriptionCart ability={ability} isLoader={false} />
           </Description>
         </Wrapper>
       ) : (
