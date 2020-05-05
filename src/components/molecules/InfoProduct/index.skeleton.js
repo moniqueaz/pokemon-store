@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
 import Skeleton from '../../atoms/Skeleton';
 
@@ -10,18 +9,6 @@ const SekeletonStyle = styled.div`
 `;
 
 const InforCartSkeleton = () => {
-  const [width, setWidth] = useState('');
-  const [height, setHeight] = useState('400px');
-
-  useEffect(() => {
-    const result = window.innerWidth;
-    if (result >= 1024) {
-      setWidth(`${result - 20}px`);
-    } else {
-      setWidth(`${result - 20}px`);
-    }
-  }, []);
-
   return (
     <SekeletonStyle>
       <Skeleton width="245px" height="35px" />
@@ -64,9 +51,5 @@ const InforCartSkeleton = () => {
     </SekeletonStyle>
   );
 };
-
-InforCartSkeleton.defaultProps = {};
-
-InforCartSkeleton.propTypes = {};
 
 export default InforCartSkeleton;

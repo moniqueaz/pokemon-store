@@ -6,7 +6,7 @@ import Skeleton from './index.skeleton';
 
 import { Abilitys, Description } from './styles';
 
-const DescriptionCart = ({ ability, isLoader }) => {
+const DescriptionProduct = ({ ability, isLoader }) => {
   return !isLoader ? (
     <Description>
       <h3>Abilitys</h3>
@@ -28,15 +28,15 @@ const DescriptionCart = ({ ability, isLoader }) => {
   );
 };
 
-DescriptionCart.defaultProps = {
+DescriptionProduct.defaultProps = {
   ability: {},
 };
 
-DescriptionCart.propTypes = {
+DescriptionProduct.propTypes = {
   /**
    * Essa propriedade recebe o objeto que será retornado com a funçaõ.
    */
   ability: PropTypes.object,
 };
 
-export default withTheme(DescriptionCart);
+export default withTheme(DescriptionProduct);
