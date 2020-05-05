@@ -13,6 +13,8 @@ import DescriptionCart from '../../atoms/DescriptionCart';
 
 import { Image, Info, Top, Description, Wrapper } from './styles';
 
+import Skeleton from './index.skeleton';
+
 const Product = ({ theme, location }) => {
   const productId = location.pathname.split('/')[2];
   const [product, setProduct] = useState();
@@ -75,23 +77,23 @@ const Product = ({ theme, location }) => {
 
   return (
     <Layout>
-      {!idLoader ? (
-        <Wrapper>
-          <Top>
+      <Wrapper>
+        <Top>
+          {!idLoader ? (
             <ItemHighlight height="auto" className="product__image">
               <Image src={product.image} alt={product.name} />
             </ItemHighlight>
-            <Info>
-              <InfoCart data={product} isLoader={false} infor={infor} />
-            </Info>
-          </Top>
-          <Description>
-            <DescriptionCart ability={ability} isLoader={false} />
-          </Description>
-        </Wrapper>
-      ) : (
-        <div>Loading...</div>
-      )}
+          ) : (
+            <Skeleton />
+          )}
+          <Info>
+            <InfoCart data={product} isLoader={!infor} infor={infor} />
+          </Info>
+        </Top>
+        <Description>
+          <DescriptionCart ability={ability} isLoader={!ability.length} />
+        </Description>
+      </Wrapper>
     </Layout>
   );
 };

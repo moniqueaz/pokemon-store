@@ -67,6 +67,11 @@ export const Price = styled.div`
   font-family: ${font.tertiary};
   font-size: 30px;
   color: ${success};
+
+  @media (min-width: 1024px) {
+    margin-bottom: 20px;
+  }
+
   @media (max-width: 1023px) {
     position: fixed;
     bottom: 0;
@@ -126,6 +131,7 @@ export const Button = styled.div`
 
 export const Stats = styled.div`
   text-transform: capitalize;
+  margin-bottom: 20px;
   h3 {
     font-size: 20px;
     font-weight: normal;
