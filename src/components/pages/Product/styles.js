@@ -10,10 +10,15 @@ export const Wrapper = styled.div`
   .product {
     &__image {
       padding: 20px;
+      min-height: 300px;
 
       @media (min-width: 1024px) {
         flex: 0 0 60%;
         width: 60%;
+        min-height: 269px;
+      }
+      @media (min-width: 1366px) {
+        min-height: 370px;
       }
     }
   }
