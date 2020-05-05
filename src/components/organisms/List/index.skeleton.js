@@ -8,36 +8,36 @@ const SekeletonStyle = styled.div`
   align-items: center;
   flex-direction: column;
   width: 100%;
-  & > div {
-    margin-bottom: 10px;
-  }
+  padding: 10px 0;
   @media (min-width: 768px) {
     flex-direction: row;
     flex-wrap: wrap;
+  }
 
-    & > div {
-      flex: 1 1 calc(50% - 10px);
-      max-width: calc(50% - 10px);
-      & + div {
-        margin-left: 10px;
+  .skeleton {
+    &__item {
+      margin-bottom: 10px;
+
+      @media (min-width: 768px) {
+        flex: 0 0 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+        & + div {
+          margin-left: 10px;
+        }
         @media (max-width: 1023px) {
           &:nth-child(2n - 1) {
             margin-left: 0;
           }
         }
       }
-    }
-  }
-  @media (min-width: 1024px) {
-    & > div {
-      flex: 1 1 calc(33.333% - 10px);
-      max-width: calc(33.333% - 10px);
-      & + div {
-        margin-left: 10px;
-        @media (min-width: 1024px) {
-          &:nth-child(3n - 2) {
-            margin-left: 0;
-          }
+      @media (min-width: 1024px) {
+        flex: 0 0 calc(33.333% - 10px);
+        max-width: calc(33.333% - 10px);
+        &:nth-child(3n - 2) {
+          margin-left: 0;
+        }
+        & + div {
+          margin-left: 10px;
         }
       }
     }
@@ -64,22 +64,22 @@ const ListSkeleton = () => {
 
   return (
     <SekeletonStyle>
-      <div>
+      <div className="skeleton__item">
         <Skeleton width={width} height={height} border="10px" />
       </div>
-      <div>
+      <div className="skeleton__item">
         <Skeleton width={width} height={height} border="10px" />
       </div>
-      <div>
+      <div className="skeleton__item">
         <Skeleton width={width} height={height} border="10px" />
       </div>
-      <div>
+      <div className="skeleton__item">
         <Skeleton width={width} height={height} border="10px" />
       </div>
-      <div>
+      <div className="skeleton__item">
         <Skeleton width={width} height={height} border="10px" />
       </div>
-      <div>
+      <div className="skeleton__item">
         <Skeleton width={width} height={height} border="10px" />
       </div>
     </SekeletonStyle>
