@@ -83,7 +83,7 @@ export const Price = styled.div`
     justify-content: center;
     align-items: center;
     height: 44px;
-    z-index: 5;
+    z-index: 1;
     border-bottom: 5px solid ${black};
   }
 `;
@@ -118,7 +118,7 @@ export const Button = styled.div`
     right: 0;
     width: 50%;
     padding: 0;
-    z-index: 5;
+    z-index: 1;
   }
 
   @media (min-width: 1024px) {
