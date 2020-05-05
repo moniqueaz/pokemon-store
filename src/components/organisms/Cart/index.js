@@ -71,7 +71,7 @@ const Cart = ({ theme }) => {
         }
       }
     } else {
-      localStorage.setItem(`cart-${theme.mode}`, JSON.stringify([]));
+      dispatch(MapDispachToActions.deleteCart(theme));
     }
   }, []);
 
