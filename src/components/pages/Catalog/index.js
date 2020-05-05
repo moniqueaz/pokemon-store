@@ -80,7 +80,7 @@ const Catalog = ({ theme, location }) => {
 
   return (
     <Layout>
-      <List data={listPokemon} isLoader={!isLoader} />
+      <List data={listPokemon} isLoader={isLoader} />
     </Layout>
   );
 };
