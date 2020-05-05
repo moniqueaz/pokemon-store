@@ -55,7 +55,7 @@ const ListSkeleton = () => {
     } else if (result >= 1024 && result < 1366) {
       setWidth(`${result / 3 - 22}px`);
     } else if (result >= 1366) {
-      setWidth(`${result / 3 - 50}px`);
+      setWidth('430px');
     } else {
       setWidth(`${result - 20}px`);
       setHeight('300px');
