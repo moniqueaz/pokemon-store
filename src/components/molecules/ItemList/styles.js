@@ -6,6 +6,7 @@ export const Image = styled.img`
   width: 60%;
   margin-bottom: 20px;
   max-width: 185px;
+  min-height: 185px;
 `;
 
 export const Type = styled.span`

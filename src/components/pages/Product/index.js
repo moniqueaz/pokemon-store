@@ -7,13 +7,12 @@ import {
   pokemon as pokemonAPI,
   abilityWithoutBaseURL,
 } from '../../../services/api';
+import Skeleton from './index.skeleton';
 import ItemHighlight from '../../atoms/ItemHighlight';
 import InfoCart from '../../molecules/InfoCart';
 import DescriptionCart from '../../atoms/DescriptionCart';
 
 import { Image, Info, Top, Description, Wrapper } from './styles';
-
-import Skeleton from './index.skeleton';
 
 const Product = ({ theme, location }) => {
   const productId = location.pathname.split('/')[2];

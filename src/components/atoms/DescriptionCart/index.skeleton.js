@@ -9,7 +9,7 @@ const SekeletonStyle = styled.div`
   }
 `;
 
-const InforCartSkeleton = () => {
+const DescriptionCartSkeleton = () => {
   const [width, setWidth] = useState('');
   const [height, setHeight] = useState('400px');
 
@@ -50,8 +50,8 @@ const InforCartSkeleton = () => {
   );
 };
 
-InforCartSkeleton.defaultProps = {};
+DescriptionCartSkeleton.defaultProps = {};
 
-InforCartSkeleton.propTypes = {};
+DescriptionCartSkeleton.propTypes = {};
 
-export default InforCartSkeleton;
+export default DescriptionCartSkeleton;
