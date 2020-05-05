@@ -4,9 +4,11 @@ import { withTheme } from 'styled-components';
 import Button from '../../atoms/Button';
 import ItemList from '../../molecules/ItemList';
 
+import Skeleton from './index.skeleton';
+
 import { Wrapper, Items, Item, ShowMore } from './styles';
 
-const List = ({ data, isLoader, message }) => {
+const List = ({ data, isLoader }) => {
   const [list, setList] = useState(data);
   const [page, setPage] = useState(1);
   const [showLoadMore, setShowLoadMore] = useState(true);
@@ -62,7 +64,7 @@ const List = ({ data, isLoader, message }) => {
           )}
         </>
       ) : (
-        <p>{message}</p>
+        <Skeleton />
       )}
     </Wrapper>
   );
@@ -71,7 +73,6 @@ const List = ({ data, isLoader, message }) => {
 List.defaultProps = {
   data: [],
   isLoader: true,
-  message: 'Loading...',
 };
 
 List.propTypes = {
@@ -83,7 +84,6 @@ List.propTypes = {
    * Essa propriedade é responsavel por ddefinir os estado do componente.
    */
   isLoader: PropTypes.bool,
-  message: PropTypes.string,
 };
 
 export default withTheme(List);
