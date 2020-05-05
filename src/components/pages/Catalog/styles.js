@@ -1,3 +1,5 @@
+// import styled from 'styled-components';
+
 // background: image('myimage.gif', 'fallback.gif');
 
 // .background{

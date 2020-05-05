@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import Skeleton from '../../atoms/Skeleton';
 
 const ProductSkeleton = () => {
@@ -23,9 +21,5 @@ const ProductSkeleton = () => {
 
   return <Skeleton width={width} height={height} border="10px" />;
 };
-
-ProductSkeleton.defaultProps = {};
-
-ProductSkeleton.propTypes = {};
 
 export default ProductSkeleton;

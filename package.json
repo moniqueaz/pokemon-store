@@ -1,10 +1,10 @@
 {
   "name": "pokemon-store",
-  "version": "0.11.0",
+  "version": "1.0.0",
   "private": true,
   "author": "Monique Azevedo <moniqueaz.si@gmail.com>",
   "scripts": {
-    "dev:fire": "REACT_APP_TYPE=fire react-scripts start",
+    "dev": "REACT_APP_TYPE=dragon react-scripts start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

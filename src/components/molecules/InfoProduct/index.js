@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { GiPlainArrow } from 'react-icons/gi';
+// import { GiPlainArrow } from 'react-icons/gi';
 import FormatPrice from '../../atoms/FormatPrice';
 import AddToCart from '../../atoms/AddToCart';
 
@@ -16,7 +16,7 @@ import {
   Types,
 } from './styles';
 
-const InfoCart = ({ data, isLoader, infor }) => {
+const InfoProduct = ({ data, isLoader, infor }) => {
   const { price, name } = data;
 
   return !isLoader ? (
@@ -67,12 +67,12 @@ const InfoCart = ({ data, isLoader, infor }) => {
   );
 };
 
-InfoCart.defaultProps = {
+InfoProduct.defaultProps = {
   data: {},
   isLoader: true,
 };
 
-InfoCart.propTypes = {
+InfoProduct.propTypes = {
   /**
    * Essa propriedade é responsavel por realizar a carga no componente.
    */
@@ -83,4 +83,4 @@ InfoCart.propTypes = {
   isLoader: PropTypes.bool,
 };
 
-export default InfoCart;
+export default InfoProduct;

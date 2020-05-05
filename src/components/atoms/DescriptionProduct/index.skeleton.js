@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Skeleton from '../../atoms/Skeleton';
 
@@ -9,9 +8,8 @@ const SekeletonStyle = styled.div`
   }
 `;
 
-const DescriptionCartSkeleton = () => {
+const DescriptionProductSkeleton = () => {
   const [width, setWidth] = useState('');
-  const [height, setHeight] = useState('400px');
 
   useEffect(() => {
     const result = window.innerWidth;
@@ -21,7 +19,6 @@ const DescriptionCartSkeleton = () => {
       setWidth('790px');
     } else {
       setWidth(`${result - 20}px`);
-      setHeight('500px');
     }
   }, []);
 
@@ -50,8 +47,4 @@ const DescriptionCartSkeleton = () => {
   );
 };
 
-DescriptionCartSkeleton.defaultProps = {};
-
-DescriptionCartSkeleton.propTypes = {};
-
-export default DescriptionCartSkeleton;
+export default DescriptionProductSkeleton;

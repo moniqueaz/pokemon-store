@@ -5,16 +5,36 @@ import { Image, Title, Item, Container } from './styles';
 
 const Minicart = ({ item }) => {
   const { image, name } = item;
+  const [product, setProduct] = useState({});
   const [show, setShow] = useState(false);
 
+  const timer = () => {
+    return setTimeout(() => {
+      setShow(false);
+    }, 2000);
+  };
+
   useEffect(() => {
+    clearTimeout(timer);
     if (item.id) {
-      setShow(true);
-      setTimeout(() => {
-        setShow(false);
-      }, 2000);
+      if (!!product.productId) {
+        setProduct(item);
+      } else {
+        setProduct(item);
+      }
     }
   }, [item]);
+
+  useEffect(() => {
+    if (product.id) {
+      setShow(true);
+      timer();
+    }
+  }, [product]);
+
+  useEffect(() => {
+    clearTimeout(timer);
+  }, []);
 
   return (
     <Item show={show}>

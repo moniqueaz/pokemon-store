@@ -2,13 +2,6 @@ import styled from 'styled-components';
 import { grayLight, white } from '../../../styles/theme';
 import { font } from '../../../styles/variables';
 
-export const Image = styled.img`
-  width: 60%;
-  margin-bottom: 20px;
-  max-width: 185px;
-  min-height: 185px;
-`;
-
 export const Type = styled.span`
   padding: 5px 10px;
   margin: 10px;
@@ -40,4 +33,12 @@ export const Middle = styled.div`
   width: 100%;
   padding: 10px;
   text-align: center;
+  .itemList {
+    &__image {
+      width: 60%;
+      margin-bottom: 20px;
+      width: auto;
+      height: 185px;
+    }
+  }
 `;

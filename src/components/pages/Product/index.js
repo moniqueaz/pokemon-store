@@ -9,10 +9,11 @@ import {
 } from '../../../services/api';
 import Skeleton from './index.skeleton';
 import ItemHighlight from '../../atoms/ItemHighlight';
-import InfoCart from '../../molecules/InfoCart';
-import DescriptionCart from '../../atoms/DescriptionCart';
+import InfoProduct from '../../molecules/InfoProduct';
+import DescriptionProduct from '../../atoms/DescriptionProduct';
+import Image from '../../atoms/Image';
 
-import { Image, Info, Top, Description, Wrapper } from './styles';
+import { Info, Top, Description, Wrapper } from './styles';
 
 const Product = ({ theme, location }) => {
   const productId = location.pathname.split('/')[2];
@@ -80,17 +81,21 @@ const Product = ({ theme, location }) => {
         <Top>
           {!idLoader ? (
             <ItemHighlight height="auto" className="product__image">
-              <Image src={product.image} alt={product.name} />
+              <Image
+                src={product.image}
+                alt={product.name}
+                className="product__image"
+              />
             </ItemHighlight>
           ) : (
             <Skeleton />
           )}
           <Info>
-            <InfoCart data={product} isLoader={!infor} infor={infor} />
+            <InfoProduct data={product} isLoader={!infor} infor={infor} />
           </Info>
         </Top>
         <Description>
-          <DescriptionCart ability={ability} isLoader={!ability.length} />
+          <DescriptionProduct ability={ability} isLoader={!ability.length} />
         </Description>
       </Wrapper>
     </Layout>

@@ -25,9 +25,9 @@ export const Content = styled.div`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
+  width: calc(100% - 10px);
   height: auto;
-  min-height: 200px;
+  min-height: 300px;
   max-width: 500px;
   border: 5px solid ${primaryLight};
   background-color: ${white};
@@ -47,6 +47,9 @@ export const Content = styled.div`
   h1,
   h2 {
     font-family: ${font.secondary};
+    @media (max-width: 1023px) {
+      font-size: 20px;
+    }
   }
 
   .highlight {
