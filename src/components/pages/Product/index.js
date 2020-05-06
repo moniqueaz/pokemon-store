@@ -57,16 +57,9 @@ const Product = ({ theme, location }) => {
 
   useEffect(() => {
     if (infor) {
-      console.log('infor: ', infor);
       getAbility(infor.abilities);
     }
   }, [infor]);
-
-  useEffect(() => {
-    if (ability) {
-      console.log('ability: ', ability);
-    }
-  }, [ability]);
 
   useEffect(() => {
     if (product) {

@@ -7,8 +7,6 @@ export const useTheme = () => useContext(ThemeToggleContext);
 
 export const MyThemeProvider = ({ children, theme }) => {
   const [themeState, setThemeState] = React.useState(theme);
-  console.log('themeState: ', themeState);
-
   return (
     <ThemeToggleContext.Provider value={{ toggle: setThemeState }}>
       <ThemeProvider

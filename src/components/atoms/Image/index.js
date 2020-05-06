@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { withTheme } from 'styled-components';
 
 const Image = ({ src, alt, className }) => {
   const [imageFallBack, setImageFallBack] = useState(src);
+
+  useEffect(() => {
+    setImageFallBack(src);
+  }, [src]);
 
   return (
     <img
