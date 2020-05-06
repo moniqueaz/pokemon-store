@@ -11,7 +11,7 @@ const SekeletonStyle = styled.div`
 const InforCartSkeleton = () => {
   return (
     <SekeletonStyle>
-      <Skeleton width="245px" height="35px" />
+      <Skeleton width="235px" height="35px" />
       <br />
       <Skeleton width="100px" height="20px" />
       <br />
@@ -32,7 +32,7 @@ const InforCartSkeleton = () => {
         <Skeleton width="200px" height="30px" />
       </p>
       <p>
-        <Skeleton width="245px" height="30px" />
+        <Skeleton width="235px" height="30px" />
       </p>
       <p>
         <Skeleton width="150px" height="30px" />
@@ -47,7 +47,7 @@ const InforCartSkeleton = () => {
         <Skeleton width="120px" height="30px" />
       </p>
       <br />
-      <Skeleton width="245px" height="70px" />
+      <Skeleton width="235px" height="70px" />
     </SekeletonStyle>
   );
 };

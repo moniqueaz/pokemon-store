@@ -14,6 +14,7 @@ import {
   Price,
   ProgressBar,
   Types,
+  ScrollArea,
 } from './styles';
 
 const InfoProduct = ({ data, isLoader, infor }) => {
@@ -28,39 +29,41 @@ const InfoProduct = ({ data, isLoader, infor }) => {
       <Button>
         <AddToCart data={data} size="normal" />
       </Button>
-      {infor && (
-        <>
-          <Details>
-            <p>Base Experience: {infor.base_experience}</p>
-            <p>Heigth: {infor.height} </p>
-            <p>Weight: {infor.weight / 10}</p>
-            <Types>
-              Types:{' '}
-              <ul>
-                {infor.types.map(({ type }, index) => {
-                  return <li key={index}>{type.name}</li>;
-                })}
-              </ul>
-            </Types>
-          </Details>
-          <Stats>
-            {infor.stats.map(({ stat, base_stat }, index) => {
-              return (
-                <div key={index}>
-                  <h3>
-                    {stat.name.replace(/-/g, ' ')} - {base_stat}
-                  </h3>
-                  <ProgressBar value={base_stat} />
-                  <div className=""></div>
-                </div>
-              );
-            })}
-          </Stats>
-          {infor.sprites.front_default && (
-            <img src={infor.sprites.front_default} alt={infor.name} />
-          )}
-        </>
-      )}
+      <ScrollArea>
+        {infor && (
+          <>
+            <Details>
+              <p>Base Experience: {infor.base_experience}</p>
+              <p>Heigth: {infor.height} </p>
+              <p>Weight: {infor.weight / 10}</p>
+              <Types>
+                Types:{' '}
+                <ul>
+                  {infor.types.map(({ type }, index) => {
+                    return <li key={index}>{type.name}</li>;
+                  })}
+                </ul>
+              </Types>
+            </Details>
+            <Stats>
+              {infor.stats.map(({ stat, base_stat }, index) => {
+                return (
+                  <div key={index}>
+                    <h3>
+                      {stat.name.replace(/-/g, ' ')} - {base_stat}
+                    </h3>
+                    <ProgressBar value={base_stat} />
+                    <div className=""></div>
+                  </div>
+                );
+              })}
+            </Stats>
+            {infor.sprites.front_default && (
+              <img src={infor.sprites.front_default} alt={infor.name} />
+            )}
+          </>
+        )}
+      </ScrollArea>
     </>
   ) : (
     <Skeleton />

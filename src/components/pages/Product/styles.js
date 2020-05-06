@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { height } from '../../../styles/variables';
 import { grayLight, grayDark } from '../../../styles/theme';
 import { font } from '../../../styles/variables';
@@ -35,13 +35,20 @@ export const Info = styled.div`
   border-radius: 10px;
   font-family: ${font.tertiary};
 
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     flex: 0 0 40%;
     width: 40%;
+    padding: 5px 20px 20px;
+  }
+
+  @media (min-width: 1024px) {
     padding: 20px;
     background-color: ${grayLight};
     margin: 40px 30px 0 0;
     height: calc(100% - ${height.desk.header} - ${height.desk.footer} - 80px);
+
+    overflow: hidden;
+    padding-bottom: 100px;
 
     border-bottom: 4px solid ${grayDark};
     border-right: 4px solid ${grayDark};
@@ -68,7 +75,7 @@ export const Top = styled.div`
   align-items: flex-start;
   flex-direction: column;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     flex-direction: row;
   }
 

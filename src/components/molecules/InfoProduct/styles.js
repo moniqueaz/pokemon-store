@@ -21,7 +21,7 @@ const animateBar = keyframes`
 export const ProgressBar = styled.div`
   border: 1px solid ${grayDark};
   border-radius: 10px;
-  width: 245px;
+  width: 235px;
   height: 5px;
   position: relative;
   overflow: hidden;
@@ -63,10 +63,11 @@ export const Title = styled.h2`
 export const Price = styled.div`
   font-family: ${font.tertiary};
   font-size: 30px;
-  color: ${success};
+  color: ${black};
 
   @media (min-width: 1024px) {
     margin-bottom: 20px;
+    color: ${success};
   }
 
   @media (max-width: 1023px) {
@@ -138,4 +139,11 @@ export const Stats = styled.div`
 
 export const Details = styled.div`
   margin-bottom: 10px;
+`;
+
+export const ScrollArea = styled.div`
+  width: 100%;
+  @media (min-width: 1024px) {
+    overflow-y: auto;
+  }
 `;
