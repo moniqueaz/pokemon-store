@@ -11,7 +11,7 @@
     "eject": "react-scripts eject",
     "storybook:fire": "REACT_APP_TYPE=fire start-storybook -p 6006",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -c .storybook -o .out"
+    "build-storybook": "build-storybook"
   },
   "jest": {
     "collectCoverageFrom": [
