@@ -88,7 +88,7 @@ export const Price = styled.div`
 
 export const Item = styled.span``;
 
-export const Types = styled.p`
+export const Types = styled.div`
   display: flex;
   ul {
     margin-left: 8px;

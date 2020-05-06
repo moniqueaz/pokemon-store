@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { height } from '../../../styles/variables';
 import { grayLight, grayDark } from '../../../styles/theme';
 import { font } from '../../../styles/variables';
