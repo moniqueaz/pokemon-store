@@ -71,10 +71,12 @@ const Catalog = ({ theme, location }) => {
 
   useEffect(() => {
     setIsLoader(true);
+    setListPokemon([]);
     mountCatalog();
   }, [search]);
 
   useEffect(() => {
+    setIsLoader(true);
     listPokemon.length && setIsLoader(false);
   }, [listPokemon]);
 

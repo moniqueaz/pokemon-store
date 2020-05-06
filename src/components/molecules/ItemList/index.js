@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import FormatPrice from '../../atoms/FormatPrice';
 import AddToCart from '../../atoms/AddToCart';
@@ -9,19 +9,13 @@ import { Type, Title, Price, Bottom, Middle } from './styles';
 
 const ItemsList = ({ data }) => {
   const { image, link, type, price, name } = data;
-  const [imageFallBack, setImageFallBack] = useState(image);
 
   return (
     <Item>
       <Type>{type}</Type>
       <Middle>
         <a href={link}>
-          <Image
-            src={imageFallBack}
-            alt={name}
-            className="itemList__image"
-            onError={() => setImageFallBack('/images/missingno.png')}
-          />
+          <Image src={image} alt={name} className="itemList__image" />
           <Title>{name}</Title>
         </a>
         <Price>

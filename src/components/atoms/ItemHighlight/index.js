@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withTheme } from 'styled-components';
 
 import { Item } from './styles';
 
@@ -28,4 +27,4 @@ ItemHighlight.propTypes = {
   className: PropTypes.string,
 };
 
-export default withTheme(ItemHighlight);
+export default ItemHighlight;

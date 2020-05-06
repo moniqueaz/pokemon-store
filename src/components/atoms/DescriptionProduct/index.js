@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withTheme } from 'styled-components';
 
 import Skeleton from './index.skeleton';
 
@@ -11,12 +10,12 @@ const DescriptionProduct = ({ ability, isLoader }) => {
     <Description>
       <h3>Abilitys</h3>
       {ability &&
-        ability.map(abil => {
+        ability.map((abil, index) => {
           return (
-            <Abilitys>
+            <Abilitys key={index}>
               <h4>{abil.name.replace(/-/g, ' ')}</h4>
               <h5>Effect</h5>
-              <p>{abil.effect_entries[[0]].effect}</p>
+              <p>{abil.effect_entries[0].effect}</p>
               <h5>Short Effect</h5>
               <p>{abil.effect_entries[0].short_effect}</p>
             </Abilitys>
@@ -29,14 +28,14 @@ const DescriptionProduct = ({ ability, isLoader }) => {
 };
 
 DescriptionProduct.defaultProps = {
-  ability: {},
+  ability: [],
 };
 
 DescriptionProduct.propTypes = {
   /**
-   * Essa propriedade recebe o objeto que será retornado com a funçaõ.
+   * Essa propriedade recebe o objeto que será retornado com a função.
    */
-  ability: PropTypes.object,
+  ability: PropTypes.array,
 };
 
-export default withTheme(DescriptionProduct);
+export default DescriptionProduct;

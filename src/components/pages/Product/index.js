@@ -57,16 +57,9 @@ const Product = ({ theme, location }) => {
 
   useEffect(() => {
     if (infor) {
-      console.log('infor: ', infor);
       getAbility(infor.abilities);
     }
   }, [infor]);
-
-  useEffect(() => {
-    if (ability) {
-      console.log('ability: ', ability);
-    }
-  }, [ability]);
 
   useEffect(() => {
     if (product) {
@@ -78,7 +71,7 @@ const Product = ({ theme, location }) => {
   return (
     <Layout>
       <Wrapper>
-        <Top>
+        <Top height={window.innerHeight} width={window.innerWidth}>
           {!idLoader ? (
             <ItemHighlight height="auto" className="product__image">
               <Image

@@ -11,43 +11,43 @@ const SekeletonStyle = styled.div`
 const InforCartSkeleton = () => {
   return (
     <SekeletonStyle>
-      <Skeleton width="245px" height="35px" />
+      <Skeleton width="235px" height="35px" />
       <br />
       <Skeleton width="100px" height="20px" />
       <br />
-      <p>
+      <div>
         <Skeleton width="150px" height="20px" />
-      </p>
-      <p>
+      </div>
+      <div>
         <Skeleton width="90px" height="20px" />
-      </p>
-      <p>
+      </div>
+      <div>
         <Skeleton width="110px" height="20px" />
-      </p>
-      <p>
+      </div>
+      <div>
         <Skeleton width="85px" height="20px" />
-      </p>
+      </div>
       <br />
-      <p>
+      <div>
         <Skeleton width="200px" height="30px" />
-      </p>
-      <p>
-        <Skeleton width="245px" height="30px" />
-      </p>
-      <p>
+      </div>
+      <div>
+        <Skeleton width="235px" height="30px" />
+      </div>
+      <div>
         <Skeleton width="150px" height="30px" />
-      </p>
-      <p>
+      </div>
+      <div>
         <Skeleton width="170px" height="30px" />
-      </p>
-      <p>
+      </div>
+      <div>
         <Skeleton width="70px" height="30px" />
-      </p>
-      <p>
+      </div>
+      <div>
         <Skeleton width="120px" height="30px" />
-      </p>
+      </div>
       <br />
-      <Skeleton width="245px" height="70px" />
+      <Skeleton width="235px" height="70px" />
     </SekeletonStyle>
   );
 };

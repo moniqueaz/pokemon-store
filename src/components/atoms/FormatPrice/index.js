@@ -17,7 +17,13 @@ FormatPrice.defaultProps = {
 };
 
 FormatPrice.propTypes = {
+  /**
+   * Essa propriedade é responsavel por informar o valor que será formatado
+   */
   value: PropTypes.number,
+  /**
+   * Essa propriedade é responsavel por defini a moeda
+   */
   currency: PropTypes.string,
 };
 
