@@ -30,3 +30,11 @@ export const skeleton = {
   to: '#D3D3D3',
   from: 'transparent',
 };
+
+export const main = {
+  white: '#fff',
+  blue: '#3269b2',
+  blueDark: '#21386e',
+  yellow: '#ffcb05',
+  yellowDark: '#c7a008',
+};
