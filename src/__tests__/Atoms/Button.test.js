@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, render } from 'enzyme';
+import { shallow } from 'enzyme';
 import ReactDOM from 'react-dom';
 import Button from '../../components/atoms/Button';
 import { FiX } from 'react-icons/fi';

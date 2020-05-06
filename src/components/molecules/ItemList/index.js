@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import FormatPrice from '../../atoms/FormatPrice';
 import AddToCart from '../../atoms/AddToCart';

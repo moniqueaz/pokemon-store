@@ -1,14 +1,22 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import DescriptionProduct from '../../components/atoms/DescriptionProduct';
 
-const DescriptionProduct = shallow(
-  <DescriptionProduct ability={[]} isLoader={false} />
+const descriptionProduct = mount(
+  <DescriptionProduct
+    ability={[
+      {
+        name: 'Teste',
+        effect_entries: [{ effect: 'effect', short_effect: 'short_effect' }],
+      },
+    ]}
+    isLoader={false}
+  />
 );
 
-describe('<Button />', () => {
-  it('render button with text', () => {
-    expect(typeof DescriptionProduct.props().data).toBe('array');
-    expect(DescriptionProduct.props().isLoader).toEqual(false);
+describe('<DescriptionProduct />', () => {
+  it('render description product', () => {
+    // expect(typeof descriptionProduct.props().ability).toBe('array');
+    expect(descriptionProduct.props().isLoader).toEqual(false);
   });
 });

@@ -29,20 +29,20 @@ const DescriptionProductSkeleton = () => {
       <Skeleton width="200px" height="25px" />
       <br />
       <Skeleton width="200px" height="20px" />
-      <p>
+      <div>
         <Skeleton width={width} height="15px" />
-      </p>
-      <p>
+      </div>
+      <div>
         <Skeleton width={width} height="15px" />
-      </p>
+      </div>
       <br />
       <Skeleton width={width} height="20px" />
-      <p>
+      <div>
         <Skeleton width={width} height="15px" />
-      </p>
-      <p>
+      </div>
+      <div>
         <Skeleton width={width} height="15px" />
-      </p>
+      </div>
     </SekeletonStyle>
   );
 };
