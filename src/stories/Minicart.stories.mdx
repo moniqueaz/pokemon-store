@@ -1,0 +1,26 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { FiX } from 'react-icons/fi';
+
+import Minicart from '../components/molecules/Minicart';
+import List from '../components/organisms/List';
+
+<Meta title="Molecules/Minicart" component={Minicart} />
+
+Documentação Molecules Minicart
+
+<Preview>
+  <Story name="default">
+    {(function() {
+      const data = {
+        name: 'Pokemon',
+        price: 2000,
+        image: 'https://pokeres.bastionbot.org/images/pokemon/4.png',
+        id: '65321',
+      };
+      return <>
+      <Minicart item={data} />
+      </>
+    })()}
+  </Story>
+</Preview>

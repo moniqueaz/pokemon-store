@@ -1,0 +1,15 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import ItemHighlight from '../components/atoms/ItemHighlight';
+
+<Meta title="Atoms/Image" component={ItemHighlight} />
+
+Documentação Atomos ItemHighlight
+
+<Preview>
+  <Story name="default">
+    <ItemHighlight height="" className="">
+      <img src="https://pokeres.bastionbot.org/images/pokemon/4.png" alt="" />
+    </ItemHighlight>
+  </Story>
+</Preview>

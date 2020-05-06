@@ -1,0 +1,35 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { FiX } from 'react-icons/fi';
+
+import DescriptionProduct from '../components/atoms/DescriptionProduct';
+
+<Meta title="Atoms/DescriptionProduct" component={DescriptionProduct} />
+
+Documentação Atomo AddToCart
+
+<Preview>
+  <Story name="default">
+    <DescriptionProduct
+      ability={[
+        {
+          name: 'Teste',
+          effect_entries: [{ effect: 'effect', short_effect: 'short_effect' }],
+        },
+        {
+          name: 'Teste',
+          effect_entries: [{ effect: 'effect', short_effect: 'short_effect' }],
+        },
+      ]}
+      isLoader={false}
+    />
+  </Story>
+</Preview>
+
+### Skeleton
+
+<Preview>
+  <Story name="skeleton">
+    <DescriptionProduct ability={[]} isLoader={true} />
+  </Story>
+</Preview>

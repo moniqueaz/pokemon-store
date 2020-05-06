@@ -1,14 +1,13 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import FormatPrice from '../components/atoms/FormatPrice';
 
-import Overlay from '../components/atoms/Overlay';
+<Meta title="Atoms/FormatPrice" component={FormatPrice} />
 
-<Meta title="Atoms/Overlay" component={Overlay} />
-
-Documentação Atomos Overlay
+Documentação Atomos FormatPrice
 
 <Preview>
   <Story name="default">
-    <Overlay show={true} />
+    <FormatPrice value={1000} currency="$" />
   </Story>
 </Preview>
