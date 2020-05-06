@@ -1,15 +1,38 @@
 import React from 'react';
-import { withTheme } from 'styled-components';
-import Layout from '../../templates/Default';
-
-import { Wrapper } from './styles';
+import {
+  Wrapper,
+  Image,
+  ImageType,
+  Button,
+  ButtonContaienr,
+  Label,
+  Footer,
+  Content,
+} from './styles';
 
 const Main = () => {
   return (
-    <Layout>
-      <Wrapper>Main</Wrapper>
-    </Layout>
+    <Wrapper>
+      <Content>
+        <Image src="/images/pokemon-logo.png" alt="" />
+        <ButtonContaienr>
+          <Button href="https://pokemon-store-fire.herokuapp.com/catalog">
+            <ImageType image="/images/fire.jpg" />
+            <Label>Fire</Label>
+          </Button>
+          <Button href="https://pokemon-store-water.herokuapp.com/catalog">
+            <ImageType image="/images/water.jpg" />
+            <Label>Water</Label>
+          </Button>
+          <Button href="https://pokemon-store-dragon.herokuapp.com/catalog">
+            <ImageType image="/images/dragon.jpg" />
+            <Label>Dragon</Label>
+          </Button>
+        </ButtonContaienr>
+      </Content>
+      <Footer>Pokemon</Footer>
+    </Wrapper>
   );
 };
 
-export default withTheme(Main);
+export default Main;

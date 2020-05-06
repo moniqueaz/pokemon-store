@@ -29,7 +29,7 @@ export const Wrapper = styled.div`
 export const Items = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   padding: 20px 10px;
 

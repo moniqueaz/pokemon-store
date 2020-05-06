@@ -1,6 +1,7 @@
 export const filterListWithName = (search, list) => {
+  const regex = RegExp(`${search}`, 'ig');
   const result = list.filter(item => {
-    return item.originalName === search;
+    return item.name.match(regex);
   });
   return result;
 };
