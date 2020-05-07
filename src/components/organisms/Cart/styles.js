@@ -90,6 +90,10 @@ export const Bottom = styled.div`
   flex: 0 0 auto;
   padding: 10px;
   border-top: 2px solid ${grayLight};
+
+  @media (max-width: 1023px) {
+    padding-bottom: 50px;
+  }
 `;
 
 export const Total = styled.div`
