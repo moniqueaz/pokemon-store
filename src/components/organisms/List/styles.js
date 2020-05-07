@@ -23,7 +23,7 @@ const animateInHorizont = keyframes`
 `;
 
 export const Wrapper = styled.div`
-  margin-bottom: 20px;
+  padding-bottom: 20px;
 `;
 
 export const Items = styled.ul`
