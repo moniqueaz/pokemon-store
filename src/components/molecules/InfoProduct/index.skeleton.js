@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Skeleton from '../../atoms/Skeleton';
 
 const SekeletonStyle = styled.div`
-  p {
+  div {
     margin: 5px 0;
   }
 `;
