@@ -46,10 +46,10 @@ const Main = () => {
           </Button>
           <Button
             target="_black"
-            href="https://pokemon-store-eletric.herokuapp.com/catalog"
+            href="https://pokemon-store-electric.herokuapp.com/catalog"
           >
-            <ImageType image="/images/eletric.png" />
-            <Label>Eletric</Label>
+            <ImageType image="/images/electric.png" />
+            <Label>Electric</Label>
           </Button>
         </ButtonContaienr>
       </Content>
