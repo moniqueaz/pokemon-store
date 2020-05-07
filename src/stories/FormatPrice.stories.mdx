@@ -1,0 +1,25 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { withKnobs, text, number } from '@storybook/addon-knobs';
+import FormatPrice from '../components/atoms/FormatPrice';
+
+<Meta title="Atoms/FormatPrice" component={FormatPrice} />
+
+Documentação Atomos FormatPrice
+
+<Preview>
+  <Story name="default">
+    <FormatPrice value={1000} currency="$" />
+  </Story>
+</Preview>
+
+### Props
+
+<Props of={FormatPrice} />
+
+### Playground
+
+<Story name="knobs" parameters={{ decorators: [withKnobs] }}>
+  <FormatPrice
+    value={number('value', 1000)}
+    currency={text('currency','$')} />
+</Story>

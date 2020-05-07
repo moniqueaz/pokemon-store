@@ -72,6 +72,7 @@ const InfoProduct = ({ data, isLoader, infor }) => {
 
 InfoProduct.defaultProps = {
   data: {},
+  infor: {},
   isLoader: true,
 };
 
@@ -80,6 +81,10 @@ InfoProduct.propTypes = {
    * Essa propriedade é responsavel por realizar a carga no componente.
    */
   data: PropTypes.object,
+  /**
+   * Essa propriedade é responsavel por realizar a carga dos detalhes do produto.
+   */
+  infor: PropTypes.object,
   /**
    * Essa propriedade é responsavel por exibir o loader do componente.
    */

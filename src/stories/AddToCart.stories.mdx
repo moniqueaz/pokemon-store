@@ -1,0 +1,45 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { withKnobs, text, object } from '@storybook/addon-knobs';
+import { FiX } from 'react-icons/fi';
+
+import AddToCart from '../components/atoms/AddToCart';
+
+<Meta title="Atoms/AddToCart" component={AddToCart} />
+
+Documentação Atomo AddToCart
+
+<Preview>
+  <Story name="default">
+    <AddToCart data={{
+      id: '25',
+      productId: '321654',
+      originalName: 'pokemon',
+      name: 'Pokemon',
+      price: 1000,
+      type: 'fire',
+      image: '/',
+      link: '/'
+    }} size="small" />
+  </Story>
+</Preview>
+
+### Props
+
+<Props of={AddToCart} />
+
+### Playground
+
+<Story name="knobs" parameters={{ decorators: [withKnobs] }}>
+  <AddToCart 
+    data={object('data', {
+      id: '25',
+      productId: '321654',
+      originalName: 'pokemon',
+      name: 'Pokemon',
+      price: 1000,
+      type: 'fire',
+      image: '/',
+      link: '/'
+    })}
+    size={text('size', 'small')} />
+</Story>

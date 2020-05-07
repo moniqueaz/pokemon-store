@@ -1,5 +1,5 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { withKnobs, object, boolean } from '@storybook/addon-knobs';
 
 import List from '../components/organisms/List';
 
@@ -11,9 +11,24 @@ Documentação Organismo List
   <Story name="default">
     <List
       data={JSON.parse(
-        '[{"id":1,"image":"https://pokeres.bastionbot.org/images/pokemon/25.png","link":"/","type":"electric","price":2000,"name":"Pikachu"},{"id":1,"image":"https://pokeres.bastionbot.org/images/pokemon/25.png","link":"/","type":"electric","price":2000,"name":"Pikachu"},{"id":1,"image":"https://pokeres.bastionbot.org/images/pokemon/25.png","link":"/","type":"electric","price":2000,"name":"Pikachu"},{"id":1,"image":"https://pokeres.bastionbot.org/images/pokemon/25.png","link":"/","type":"electric","price":2000,"name":"Pikachu"},{"id":1,"image":"https://pokeres.bastionbot.org/images/pokemon/25.png","link":"/","type":"electric","price":2000,"name":"Pikachu"},{"id":1,"image":"https://pokeres.bastionbot.org/images/pokemon/25.png","link":"/","type":"electric","price":2000,"name":"Pikachu"},{"id":1,"image":"https://pokeres.bastionbot.org/images/pokemon/25.png","link":"/","type":"electric","price":2000,"name":"Pikachu"},{"id":1,"image":"https://pokeres.bastionbot.org/images/pokemon/25.png","link":"/","type":"electric","price":2000,"name":"Pikachu"},{"id":1,"image":"https://pokeres.bastionbot.org/images/pokemon/25.png","link":"/","type":"electric","price":2000,"name":"Pikachu"},{"id":1,"image":"https://pokeres.bastionbot.org/images/pokemon/25.png","link":"/","type":"electric","price":2000,"name":"Pikachu"},{"id":1,"image":"https://pokeres.bastionbot.org/images/pokemon/25.png","link":"/","type":"electric","price":2000,"name":"Pikachu"}]'
+        '[{"id":1,"image":"https://pokeres.bastionbot.org/images/pokemon/25.png","link":"/","type":"electric","price":2000,"name":"Pikachu"},{"id":1,"image":"https://pokeres.bastionbot.org/images/pokemon/25.png","link":"/","type":"electric","price":2000,"name":"Pikachu"},{"id":1,"image":"https://pokeres.bastionbot.org/images/pokemon/25.png","link":"/","type":"electric","price":2000,"name":"Pikachu"},{"id":1,"image":"https://pokeres.bastionbot.org/images/pokemon/25.png","link":"/","type":"electric","price":2000,"name":"Pikachu"},{"id":1,"image":"https://pokeres.bastionbot.org/images/pokemon/25.png","link":"/","type":"electric","price":2000,"name":"Pikachu"},{"id":1,"image":"https://pokeres.bastionbot.org/images/pokemon/25.png","link":"/","type":"electric","price":2000,"name":"Pikachu"}]'
       )}
       isLoader={false}
     />
   </Story>
 </Preview>
+
+### Props
+
+<Props of={List} />
+
+### Playground
+
+<Story name="knobs" parameters={{ decorators: [withKnobs] }}>
+  <List
+      data={object('data', JSON.parse(
+        '[{"id":1,"image":"https://pokeres.bastionbot.org/images/pokemon/25.png","link":"/","type":"electric","price":2000,"name":"Pikachu"},{"id":1,"image":"https://pokeres.bastionbot.org/images/pokemon/25.png","link":"/","type":"electric","price":2000,"name":"Pikachu"},{"id":1,"image":"https://pokeres.bastionbot.org/images/pokemon/25.png","link":"/","type":"electric","price":2000,"name":"Pikachu"},{"id":1,"image":"https://pokeres.bastionbot.org/images/pokemon/25.png","link":"/","type":"electric","price":2000,"name":"Pikachu"},{"id":1,"image":"https://pokeres.bastionbot.org/images/pokemon/25.png","link":"/","type":"electric","price":2000,"name":"Pikachu"},{"id":1,"image":"https://pokeres.bastionbot.org/images/pokemon/25.png","link":"/","type":"electric","price":2000,"name":"Pikachu"}]'
+      ))}
+      isLoader={boolean('isLoader', false)}
+    />
+</Story>

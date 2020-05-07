@@ -14,7 +14,7 @@ export const Content = styled.div`
   align-items: center;
   flex-direction: column;
   padding: 10px;
-  height: calc(100vh - 50px);
+  min-height: calc(100vh - 50px);
   width: 100%;
 `;
 
@@ -65,7 +65,7 @@ export const ImageType = styled.div`
 export const Button = styled.a`
   width: auto;
   flex: 0 0 auto;
-  margin: 5px;
+  margin: 15px;
   display: flex;
   justify-content: center;
   align-items: center;

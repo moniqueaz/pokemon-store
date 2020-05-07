@@ -31,7 +31,6 @@ const ItemsList = ({ data }) => {
 
 ItemsList.defaultProps = {
   data: {},
-  addToCart: () => undefined,
 };
 
 ItemsList.propTypes = {

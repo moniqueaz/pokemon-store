@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import {
   backgroundColor,
-  backgroundFooter,
-  textColorFooter,
+  textColor,
   primaryDark,
   grayLight,
   white,
@@ -24,8 +23,8 @@ export const Container = styled.div`
 export const Footer = styled.div`
   padding: 10px;
   text-align: center;
-  background-color: ${backgroundFooter};
-  color: ${textColorFooter};
+  background-color: ${backgroundColor};
+  color: ${textColor};
   border-top: 4px solid ${primaryDark};
   font-family: ${font.tertiary};
 `;
