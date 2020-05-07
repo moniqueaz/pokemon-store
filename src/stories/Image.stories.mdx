@@ -19,3 +19,15 @@ Documentação Atomos Image
     <Image src="https://pokeres.bastionbot.org/images/pokemon/x4.png" alt="" />
   </Story>
 </Preview>
+
+### Props
+
+<Props of={Image} />
+
+### Playground
+
+<Story name="knobs" parameters={{ decorators: [withKnobs] }}>
+  <Image
+    src={text('src', 'https://pokeres.bastionbot.org/images/pokemon/4.png')}
+    alt={text('alt', 'Pokemon')} />
+</Story>

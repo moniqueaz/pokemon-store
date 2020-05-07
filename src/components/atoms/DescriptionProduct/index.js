@@ -29,6 +29,7 @@ const DescriptionProduct = ({ ability, isLoader }) => {
 
 DescriptionProduct.defaultProps = {
   ability: [],
+  isLoader: true,
 };
 
 DescriptionProduct.propTypes = {
@@ -36,6 +37,10 @@ DescriptionProduct.propTypes = {
    * Essa propriedade recebe o objeto que será retornado com a função.
    */
   ability: PropTypes.array,
+  /**
+   * Essa propriedade é responsavel pordefinir o estado do compoennete.
+   */
+  isLoader: PropTypes.bool,
 };
 
 export default DescriptionProduct;

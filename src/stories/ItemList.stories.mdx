@@ -18,7 +18,25 @@ Documentação Molecula ItemList
         price: 2000,
         name: 'Pikachu',
       }}
-      isLoader={false}
     />
   </Story>
 </Preview>
+
+### Props
+
+<Props of={ItemList} />
+
+### Playground
+
+<Story name="knobs" parameters={{ decorators: [withKnobs] }}>
+  <ItemList
+      data={{
+        id: 1,
+        image: 'https://pokeres.bastionbot.org/images/pokemon/25.png',
+        link: '/',
+        type: 'electric',
+        price: 2000,
+        name: 'Pikachu',
+      }}
+    />
+</Story>

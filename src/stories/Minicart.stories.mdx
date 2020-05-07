@@ -1,5 +1,5 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { withKnobs, object } from '@storybook/addon-knobs';
 import { FiX } from 'react-icons/fi';
 
 import Minicart from '../components/molecules/Minicart';
@@ -24,3 +24,23 @@ Documentação Molecules Minicart
     })()}
   </Story>
 </Preview>
+
+### Props
+
+<Props of={Minicart} />
+
+### Playground
+
+<Story name="knobs" parameters={{ decorators: [withKnobs] }}>
+  {(function() {
+      const data = {
+        name: 'Pokemon',
+        price: 2000,
+        image: 'https://pokeres.bastionbot.org/images/pokemon/4.png',
+        id: '65321',
+      };
+      return <>
+      <Minicart item={object('item', data)} />
+      </>
+    })()}
+</Story>

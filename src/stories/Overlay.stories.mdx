@@ -7,8 +7,20 @@ import Overlay from '../components/atoms/Overlay';
 
 Documentação Atomos Overlay
 
+### Playground
+
+<Story name="knobs" parameters={{ decorators: [withKnobs] }}>
+  <Overlay show={boolean('show', false)} />
+</Story>
+
+### Default
+
 <Preview>
   <Story name="default">
-    <Overlay show={true} />
+    <Overlay show={false} />
   </Story>
 </Preview>
+
+### Props
+
+<Props of={Overlay} />

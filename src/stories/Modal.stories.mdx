@@ -1,5 +1,5 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 import FormatPrice from '../components/atoms/FormatPrice';
 
 import Modal from '../components/molecules/Modal';
@@ -21,3 +21,21 @@ Documentação Molecula Modal
     </Modal>
   </Story>
 </Preview>
+
+### Props
+
+<Props of={Modal} />
+
+### Playground
+
+<Story name="knobs" parameters={{ decorators: [withKnobs] }}>
+  <Modal show>
+    <h2>{text('titulo', 'Obrigada!!')}</h2>
+    <br />
+    <p>{text('texto', 'Voce ganhou de volta')}</p>
+    <br />
+    <span className="success highlight">
+      <FormatPrice value={number('price', 2000)} />
+    </span>
+  </Modal>
+</Story>
