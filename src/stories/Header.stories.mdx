@@ -1,0 +1,22 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { FiX } from 'react-icons/fi';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+import Header from '../components/organisms/Header';
+
+<Meta title="Organisms/Header" component={Header} />
+
+Documentação Organisms Header
+
+<Preview>
+  <Story name="default">
+    <BrowserRouter>
+      <Switch>
+        <Route>
+          <Header />
+        </Route>
+      </Switch>
+    </BrowserRouter>
+  </Story>
+</Preview>

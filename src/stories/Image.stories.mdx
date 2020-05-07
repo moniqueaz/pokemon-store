@@ -1,0 +1,33 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import Image from '../components/atoms/Image';
+
+<Meta title="Atoms/Image" component={Image} />
+
+Documentação Atomos Image
+
+<Preview>
+  <Story name="default">
+    <Image src="https://pokeres.bastionbot.org/images/pokemon/4.png" alt="" />
+  </Story>
+</Preview>
+
+### Error
+
+<Preview>
+  <Story name="error">
+    <Image src="https://pokeres.bastionbot.org/images/pokemon/x4.png" alt="" />
+  </Story>
+</Preview>
+
+### Props
+
+<Props of={Image} />
+
+### Playground
+
+<Story name="knobs" parameters={{ decorators: [withKnobs] }}>
+  <Image
+    src={text('src', 'https://pokeres.bastionbot.org/images/pokemon/4.png')}
+    alt={text('alt', 'Pokemon')} />
+</Story>

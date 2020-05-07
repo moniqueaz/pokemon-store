@@ -1,6 +1,7 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import { FiX } from 'react-icons/fi';
+import { textColorSecondary, backgroundColorSecondary } from '../styles/theme';
 
 import Button from '../components/atoms/Button';
 
@@ -13,6 +14,10 @@ Documentação Atomo Button
     <Button>Text</Button>
   </Story>
 </Preview>
+
+### Props
+
+<Props of={Button} />
 
 ### Button with icons
 
@@ -32,3 +37,28 @@ Documentação Atomo Button
     <Button full>Text</Button>
   </Story>
 </Preview>
+
+### Button with icons
+
+<Preview>
+  <Story name="color">
+    <Button
+      color={textColorSecondary}
+      bgColor={backgroundColorSecondary}
+    >
+      Text
+    </Button>
+  </Story>
+</Preview>
+
+### Playground
+
+<Story name="knobs" parameters={{ decorators: [withKnobs] }}>
+  <Button
+    full={boolean('full', false)}
+    size={text('size', 'small')}
+    disabled={boolean('disabled', false)}
+    color={text('color', 'red')}
+    bgColor={text('bgColor', 'blue')}
+  >{text('children', 'text')}</Button>
+</Story>

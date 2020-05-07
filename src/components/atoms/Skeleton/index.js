@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withTheme } from 'styled-components';
-
 import { Item } from './styles';
 
 const Skeleton = ({ height, width, border }) => {
@@ -29,4 +27,4 @@ Skeleton.propTypes = {
   border: PropTypes.string,
 };
 
-export default withTheme(Skeleton);
+export default Skeleton;

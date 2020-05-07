@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { FiSearch, FiX } from 'react-icons/fi';
 import { withTheme } from 'styled-components';
@@ -45,12 +45,8 @@ const Header = ({ theme }) => {
   );
 };
 
-Header.defaultProps = {
-  toggleCart: () => undefined,
-};
+Header.defaultProps = {};
 
-Header.propTypes = {
-  toggleCart: PropTypes.func,
-};
+Header.propTypes = {};
 
 export default withTheme(Header);

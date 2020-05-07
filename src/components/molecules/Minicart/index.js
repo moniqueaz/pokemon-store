@@ -15,22 +15,15 @@ const Minicart = ({ item }) => {
   };
 
   useEffect(() => {
-    clearTimeout(timer);
     if (item.id) {
-      if (!!product.productId) {
-        setProduct(item);
+      if (product.id) {
+        setShow(true);
+        timer();
       } else {
         setProduct(item);
       }
     }
   }, [item]);
-
-  useEffect(() => {
-    if (product.id) {
-      setShow(true);
-      timer();
-    }
-  }, [product]);
 
   useEffect(() => {
     clearTimeout(timer);

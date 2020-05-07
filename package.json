@@ -4,10 +4,10 @@
   "private": true,
   "author": "Monique Azevedo <moniqueaz.si@gmail.com>",
   "scripts": {
-    "dev": "REACT_APP_TYPE=fire react-scripts start",
+    "dev": "REACT_APP_TYPE=grass react-scripts start",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --coverage",
+    "test": "react-scripts test --coverage --watchAll",
     "eject": "react-scripts eject",
     "storybook:fire": "REACT_APP_TYPE=fire start-storybook -p 6006",
     "storybook": "start-storybook -p 6006",
@@ -15,7 +15,7 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx,ts,tsx}",
+      "src/**/*.test.{js,jsx,ts,tsx}",
       "!<rootDir>/node_modules/",
       "!<rootDir>/path/to/dir/"
     ],

@@ -1,5 +1,5 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { withKnobs, text } from '@storybook/addon-knobs';
 
 import Search from '../components/molecules/Search';
 
@@ -9,6 +9,24 @@ Documentação Molecula Search
 
 <Preview>
   <Story name="default">
-    <Search />
+    <Search value='' />
   </Story>
 </Preview>
+
+### With value
+
+<Preview>
+  <Story name="with value">
+    <Search value='Nome Pokemon' />
+  </Story>
+</Preview>
+
+### Props
+
+<Props of={Search} />
+
+### Playground
+
+<Story name="knobs" parameters={{ decorators: [withKnobs] }}>
+  <Search value={text('value', '')} />
+</Story>
