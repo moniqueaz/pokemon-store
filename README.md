@@ -2,10 +2,10 @@
 
 - <a href="#introduction">Introdução</a>
 - <a href="#objective">Objetivo</a>
+- <a href="#the-store">A Loja</a>
 - <a href="#challenge">Desafio</a>
 - <a href="#solutions">Soluções</a>
 - <a href="#tecnologies">Tecnologias</a>
-- <a href="#the-store">A Loja</a>
 - <a href="#init-project">Iniciar Projeto</a>
 - <a href="#start-project">Startar Projeto</a>
 - <a href="#storybook">Storybook</a>
@@ -35,10 +35,10 @@ loja possuiria, pagina de catalogo, pagina de produto, o cart e uma busca.
 - <a href="https://pokemon-store-dragon.herokuapp.com/catalog">Dragon</a>
 - <a href="https://pokemon-store-grass.herokuapp.com/catalog">Grass</a>
 
-<img src='./assets/store-fire.jpeg' width='25%' alt='fire'/>
-<img src='./assets/store-water.jpeg' width='25%' alt='water'/>
-<img src='./assets/store-dragon.jpeg' width='25%' alt='dragon'/>
-<img src='./assets/store-grass.jpeg' width='25%' alt='grass'/>
+<img src='./assets/store-fire.jpeg' width='100%' alt='fire'/>
+<img src='./assets/store-water.jpeg' width='100%' alt='water'/>
+<img src='./assets/store-dragon.jpeg' width='100%' alt='dragon'/>
+<img src='./assets/store-grass.jpeg' width='100%' alt='grass'/>
 
 O projeto foi todo criado como mobile-first, com um layout bem descontraído, cada
 tema possuim um conjunto de cores primarias, secundarias e tercearias, black, white
@@ -50,7 +50,7 @@ Todas as lojas posstuim a mesma pagina main, a main não possuim tema, ela é
 responsavel apenas por lista todas as lojas e disponibilizar link para a pagina de
 catalogo das mesmas.
 
-<img src='./assets/main.jpeg' width='50%' alt='main'/>
+<img src='./assets/main.jpeg' width='100%' alt='main'/>
 
 A pagina de catalogo lista todos os pokemon disponivei na api [pokeapi.co](https://pokeapi.co/)
 e as imagems dos pokemon vieram da api [pokeres.bastionbot.org](https://pokeres.bastionbot.org/) onde eu só precisava passar a url com o numero do pokemon .png para conseguir a
@@ -80,7 +80,7 @@ o botão fica disponivel no header da pagina. É possivel excluir produtos do ca
 ao finalizar a comprar o comportamento é de fechar o cart, limpar o mesmo e
 exibir uma modal de agradecimento com 10% de cashback com base no valor total.
 
-<img src='./assets/modal.jpeg' alt='modal' width='50%' />
+<img src='./assets/modal.jpeg' alt='modal' width='100%' />
 
 O search é bem simples, ele realiza um filter das lista do catalogo e compara o valor
 do input com o nome do pokemon, utilizei uma regex bem simples pra isso, com isso ele
@@ -89,14 +89,14 @@ retorna um nova lista que é passada para o componete que exibi o filtro.
 Toda vez que você atualiza a lista do cart ele mostra uma notificação com a
 foto e o nome do ultimo pokemon que foi adicionado.
 
-<img src='./assets/minicart.jpeg' alt='minicart' width='100%' />
+<img src='./assets/minicart.jpeg' alt='minicart' width='50%' />
 
 Na pagina de produto, no mobile ele possui o button e o price fixados a base
 na pagina, assim é possivel adicionar ao carrinho a qualquer momento, mesmo que
 tenha realizado um scroll, o mesmo acontece no desk, porem toda a barra da direita
 acompanha o scroll, mantendo sempre em vista o price e o button addToCart.
 
-<img src='./assets/product.jpeg' alt='product' width='50%' />
+<img src='./assets/product.jpeg' alt='product' width='100%' />
 
 ## Challenge
 
@@ -150,7 +150,7 @@ para cada componente e ele tambem utiliza das proptypes para documentar as propr
 
 ### Componente
 
-<img src='./assets/component.jpeg' width='70%' alt='component'/>
+<img src='./assets/component.jpeg' width='100%' alt='component'/>
 <br/><br/>
 
 ### Playground
@@ -160,7 +160,7 @@ para cada componente e ele tambem utiliza das proptypes para documentar as propr
 
 ### Documentação
 
-<img src='./assets/docs.jpeg' width='70%' alt='docs'/>
+<img src='./assets/docs.jpeg' width='100%' alt='docs'/>
 <br/><br/>
 
 ## Start
@@ -181,7 +181,7 @@ Está configurado para exibir o coverage
 Foi criado um pipeline para uma rapida atualização de todos os projetos, já que ele possuim um mesmo codigo base. Basicamente, toda vez que a master é atualiza, o pipeline é executado,
 atualizando todos os sites com a ultima versão do projeto.
 
-<img src='./assets/pipeline.jpeg' width='70%' alt='pipeline'/>
+<img src='./assets/pipeline.jpeg' width='100%' alt='pipeline'/>
 <br/><br/>
 <img src='./assets/build.jpeg' width='50%' alt='build'/>
 
