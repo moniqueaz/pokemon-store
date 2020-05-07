@@ -44,13 +44,13 @@ const Main = () => {
             <ImageType image="/images/grass.jpg" />
             <Label>Grass</Label>
           </Button>
-          {/* <Button
+          <Button
             target="_black"
             href="https://pokemon-store-eletric.herokuapp.com/catalog"
           >
             <ImageType image="/images/eletric.png" />
             <Label>Eletric</Label>
-          </Button> */}
+          </Button>
         </ButtonContaienr>
       </Content>
       <Footer>Pokemon</Footer>
