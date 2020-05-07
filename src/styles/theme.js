@@ -7,6 +7,7 @@ export const primary = theme('mode', {
   water: '#0099E0',
   dragon: '#E08B02',
   grass: '#00CC9C',
+  electric: '#E6CD00',
 });
 
 export const primaryLight = theme('mode', {
@@ -14,6 +15,7 @@ export const primaryLight = theme('mode', {
   water: '#19B6FF',
   dragon: '#FFA81C',
   grass: '#40D5B2',
+  electric: '#EAD746',
 });
 
 export const primaryDark = theme('mode', {
@@ -21,6 +23,7 @@ export const primaryDark = theme('mode', {
   water: '#006594',
   dragon: '#945B01',
   grass: '#004D3B',
+  electric: '#665A00',
 });
 
 export const secondary = theme('mode', {
@@ -28,6 +31,7 @@ export const secondary = theme('mode', {
   water: '#E07A00',
   dragon: '#0277E0',
   grass: '#CC3300',
+  electric: '#E61782',
 });
 
 export const secondaryLight = theme('mode', {
@@ -35,6 +39,7 @@ export const secondaryLight = theme('mode', {
   water: '#FF9819',
   dragon: '#1C95FF',
   grass: '#FF5319',
+  electric: '#EA5EA6',
 });
 
 export const secondaryDark = theme('mode', {
@@ -42,6 +47,7 @@ export const secondaryDark = theme('mode', {
   water: '#945100',
   dragon: '#014F94',
   grass: '#802000',
+  electric: '#660A3A',
 });
 
 export const black = theme('mode', {
@@ -49,6 +55,7 @@ export const black = theme('mode', {
   water: '#272A2B',
   dragon: '#272A2B',
   grass: '#272A2B',
+  electric: '#272A2B',
 });
 
 export const white = theme('mode', {
@@ -56,6 +63,7 @@ export const white = theme('mode', {
   water: '#fff',
   dragon: '#fff',
   grass: '#fff',
+  electric: '#fff',
 });
 
 export const gray = theme('mode', {
@@ -63,6 +71,7 @@ export const gray = theme('mode', {
   water: '#6C7378',
   dragon: '#6C7378',
   grass: '#6C7378',
+  electric: '#6C7378',
 });
 
 export const grayLight = theme('mode', {
@@ -70,6 +79,7 @@ export const grayLight = theme('mode', {
   water: '#D1D1D1',
   dragon: '#D1D1D1',
   grass: '#D1D1D1',
+  electric: '#D1D1D1',
 });
 
 export const grayDark = theme('mode', {
@@ -77,6 +87,7 @@ export const grayDark = theme('mode', {
   water: '#555A5E',
   dragon: '#555A5E',
   grass: '#555A5E',
+  electric: '#555A5E',
 });
 
 export const error = theme('mode', {
@@ -84,6 +95,7 @@ export const error = theme('mode', {
   water: '#E01631',
   dragon: '#E00DBE',
   grass: '#CC0A26',
+  electric: '#E34C17',
 });
 
 export const success = theme('mode', {
@@ -91,6 +103,7 @@ export const success = theme('mode', {
   water: '#0BE0B0',
   dragon: '#10948C',
   grass: '#1493CC',
+  electric: '#4600B0',
 });
 
 export const backgroundColor = theme('mode', {
@@ -98,6 +111,7 @@ export const backgroundColor = theme('mode', {
   water: primary,
   dragon: primary,
   grass: primary,
+  electric: primary,
 });
 
 export const textColor = theme('mode', {
@@ -105,6 +119,7 @@ export const textColor = theme('mode', {
   water: white,
   dragon: white,
   grass: white,
+  electric: black,
 });
 
 export const backgroundColorSecondary = theme('mode', {
@@ -112,6 +127,7 @@ export const backgroundColorSecondary = theme('mode', {
   water: secondary,
   dragon: secondary,
   grass: secondary,
+  electric: secondary,
 });
 
 export const textColorSecondary = theme('mode', {
@@ -119,20 +135,7 @@ export const textColorSecondary = theme('mode', {
   water: black,
   dragon: white,
   grass: white,
-});
-
-export const backgroundFooter = theme('mode', {
-  fire: primary,
-  water: primary,
-  dragon: primary,
-  grass: primary,
-});
-
-export const textColorFooter = theme('mode', {
-  fire: white,
-  water: white,
-  dragon: white,
-  grass: white,
+  electric: white,
 });
 
 // Button
@@ -142,6 +145,7 @@ export const textButtonColor = theme('mode', {
   water: white,
   dragon: white,
   grass: white,
+  electric: white,
 });
 
 export const backgroundButtonColor = theme('mode', {
@@ -149,6 +153,7 @@ export const backgroundButtonColor = theme('mode', {
   water: success,
   dragon: success,
   grass: success,
+  electric: success,
 });
 
 export const textButtonColorDisabled = theme('mode', {
@@ -156,6 +161,7 @@ export const textButtonColorDisabled = theme('mode', {
   water: black,
   dragon: black,
   grass: black,
+  electric: black,
 });
 
 export const backgroundButtonColorDisabled = theme('mode', {
@@ -163,4 +169,5 @@ export const backgroundButtonColorDisabled = theme('mode', {
   water: gray,
   dragon: gray,
   grass: gray,
+  electric: gray,
 });

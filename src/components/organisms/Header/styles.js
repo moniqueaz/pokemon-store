@@ -38,9 +38,13 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: 24px;
+  font-size: 20px;
   font-family: ${font.secondary};
   flex: 1 1 auto;
+
+  @media (min-width: 375px) {
+    font-size: 24px;
+  }
 
   a {
     text-decoration: none;
