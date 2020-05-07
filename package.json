@@ -4,7 +4,7 @@
   "private": true,
   "author": "Monique Azevedo <moniqueaz.si@gmail.com>",
   "scripts": {
-    "dev": "REACT_APP_TYPE=fire react-scripts start",
+    "dev": "REACT_APP_TYPE=grass react-scripts start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --coverage --watchAll",
