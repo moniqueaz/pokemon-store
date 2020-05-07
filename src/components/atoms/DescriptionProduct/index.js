@@ -34,7 +34,7 @@ DescriptionProduct.defaultProps = {
 
 DescriptionProduct.propTypes = {
   /**
-   * Essa propriedade recebe o objeto que será retornado com a função.
+   * Essa propriedade recebe um array de objetos que irá montar o componente.
    */
   ability: PropTypes.array,
   /**

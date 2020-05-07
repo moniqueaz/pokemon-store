@@ -1,10 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ReactDOM from 'react-dom';
 import Button from '../../components/atoms/Button';
 import { FiX } from 'react-icons/fi';
 
-const button = shallow(
+const wrapper = shallow(
   <Button
     color={() => {
       return 'red';
@@ -28,14 +27,14 @@ const button = shallow(
 
 describe('<Button />', () => {
   it('render button with text', () => {
-    expect(typeof button.props().color).toBe('function');
-    expect(typeof button.props().bgColor).toBe('function');
-    expect(button.props().size).toEqual('small');
-    expect(button.props().disabled).toEqual(false);
-    expect(button.props().full).toEqual(false);
-    expect(button.props().type).toEqual('button');
-    expect(button.props().className).toEqual('teste');
-    expect(typeof button.props().onClick).toBe('function');
-    expect(button.text()).toEqual('<FiX />Text');
+    expect(typeof wrapper.props().color).toBe('function');
+    expect(typeof wrapper.props().bgColor).toBe('function');
+    expect(wrapper.props().size).toEqual('small');
+    expect(wrapper.props().disabled).toEqual(false);
+    expect(wrapper.props().full).toEqual(false);
+    expect(wrapper.props().type).toEqual('button');
+    expect(wrapper.props().className).toEqual('teste');
+    expect(typeof wrapper.props().onClick).toBe('function');
+    expect(wrapper.text()).toEqual('<FiX />Text');
   });
 });
