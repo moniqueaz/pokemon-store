@@ -72,7 +72,7 @@ const Product = ({ theme, location }) => {
     <Layout>
       <Wrapper>
         <Top height={window.innerHeight} width={window.innerWidth}>
-          {!idLoader ? (
+          {false ? (
             <ItemHighlight height="auto" className="product__image">
               <Image
                 src={product.image}

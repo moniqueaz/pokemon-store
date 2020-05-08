@@ -79,6 +79,10 @@ export const Top = styled.div`
     flex-direction: row;
   }
 
+  @media (min-width: 1024px) {
+    margin-right: calc((1366px - 60px) * (30 / 100));
+  }
+
   .product {
     &__image {
       display: flex;

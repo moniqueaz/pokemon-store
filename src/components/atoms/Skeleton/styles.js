@@ -3,10 +3,10 @@ import { skeleton } from '../../../styles/variables';
 
 const animate = width => keyframes`
   from {
-    transform: translateX(-100%);
+    left: 0;
   }
   to {
-    transform: translateX(${width});
+    left: 100%;
   }
 `;
 
@@ -24,7 +24,7 @@ export const Item = styled.div`
     left: 0;
     top: 0;
     width: 50px;
-    height: ${props => props.height};
+    height: 100%;
     z-index: 1;
     background-image: linear-gradient(
       to right,
